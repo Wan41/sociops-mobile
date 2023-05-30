@@ -43,104 +43,108 @@ class _ProfileScreenState extends State<ProfileScreen> {
           )
         ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.only(left: 16, right: 16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(height: 40),
-            CircleAvatar(
-              radius: 80,
-              backgroundImage: AssetImage('assets/pp.jpg'),
-            ),
-            SizedBox(height: 16),
-            Text(
-              'Muhammad Rifki Muzakki',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+      body: Padding(
+        padding: const EdgeInsets.only(left: 16, right: 16),
+        child: ListView(
+          children: const [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                SizedBox(height: 40),
+                CircleAvatar(
+                  radius: 80,
+                  backgroundImage: AssetImage('assets/pp.jpg'),
+                ),
+                SizedBox(height: 16),
                 Text(
-                  '12',
+                  'Muhammad Rifki Muzakki',
                   style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(height: 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      '12',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 24,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Text(
+                      '32',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 24,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Text(
+                      '17',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 24,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      'Galang Dana',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Text(
+                      'Volunteer',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Text(
+                      'Mengikuti',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 8),
+                Divider(),
+                SizedBox(height: 8),
+                Text(
+                  'Tentang saya',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
                     color: Colors.black,
                   ),
                 ),
                 Text(
-                  '32',
+                  'Halo, saya seseorang yang sangat tertarik untuk mengikuti kampanye social dan suka menolong orang lain yang membetuhkan :).',
                   style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
                     color: Colors.black,
                   ),
                 ),
-                Text(
-                  '17',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 24,
-                    color: Colors.black,
-                  ),
-                ),
+                Divider(),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  'Galang Dana',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                    color: Colors.black,
-                  ),
-                ),
-                Text(
-                  'Volunteer',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                    color: Colors.black,
-                  ),
-                ),
-                Text(
-                  'Mengikuti',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16,
-                    color: Colors.black,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 8),
-            Divider(),
-            SizedBox(height: 8),
-            Text(
-              'Tentang saya',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
-                color: Colors.black,
-              ),
-            ),
-            Text(
-              'Halo, saya seseorang yang sangat tertarik untuk mengikuti kampanye social dan suka menolong orang lain yang membetuhkan :).',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 14,
-                color: Colors.black,
-              ),
-            ),
-            Divider(),
           ],
         ),
       ),

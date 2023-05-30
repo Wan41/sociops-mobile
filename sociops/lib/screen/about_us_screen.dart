@@ -43,7 +43,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
             const SizedBox(
               height: 12,
             ),
-            Image.asset('assets/profile_photo.jpg'),
+            // Image.asset('assets/profile_photo.jpg'),
             const SizedBox(
               height: 12,
             ),
