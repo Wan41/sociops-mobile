@@ -109,7 +109,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 ColorStyle().primaryblue,
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const LoginScreen(),
+                                ),
+                              );
+                            },
                             child: Text(
                               "Buat akun",
                               style: GoogleFonts.inter(

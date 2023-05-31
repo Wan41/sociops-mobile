@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sociops/screen/bottom_screen.dart';
 import 'package:sociops/screen/register_screen.dart';
 import 'package:sociops/style/color_style.dart';
 
@@ -127,7 +128,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ColorStyle().primaryblue,
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const BottomNavbar(),
+                                ),
+                              );
+                            },
                             child: Text(
                               "Masuk",
                               style: GoogleFonts.inter(
