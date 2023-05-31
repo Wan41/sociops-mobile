@@ -30,23 +30,25 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
-        children: [
-          SizedBox(height: 148),
-          Center(
-            child: Image(
-              image: AssetImage('assets/splash-screen1.png'),
-              fit: BoxFit.contain,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 148),
+            Center(
+              child: Image(
+                image: AssetImage('assets/splash-screen1.png'),
+                fit: BoxFit.contain,
+              ),
             ),
-          ),
-          SizedBox(height: 148),
-          Center(
-            child: Image(
-              image: AssetImage('assets/logo.png'),
-              fit: BoxFit.contain,
+            SizedBox(height: 148),
+            Center(
+              child: Image(
+                image: AssetImage('assets/logo.png'),
+                fit: BoxFit.contain,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
