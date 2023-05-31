@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:login_and_create/screen/register_screen.dart';
-import 'package:login_and_create/style/color_style.dart';
+import 'package:sociops/screen/register_screen.dart';
+import 'package:sociops/style/color_style.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
