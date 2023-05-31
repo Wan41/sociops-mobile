@@ -14,6 +14,7 @@ dependencies:
   carousel_slider: ^4.2.1
   getwidget: ^3.0.1
   from_css_color: ^2.0.0
+  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:

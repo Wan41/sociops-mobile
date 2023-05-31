@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ColorStyle {
   Color primarydark = const Color(0xff101828);
 
-  Color primarblue = const Color(0xff444CE7);
+  Color primaryblue = const Color(0xff444CE7);
 
   Color secondarypink = const Color(0xffFFF3E2);
 
