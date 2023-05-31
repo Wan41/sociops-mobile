@@ -12,6 +12,9 @@ dependencies:
   google_fonts: ^4.0.4
   expandable: ^5.0.1
   carousel_slider: ^4.2.1
+  getwidget: ^3.0.1
+  from_css_color: ^2.0.0
+  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +29,5 @@ flutter:
     - assets/handoff/
     - assets/handoff/foto/
     - assets/handoff/icon/
+    - assets/create.png
+    - assets/house.png
