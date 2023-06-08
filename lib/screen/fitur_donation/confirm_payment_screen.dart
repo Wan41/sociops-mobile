@@ -32,7 +32,7 @@ class _ConfirmPaymentScreenState extends State<ConfirmPaymentScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            const SizedBox(height: 48),
+            const SizedBox(height: 16),
             Text(
               'Donate amount',
               style: GoogleFonts.inter(
@@ -61,6 +61,7 @@ class _ConfirmPaymentScreenState extends State<ConfirmPaymentScreen> {
                 ),
                 const SizedBox(height: 16),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     const CircleAvatar(),
                     Column(
@@ -130,6 +131,7 @@ class _ConfirmPaymentScreenState extends State<ConfirmPaymentScreen> {
                 Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           'Donate amount',
@@ -148,6 +150,7 @@ class _ConfirmPaymentScreenState extends State<ConfirmPaymentScreen> {
                       ],
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           'Transaction fee',
@@ -169,6 +172,7 @@ class _ConfirmPaymentScreenState extends State<ConfirmPaymentScreen> {
                 ),
                 const Divider(),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'Total',
