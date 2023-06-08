@@ -54,43 +54,47 @@ class _LoginScreenState extends State<LoginScreen> {
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 20),
-                        TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'Email',
-                            filled: true,
-                            fillColor: Colors.grey[50],
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                width: 2.0,
+                        SizedBox(
+                          width: 396,
+                          height: 72,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              labelText: 'Email',
+                              filled: true,
+                              fillColor: const Color(0XFFF9FAFB),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(16),
+                                borderSide: BorderSide.none,
                               ),
-                              borderRadius: BorderRadius.circular(10),
                             ),
                           ),
                         ),
                         const SizedBox(height: 12),
-                        TextFormField(
-                          obscureText: isObscureText,
-                          decoration: InputDecoration(
-                            suffixIcon: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  isObscureText = !isObscureText;
-                                });
-                              },
-                              icon: Icon(
-                                isObscureText
-                                    ? Icons.visibility
-                                    : Icons.visibility_off,
+                        SizedBox(
+                          width: 396,
+                          height: 72,
+                          child: TextFormField(
+                            obscureText: isObscureText,
+                            decoration: InputDecoration(
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    isObscureText = !isObscureText;
+                                  });
+                                },
+                                icon: Icon(
+                                  isObscureText
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                ),
                               ),
-                            ),
-                            labelText: 'Kata sandi',
-                            filled: true,
-                            fillColor: Colors.grey[50],
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                width: 2.0,
+                              labelText: 'Kata sandi',
+                              filled: true,
+                              fillColor: Colors.grey[50],
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                              borderRadius: BorderRadius.circular(10),
                             ),
                           ),
                         ),
@@ -147,24 +151,26 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         const SizedBox(height: 16),
-                        Container(
-                          width: double.infinity,
-                          margin: const EdgeInsets.symmetric(vertical: 10),
-                          child: Stack(
-                            alignment: Alignment.center,
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          child: Row(
                             children: [
-                              const Divider(),
-                              Container(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 10),
+                              Expanded(
+                                child: Divider(),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 8),
                                 child: Text(
                                   'Atau lanjutkan dengan',
-                                  style: GoogleFonts.inter(
-                                    color: const Color(0XFF667085),
+                                  style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
+                                    color: Colors.black,
                                   ),
                                 ),
+                              ),
+                              Expanded(
+                                child: Divider(),
                               ),
                             ],
                           ),

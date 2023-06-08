@@ -64,80 +64,90 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   ],
                 ),
                 const SizedBox(height: 24),
-                TextFormField(
-                  decoration: InputDecoration(
-                    labelText: 'Full Name',
-                    filled: true,
-                    fillColor: Colors.grey[50],
-                    border: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        width: 2.0,
+                SizedBox(
+                  width: 396,
+                  height: 72,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'Full name',
+                      filled: true,
+                      fillColor: const Color(0XFFF9FAFB),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide.none,
                       ),
-                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                 ),
                 const SizedBox(height: 16),
-                TextFormField(
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    filled: true,
-                    fillColor: Colors.grey[50],
-                    border: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        width: 2.0,
+                SizedBox(
+                  width: 396,
+                  height: 72,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                      filled: true,
+                      fillColor: const Color(0XFFF9FAFB),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide.none,
                       ),
-                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                 ),
                 const SizedBox(height: 16),
-                TextFormField(
-                  decoration: InputDecoration(
-                    labelText: 'Phone number',
-                    filled: true,
-                    fillColor: Colors.grey[50],
-                    border: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        width: 2.0,
+                SizedBox(
+                  width: 396,
+                  height: 72,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'Phone number',
+                      filled: true,
+                      fillColor: const Color(0XFFF9FAFB),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide.none,
                       ),
-                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                 ),
                 const SizedBox(height: 16),
-                DropdownButtonFormField<String>(
-                  decoration: InputDecoration(
-                    labelText: 'Gender',
-                    filled: true,
-                    fillColor: Colors.grey[50],
-                    border: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        width: 2.0,
+                SizedBox(
+                  width: 396,
+                  height: 72,
+                  child: DropdownButtonFormField<String>(
+                    decoration: InputDecoration(
+                      labelText: 'Gender',
+                      filled: true,
+                      fillColor: const Color(0XFFF9FAFB),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide.none,
                       ),
-                      borderRadius: BorderRadius.circular(10),
                     ),
+                    items: <String>['Laki-laki', 'Perempuan', 'Other']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {},
                   ),
-                  items: <String>['Laki-laki', 'Perempuan', 'Other']
-                      .map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {},
                 ),
                 const SizedBox(height: 16),
-                TextFormField(
-                  decoration: InputDecoration(
-                    labelText: 'Location',
-                    filled: true,
-                    fillColor: Colors.grey[50],
-                    border: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        width: 2.0,
+                SizedBox(
+                  width: 396,
+                  height: 72,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'Location',
+                      filled: true,
+                      fillColor: const Color(0XFFF9FAFB),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide.none,
                       ),
-                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                 ),
