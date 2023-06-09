@@ -25,7 +25,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen> {
     'Rp300.000',
   ];
 
-  Color buttonColor = const Color(0XFFEEF4FF);
+  int _selectedIndex = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen> {
             ),
             const SizedBox(height: 32),
             SizedBox(
-              height: 428,
+              height: 310,
               child: GridView.builder(
                 itemCount: items.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -71,22 +71,33 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen> {
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap: () {
-                      print(index);
+                      setState(() {
+                        if (_selectedIndex == index) {
+                          _selectedIndex = -1;
+                        } else {
+                          _selectedIndex = index;
+                        }
+                      });
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 22, horizontal: 29),
+                          vertical: 22, horizontal: 26),
                       decoration: BoxDecoration(
-                        color: const Color(0XFFEEF4FF),
+                        color: _selectedIndex == index
+                            ? const Color(0XFF444CE7)
+                            : const Color(0XFFEEF4FF),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Text(
                         items[index],
-                        style: const TextStyle(
-                          color: Color(0XFF0048B4),
+                        style: TextStyle(
+                          color: _selectedIndex == index
+                              ? Colors.white
+                              : const Color(0XFF444CE7),
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   );

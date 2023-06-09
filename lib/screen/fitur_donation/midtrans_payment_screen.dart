@@ -72,12 +72,16 @@ class _MidtransPaymentScreenState extends State<MidtransPaymentScreen> {
                   return GestureDetector(
                     onTap: () {
                       setState(() {
-                        _selectedIndex = index;
+                        if (_selectedIndex == index) {
+                          _selectedIndex = -1;
+                        } else {
+                          _selectedIndex = index;
+                        }
                       });
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 22, horizontal: 29),
+                          vertical: 22, horizontal: 26),
                       decoration: BoxDecoration(
                         color: _selectedIndex == index
                             ? const Color(0XFF444CE7)

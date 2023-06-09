@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sociops/screen/fitur_donation/donate_confirmation_screen.dart';
 
 class ConfirmPaymentScreen extends StatefulWidget {
   const ConfirmPaymentScreen({super.key});
@@ -128,6 +127,7 @@ class _ConfirmPaymentScreenState extends State<ConfirmPaymentScreen> {
                     fontSize: 18,
                   ),
                 ),
+                const SizedBox(height: 16),
                 Column(
                   children: [
                     Row(
@@ -149,6 +149,7 @@ class _ConfirmPaymentScreenState extends State<ConfirmPaymentScreen> {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 8),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -211,13 +212,7 @@ class _ConfirmPaymentScreenState extends State<ConfirmPaymentScreen> {
                 ),
               ),
             ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const DonateConfirmationScreen()),
-              );
-            },
+            onPressed: () {},
             child: const Text(
               'Bayar',
               style: TextStyle(
