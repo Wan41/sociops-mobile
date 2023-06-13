@@ -16,7 +16,7 @@ class _DetailDonationScreenState extends State<DetailDonationScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         title: Text(
           'Detail galang dana',
           style: GoogleFonts.inter(
@@ -54,225 +54,179 @@ class _DetailDonationScreenState extends State<DetailDonationScreen> {
           )
         ],
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.asset('assets/Rectangle 8.png'),
-              const SizedBox(height: 8),
-              Text(
-                '#BisaBebasStunting: Donasi untuk Bantu Pengobatan',
-                style: GoogleFonts.inter(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 18,
-                ),
-              ),
-              const SizedBox(height: 16),
-              Container(
-                height: 148,
-                decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0xffe0eaff)),
-                  borderRadius: BorderRadius.circular(24),
-                ),
-                child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(left: 12, right: 12),
-                      child: Image.asset(
-                        'assets/polaroid.png',
-                      ),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const SizedBox(height: 16),
-                        Text(
-                          'Cara berdonasi dengan aksi',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: const Color(0xFF444CE7),
-                          ),
-                        ),
-                        // Text(
-                        //   'Upload foto kamu di sosial media dengan caption yang menjelaskan apa itu stunting dan bagaimana pencegahannya. Jangan lupa untuk menuliskan tagar #BisaBebasStunting dan tag akun @SkillUpLife',
-                        //   style: GoogleFonts.inter(
-                        //     fontWeight: FontWeight.w400,
-                        //     fontSize: 14,
-                        //   ),
-                        // ),
-                        Text(
-                          'Upload foto kamu di sosial media dengan',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                          ),
-                        ),
-                        Text(
-                          'caption yang menjelaskan apa itu stunting',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                          ),
-                        ),
-                        Text(
-                          'dan bagaimana pencegahannya. Jangan lupa',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                          ),
-                        ),
-                        Text(
-                          'untuk menuliskan tagar #BisaBebasStunting',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                          ),
-                        ),
-                        Text(
-                          'dan tag akun @SkillUpLife',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              // Container(
-              //   padding: const EdgeInsets.only(top: 12, right: 12, bottom: 12),
-              //   child: Column(
-              //     children: [
-              //       const SizedBox(height: 16),
-              //       Text(
-              //         'Cara berdonasi dengan aksi',
-              //         style: GoogleFonts.inter(
-              //           fontWeight: FontWeight.w500,
-              //           fontSize: 16,
-              //           color: const Color(0xFF444CE7),
-              //         ),
-              //       ),
-              //       Text(
-              //         'Upload foto kamu di sosial media dengan caption yang menjelaskan apa itu stunting dan bagaimana pencegahannya. Jangan lupa untuk menuliskan tagar #BisaBebasStunting dan tag akun @SkillUpLife',
-              //         style: GoogleFonts.inter(
-              //           fontWeight: FontWeight.w400,
-              //           fontSize: 14,
-              //         ),
-              //       ),
-              //       const SizedBox(height: 16),
-              //     ],
-              //   ),
-              // ),
-              const SizedBox(height: 16),
-              const Divider(),
-              const Divider(),
-              const SizedBox(height: 12),
-              Text(
-                'Upload bukti postingan',
-                style: GoogleFonts.inter(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                ),
-              ),
-              const SizedBox(height: 16),
-              SizedBox(
-                width: 396,
-                height: 120,
-                child: OutlinedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color(0xFFEEF4FF),
-                    ),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16.0),
-                        side: BorderSide.none,
-                      ),
-                    ),
+      body: Container(
+        color: Colors.white,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset('assets/Rectangle 8.png'),
+                const SizedBox(height: 8),
+                Text(
+                  '#BisaBebasStunting: Donasi untuk Bantu Pengobatan',
+                  style: GoogleFonts.inter(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
                   ),
-                  onPressed: () {},
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                ),
+                const SizedBox(height: 16),
+                Container(
+                  height: 148,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: const Color(0xffe0eaff)),
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Icon(
-                        Icons.photo_library_outlined,
-                        color: Color(0xFF444CE7),
-                      ),
-                      const SizedBox(height: 12),
-                      Text(
-                        'Tambah foto atau video',
-                        style: GoogleFonts.inter(
-                          color: const Color(0xFF444CE7),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
+                      Container(
+                        padding: const EdgeInsets.only(
+                          top: 12,
+                          left: 12,
+                          right: 12,
                         ),
+                        child: Image.asset(
+                          'assets/Polaroid.png',
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 16),
+                          Text(
+                            'Cara berdonasi dengan aksi',
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: const Color(0xFF444CE7),
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          SizedBox(
+                            width: 300,
+                            child: Text(
+                              'Upload foto kamu di sosial media dengan caption yang menjelaskan apa itu stunting dan bagaimana pencegahannya. Jangan lupa untuk menuliskan tagar #BisaBebasStunting dan tag akun @SkillUpLife',
+                              style: GoogleFonts.inter(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ),
-              ),
-              const SizedBox(height: 32),
-              SizedBox(
-                width: 396,
-                height: 52,
-                child: OutlinedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color(0xFFEEF4FF),
+                const SizedBox(height: 16),
+                const Divider(),
+                const Divider(),
+                const SizedBox(height: 12),
+                Text(
+                  'Upload bukti postingan',
+                  style: GoogleFonts.inter(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                SizedBox(
+                  width: 396,
+                  height: 120,
+                  child: OutlinedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xFFEEF4FF),
+                      ),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
+                          side: BorderSide.none,
+                        ),
+                      ),
                     ),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(32.0),
-                        side: BorderSide.none,
+                    onPressed: () {},
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          Icons.photo_library_outlined,
+                          color: Color(0xFF444CE7),
+                        ),
+                        const SizedBox(height: 12),
+                        Text(
+                          'Tambah foto atau video',
+                          style: GoogleFonts.inter(
+                            color: const Color(0xFF444CE7),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 32),
+                SizedBox(
+                  width: 396,
+                  height: 52,
+                  child: OutlinedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xFFEEF4FF),
+                      ),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(32.0),
+                          side: BorderSide.none,
+                        ),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'Tambahkan link',
+                      style: GoogleFonts.inter(
+                        color: const Color(0xFF444CE7),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
-                  onPressed: () {},
-                  child: Text(
-                    'Tambahkan link',
-                    style: GoogleFonts.inter(
-                      color: const Color(0xFF444CE7),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: SizedBox(
-          width: 396,
-          height: 60,
-          child: OutlinedButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(
-                const Color(0xFF444CE7),
-              ),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(32.0),
+      bottomNavigationBar: Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: SizedBox(
+            width: 396,
+            height: 60,
+            child: OutlinedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  const Color(0xFF444CE7),
+                ),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32.0),
+                  ),
                 ),
               ),
-            ),
-            onPressed: () {},
-            child: const Text(
-              'Lanjutkan',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
+              onPressed: () {},
+              child: Text(
+                'Lanjutkan',
+                style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
           ),

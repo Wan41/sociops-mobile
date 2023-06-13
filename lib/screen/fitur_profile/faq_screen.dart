@@ -15,7 +15,7 @@ class _FAQScreenState extends State<FAQScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         title: Text(
           'FAQ',
           style: GoogleFonts.inter(
@@ -28,20 +28,23 @@ class _FAQScreenState extends State<FAQScreen> {
           color: Color(0XFF444CE7),
         ),
       ),
-      body: const SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 16),
-              ExpandableWidget(),
-              ExpandableWidget(),
-              ExpandableWidget(),
-              ExpandableWidget(),
-              ExpandableWidget(),
-              ExpandableWidget(),
-            ],
+      body: Container(
+        color: Colors.white,
+        child: const SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 16),
+                ExpandableWidget(),
+                ExpandableWidget(),
+                ExpandableWidget(),
+                ExpandableWidget(),
+                ExpandableWidget(),
+                ExpandableWidget(),
+              ],
+            ),
           ),
         ),
       ),
