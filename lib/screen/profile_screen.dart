@@ -1,6 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sociops/screen/fitur_profile/edit_profile_screen.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:sociops/screen/fitur_profile/setting_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -11,6 +13,79 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final ImagePicker _picker = ImagePicker();
+  List<XFile>? _imageFileList;
+  dynamic _pickImageError;
+
+  Future<void> _onImageButtonPressed(ImageSource source) async {
+    try {
+      final XFile? pickedFile = await _picker.pickImage(source: source);
+      if (pickedFile != null) {
+        setState(() {
+          _setImageFileListFromFile(pickedFile);
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _pickImageError = e;
+      });
+    }
+    // ignore: use_build_context_synchronously
+    Navigator.of(context).pop();
+  }
+
+  void _setImageFileListFromFile(XFile? file) {
+    if (file != null) {
+      setState(() {
+        _imageFileList = [file];
+      });
+    }
+  }
+
+  Widget bottomSheet() {
+    return Container(
+      height: 100.0,
+      width: 300.0,
+      margin: const EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 20,
+      ),
+      child: Column(
+        children: [
+          const Text(
+            'Pilih Foto Profil Anda',
+            style: TextStyle(
+              fontSize: 20.0,
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: () {
+                  _onImageButtonPressed(ImageSource.camera);
+                },
+                icon: const Icon(Icons.camera),
+              ),
+              const Text('Camera'),
+              const SizedBox(width: 50),
+              IconButton(
+                onPressed: () {
+                  _onImageButtonPressed(ImageSource.gallery);
+                },
+                icon: const Icon(Icons.image),
+              ),
+              const Text('Galeri'),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,20 +136,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(height: 40),
                 Stack(
                   children: [
-                    const CircleAvatar(
-                      radius: 80,
-                      backgroundImage: AssetImage('assets/pp.jpg'),
-                    ),
+                    if (_imageFileList != null)
+                      ClipOval(
+                        child: Image.file(
+                          File(_imageFileList![0].path),
+                          width: 160,
+                          height: 160,
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    else
+                      const Center(
+                        child: CircleAvatar(
+                          radius: 80,
+                          backgroundImage: AssetImage('assets/profile.jpg'),
+                        ),
+                      ),
                     Positioned(
                       bottom: 0,
                       right: 0,
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const EditProfileScreen(),
-                            ),
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (context) => bottomSheet(),
                           );
                         },
                         child: Container(

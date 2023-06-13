@@ -43,6 +43,7 @@ class _FAQScreenState extends State<FAQScreen> {
                 ExpandableWidget(),
                 ExpandableWidget(),
                 ExpandableWidget(),
+                ExpandableWidget(),
               ],
             ),
           ),
