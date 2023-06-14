@@ -128,10 +128,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           ),
                         )
                       else
-                        const Center(
-                          child: CircleAvatar(
-                            radius: 80,
-                            backgroundImage: AssetImage('assets/profile.jpg'),
+                        const SizedBox(
+                          width: 160,
+                          height: 160,
+                          child: Center(
+                            child: CircleAvatar(
+                              radius: 80,
+                              backgroundImage: AssetImage('assets/profile.jpg'),
+                            ),
                           ),
                         ),
                       Positioned(
