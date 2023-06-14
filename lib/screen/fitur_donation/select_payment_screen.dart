@@ -93,7 +93,6 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen> {
                               selectedAmount = items[index];
                             }
                             checkButtonStatus();
-                            print(selectedAmount);
                           });
                         },
                         child: Container(
