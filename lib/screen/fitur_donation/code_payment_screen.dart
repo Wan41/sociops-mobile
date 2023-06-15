@@ -57,7 +57,7 @@ class CodePaymentScreen extends StatelessWidget {
         elevation: 0.0,
         backgroundColor: Colors.white,
         title: Text(
-          'Kode donasi',
+          'Kode pembayaran',
           style: GoogleFonts.inter(
             fontWeight: FontWeight.w500,
             fontSize: 24,
