@@ -1,0 +1,4 @@
+#Thu Jun 15 19:41:38 ICT 2023
+base.0=C\:\\Users\\kangj\\OneDrive\\Documents\\GitHub\\sociops-mobile\\fitur_volunteer\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
