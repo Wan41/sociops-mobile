@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sociops/widget/bottom_navbar_widget.dart';
 import 'package:sociops/widget/card_volunteer.dart';
 import 'package:sociops/widget/cekbo.dart';
+import 'package:sociops/widget/choose_filter.dart';
 
 class VolunteerScreen extends StatefulWidget {
   const VolunteerScreen({super.key});
@@ -19,12 +20,6 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
       _selectedNavbar = index;
     });
   }
-
-  // void _cekbox(bool val) {
-  //   setState(() {
-  //     cekbox = val;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +74,11 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                           color: Color(0xFF444CE7),
                         ),
                         onPressed: () {
-                          setState(() {});
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return ChooseFilter();
+                              });
                         },
                       ),
                       IconButton(
