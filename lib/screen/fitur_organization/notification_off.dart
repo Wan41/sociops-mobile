@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sociops/screen/fitur_beranda/round_button.dart';
+import 'package:sociops/screen/fitur_organization/round_button.dart';
 import 'package:sociops/style/color_style.dart';
 import 'package:sociops/style/font_style.dart';
 import 'package:sociops/screen/home_screen.dart';
