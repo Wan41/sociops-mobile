@@ -626,13 +626,13 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                 minHeight: 12,
               ),
               SizedBox(height: 16),
-              GestureDetector(
+              InkWell(
                 onTap: toggleFollow,
                 child: Container(
                   height: 40,
                   margin: EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 247, 214, 214),
+                    color: Color.fromARGB(255, 247, 32, 32),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
@@ -640,9 +640,9 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                     children: [
                       SizedBox(width: 8),
                       Text(
-                        isFollowing ? 'Donasi Sekarang' : 'Donasi Sekarang',
+                        'Donasi Sekarang',
                         style: TextStyle(
-                          color: Color.fromARGB(255, 247, 32, 32),
+                          color: Colors.white,
                         ),
                       ),
                     ],
