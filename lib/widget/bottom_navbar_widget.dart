@@ -14,19 +14,19 @@ class BottomNavbarWidget extends StatelessWidget {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_rounded),
+          icon: Icon(Icons.home_filled),
           label: 'Beranda',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.explore_rounded),
+          icon: Icon(Icons.dashboard_outlined),
           label: 'Eksplor',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.access_time_filled_rounded),
+          icon: Icon(Icons.access_time),
           label: 'Aktifitas',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.account_circle_rounded),
+          icon: Icon(Icons.person_outline),
           label: 'Profil',
         ),
       ],
