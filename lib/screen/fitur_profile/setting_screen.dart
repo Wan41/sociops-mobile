@@ -39,40 +39,48 @@ class _SettingScreenState extends State<SettingScreen> {
           child: Column(
             children: [
               const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.edit_outlined,
+                    color: Colors.black,
+                  ),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EditProfileScreen()),
+                    );
+                  },
+                  label: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const EditProfileScreen()),
-                              );
-                            },
-                            icon: const Icon(Icons.edit_outlined,
-                                color: Colors.black),
-                            label: Text(
-                              'Edit Profile',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+                      Text(
+                        'Edit Profile',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
@@ -91,40 +99,48 @@ class _SettingScreenState extends State<SettingScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.notifications_outlined,
+                    color: Colors.black,
+                  ),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NotificationScreen()),
+                    );
+                  },
+                  label: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const NotificationScreen()),
-                              );
-                            },
-                            icon: const Icon(Icons.notifications_outlined,
-                                color: Colors.black),
-                            label: Text(
-                              'Notifikasi',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+                      Text(
+                        'Notifikasi',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
@@ -143,40 +159,48 @@ class _SettingScreenState extends State<SettingScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.security_outlined,
+                    color: Colors.black,
+                  ),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SecurityScreen()),
+                    );
+                  },
+                  label: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const SecurityScreen()),
-                              );
-                            },
-                            icon: const Icon(Icons.security_outlined,
-                                color: Colors.black),
-                            label: Text(
-                              'Keamanan',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+                      Text(
+                        'Keamanan',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
@@ -194,39 +218,48 @@ class _SettingScreenState extends State<SettingScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.help_outline_outlined,
+                    color: Colors.black,
+                  ),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HelpScreen()),
+                    );
+                  },
+                  label: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const HelpScreen()),
-                              );
-                            },
-                            icon: const Icon(Icons.help_outline_outlined,
-                                color: Colors.black),
-                            label: Text(
-                              'Bantuan',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+                      Text(
+                        'Bantuan',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
@@ -244,73 +277,74 @@ class _SettingScreenState extends State<SettingScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.red,
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.logout_outlined,
+                    color: Color(0XFFD92D20),
                   ),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    icon: const Icon(Icons.logout_outlined),
-                                    iconColor: Colors.red,
-                                    title: const Text('Keluar'),
-                                    content: const Text(
-                                      'Apakah Anda yakin ingin keluar? Anda masih dapat masuk kapan pun Anda mau',
-                                      textAlign: TextAlign.center,
-                                    ),
-                                    actions: [
-                                      ElevatedButton(
-                                        onPressed: () {
-                                          Navigator.pop(context);
-                                        },
-                                        child: const Text('Batal'),
-                                      ),
-                                      ElevatedButton(
-                                        onPressed: () {
-                                          Navigator.pop(context);
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ProfileScreen(),
-                                            ),
-                                          );
-                                        },
-                                        child: const Text('Keluar'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            },
-                            icon: const Icon(Icons.logout_outlined,
-                                color: Colors.red),
-                            label: Text(
-                              'Keluar',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Colors.red,
-                              ),
-                            ),
-                          ),
-                        ],
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFD92D20),
+                        ),
                       ),
-                    ],
+                    ),
+                  ),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          icon: const Icon(Icons.logout_outlined),
+                          iconColor: Colors.red,
+                          title: const Text('Keluar'),
+                          content: const Text(
+                            'Apakah Anda yakin ingin keluar? Anda masih dapat masuk kapan pun Anda mau',
+                            textAlign: TextAlign.center,
+                          ),
+                          actions: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text('Batal'),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const ProfileScreen(),
+                                  ),
+                                );
+                              },
+                              child: const Text('Keluar'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  label: Text(
+                    'Keluar',
+                    style: GoogleFonts.inter(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      color: Colors.red,
+                    ),
                   ),
                 ),
               ),

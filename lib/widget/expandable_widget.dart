@@ -20,59 +20,56 @@ class ExpandableWidget extends StatelessWidget {
         child: ExpandableNotifier(
           child: Padding(
             padding: const EdgeInsets.all(10),
-            child: Card(
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                children: <Widget>[
-                  ScrollOnExpand(
-                    scrollOnExpand: true,
-                    scrollOnCollapse: false,
-                    child: ExpandablePanel(
-                      theme: const ExpandableThemeData(
-                        headerAlignment: ExpandablePanelHeaderAlignment.center,
-                        tapBodyToCollapse: true,
-                      ),
-                      header: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Text(
-                          "Apa itu Sociops?",
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
-                      ),
-                      collapsed: const Text(
-                        loremIpsum,
-                        softWrap: true,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      expanded: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          for (var _ in Iterable.generate(5))
-                            const Padding(
-                                padding: EdgeInsets.only(bottom: 10),
-                                child: Text(
-                                  loremIpsum,
-                                  softWrap: true,
-                                  overflow: TextOverflow.fade,
-                                )),
-                        ],
-                      ),
-                      builder: (_, collapsed, expanded) {
-                        return Padding(
-                          padding: const EdgeInsets.only(
-                              left: 10, right: 10, bottom: 10),
-                          child: Expandable(
-                            collapsed: collapsed,
-                            expanded: expanded,
-                            theme: const ExpandableThemeData(crossFadePoint: 0),
-                          ),
-                        );
-                      },
+            child: Column(
+              children: <Widget>[
+                ScrollOnExpand(
+                  scrollOnExpand: true,
+                  scrollOnCollapse: false,
+                  child: ExpandablePanel(
+                    theme: const ExpandableThemeData(
+                      headerAlignment: ExpandablePanelHeaderAlignment.center,
+                      tapBodyToCollapse: true,
                     ),
+                    header: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        "Apa itu Sociops?",
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ),
+                    collapsed: const Text(
+                      loremIpsum,
+                      softWrap: true,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    expanded: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        for (var _ in Iterable.generate(5))
+                          const Padding(
+                              padding: EdgeInsets.only(bottom: 10),
+                              child: Text(
+                                loremIpsum,
+                                softWrap: true,
+                                overflow: TextOverflow.fade,
+                              )),
+                      ],
+                    ),
+                    builder: (_, collapsed, expanded) {
+                      return Padding(
+                        padding: const EdgeInsets.only(
+                            left: 10, right: 10, bottom: 10),
+                        child: Expandable(
+                          collapsed: collapsed,
+                          expanded: expanded,
+                          theme: const ExpandableThemeData(crossFadePoint: 0),
+                        ),
+                      );
+                    },
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
