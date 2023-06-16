@@ -15,6 +15,8 @@ dependencies:
   getwidget: ^3.0.1
   from_css_color: ^2.0.0
   cupertino_icons: ^1.0.2
+  get: ^4.6.5
+  file_picker: ^5.3.2
   alert_dialog: ^1.0.1
   cool_alert: ^2.0.1
   quickalert: ^1.0.1
@@ -22,7 +24,6 @@ dependencies:
   intl: ^0.18.1
   image_picker: ^0.8.9
   giff_dialog: ^1.0.1
-
 
 dev_dependencies:
   flutter_test:
