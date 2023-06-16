@@ -5,14 +5,14 @@ import 'package:sociops/screen/home_screen.dart';
 import 'package:sociops/screen/profile_screen.dart';
 import 'package:sociops/widget/bottom_navbar_widget.dart';
 
-class BottomNavbar extends StatefulWidget {
-  const BottomNavbar({Key? key}) : super(key: key);
+class BottomNavbarScreen extends StatefulWidget {
+  const BottomNavbarScreen({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavbar> createState() => _BottomNavbarState();
+  State<BottomNavbarScreen> createState() => _BottomNavbarScreenState();
 }
 
-class _BottomNavbarState extends State<BottomNavbar> {
+class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
   int _selectedNavbar = 0;
 
   void _changeSelectedNavbar(int index) {
