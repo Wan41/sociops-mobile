@@ -19,7 +19,7 @@ class _HelpScreenState extends State<HelpScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         title: Text(
           'Help',
           style: GoogleFonts.inter(
@@ -32,44 +32,55 @@ class _HelpScreenState extends State<HelpScreen> {
           color: Color(0XFF444CE7),
         ),
       ),
-      body: Padding(
-          padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+      body: Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
           child: Column(
             children: [
               const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.emoji_emotions_outlined,
+                    color: Colors.black,
+                  ),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const FAQScreen()),
+                    );
+                  },
+                  label: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const FAQScreen()),
-                              );
-                            },
-                            icon: const Icon(Icons.live_help_outlined,
-                                color: Colors.black),
-                            label: Text(
-                              'FAQ',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+                      Text(
+                        'FAQ',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
@@ -87,40 +98,48 @@ class _HelpScreenState extends State<HelpScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.emoji_emotions_outlined,
+                    color: Colors.black,
+                  ),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ContactUsScreen()),
+                    );
+                  },
+                  label: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const ContactUsScreen()),
-                              );
-                            },
-                            icon: const Icon(Icons.call_outlined,
-                                color: Colors.black),
-                            label: Text(
-                              'Kontak kami',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+                      Text(
+                        'Kontak kami',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
@@ -138,40 +157,48 @@ class _HelpScreenState extends State<HelpScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.emoji_emotions_outlined,
+                    color: Colors.black,
+                  ),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const TermConditionScreen()),
+                    );
+                  },
+                  label: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const TermConditionScreen()),
-                              );
-                            },
-                            icon: const Icon(Icons.find_in_page_outlined,
-                                color: Colors.black),
-                            label: Text(
-                              'Syarat & Ketentuan',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+                      Text(
+                        'Syarat & Ketentuan',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
@@ -190,39 +217,48 @@ class _HelpScreenState extends State<HelpScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.emoji_emotions_outlined,
+                    color: Colors.black,
+                  ),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PolicyScreen()),
+                    );
+                  },
+                  label: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const PolicyScreen()),
-                              );
-                            },
-                            icon: const Icon(Icons.contact_page_outlined,
-                                color: Colors.black),
-                            label: Text(
-                              'Kebijakan dan Privasi',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+                      Text(
+                        'Kebijakan dan Privasi',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
@@ -240,40 +276,48 @@ class _HelpScreenState extends State<HelpScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.emoji_emotions_outlined,
+                    color: Colors.black,
+                  ),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AboutUsScreen()),
+                    );
+                  },
+                  label: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const AboutUsScreen()),
-                              );
-                            },
-                            icon: const Icon(Icons.emoji_emotions_outlined,
-                                color: Colors.black),
-                            label: Text(
-                              'Tentang kami',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
+                      Text(
+                        'Tentang kami',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
@@ -291,7 +335,9 @@ class _HelpScreenState extends State<HelpScreen> {
                 ),
               ),
             ],
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
