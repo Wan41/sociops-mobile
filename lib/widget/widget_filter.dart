@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import 'package:sociops/data/list_data.dart';
+import 'package:sociops/widget/widget_color_choose.dart';
+>>>>>>> f8a7b8ae0d73dd3fb91b9f658a4e6a09d3590054
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
