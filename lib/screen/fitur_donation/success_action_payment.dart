@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sociops/screen/bottom_screen.dart';
 import 'package:sociops/screen/fitur_donation/donation_screen.dart';
 
-class SuccesActionScreen extends StatefulWidget {
-  const SuccesActionScreen({super.key});
+class SuccessActionScreen extends StatefulWidget {
+  const SuccessActionScreen({super.key});
 
   @override
-  State<SuccesActionScreen> createState() => _SuccesActionScreenState();
+  State<SuccessActionScreen> createState() => _SuccessActionScreenState();
 }
 
-class _SuccesActionScreenState extends State<SuccesActionScreen> {
+class _SuccessActionScreenState extends State<SuccessActionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

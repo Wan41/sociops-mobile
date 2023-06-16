@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sociops/screen/fitur_donation/detail_donate_screen.dart';
+import 'package:sociops/screen/fitur_donation/detail_donation_screen.dart';
 
 class DonationScreen extends StatefulWidget {
   const DonationScreen({super.key});
@@ -383,7 +385,15 @@ class _DonationScreenState extends State<DonationScreen> {
                         width: 372,
                         height: 30,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailDonationScreen(),
+                              ),
+                            );
+                          },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
                               const Color(0xFFECFDF3),
@@ -446,7 +456,15 @@ class _DonationScreenState extends State<DonationScreen> {
                         width: 372,
                         height: 44,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailDonateScreen(),
+                              ),
+                            );
+                          },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
                               const Color(0xFFFEF3F2),
@@ -609,7 +627,15 @@ class _DonationScreenState extends State<DonationScreen> {
                         width: 372,
                         height: 30,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailDonationScreen(),
+                              ),
+                            );
+                          },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
                               const Color(0xFFECFDF3),
@@ -672,7 +698,15 @@ class _DonationScreenState extends State<DonationScreen> {
                         width: 372,
                         height: 44,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailDonateScreen(),
+                              ),
+                            );
+                          },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
                               const Color(0xFFFEF3F2),
@@ -835,7 +869,15 @@ class _DonationScreenState extends State<DonationScreen> {
                         width: 372,
                         height: 30,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailDonationScreen(),
+                              ),
+                            );
+                          },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
                               const Color(0xFFECFDF3),
@@ -898,7 +940,15 @@ class _DonationScreenState extends State<DonationScreen> {
                         width: 372,
                         height: 44,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailDonateScreen(),
+                              ),
+                            );
+                          },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
                               const Color(0xFFFEF3F2),

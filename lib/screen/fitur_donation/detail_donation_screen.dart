@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:sociops/screen/fitur_donation/success_action_payment.dart';
 
 class DetailDonationScreen extends StatefulWidget {
   const DetailDonationScreen({super.key});
@@ -327,7 +328,14 @@ class _DetailDonationScreenState extends State<DetailDonationScreen> {
                   ),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SuccessActionScreen(),
+                  ),
+                );
+              },
               child: Text(
                 'Lanjutkan',
                 style: GoogleFonts.inter(

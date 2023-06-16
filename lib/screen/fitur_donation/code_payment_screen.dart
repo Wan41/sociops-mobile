@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'dart:core';
 
+import 'package:sociops/screen/fitur_donation/success_payment_screen.dart';
+
 // ignore: must_be_immutable
 class CodePaymentScreen extends StatelessWidget {
   final String selectedAmount;
@@ -202,7 +204,14 @@ class CodePaymentScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SuccessPaymentScreen(),
+                        ),
+                      );
+                    },
                     child: Text(
                       'Pergi ke midtrans',
                       style: GoogleFonts.inter(
