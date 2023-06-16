@@ -13,4 +13,18 @@ class FontFamily {
       fontWeight: FontWeight.w400,
       fontSize: 14,
       color: ColorStyle().primarydark);
+
+  TextStyle mediumteks = GoogleFonts.inter(
+      fontWeight: FontWeight.w500,
+      fontSize: 18,
+      color: ColorStyle().primarydark);
+
+  TextStyle reguler = GoogleFonts.inter(
+      fontWeight: FontWeight.w400,
+      fontSize: 16,
+      color: ColorStyle().primarydark);
+  TextStyle light = GoogleFonts.inter(
+      fontWeight: FontWeight.w200,
+      fontSize: 16,
+      color: ColorStyle().primarydark);
 }

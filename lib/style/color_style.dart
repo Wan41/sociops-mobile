@@ -28,4 +28,12 @@ class ColorStyle {
   Color buttonColor = const Color(0xFFE0EAFF);
 
   Color kotakColor = const Color(0xFFC6D7FE);
+
+  Color disablebutton = const Color(0xffEEF4FF);
+
+  Color red = const Color(0xffD92D20);
+
+  Color orange = const Color(0xffF79009);
+
+  Color orangedisable = const Color(0xffFFFAEB);
 }
