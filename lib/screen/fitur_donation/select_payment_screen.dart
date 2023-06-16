@@ -56,120 +56,123 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen> {
       ),
       body: Container(
         color: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            children: [
-              Text(
-                'Pilih berapa nominal donasi yang ingin Anda donasikan',
-                style: GoogleFonts.inter(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16,
-                  color: Colors.black,
-                ),
-              ),
-              const SizedBox(height: 32),
-              SizedBox(
-                height: 310,
-                child: GridView.builder(
-                  itemCount: items.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 12,
-                    mainAxisSpacing: 13,
-                    childAspectRatio: 2,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                Text(
+                  'Pilih berapa nominal donasi yang ingin Anda donasikan',
+                  style: GoogleFonts.inter(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16,
+                    color: Colors.black,
                   ),
-                  itemBuilder: (BuildContext context, int index) {
-                    return GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          if (_selectedIndex == index) {
-                            _selectedIndex = -1;
-                            selectedAmount = '';
-                          } else {
-                            _selectedIndex = index;
-                            selectedAmount = items[index];
-                          }
-                          checkButtonStatus();
-                        });
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 22, horizontal: 26),
-                        decoration: BoxDecoration(
-                          color: _selectedIndex == index
-                              ? const Color(0XFF444CE7)
-                              : const Color(0XFFEEF4FF),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Text(
-                          items[index],
-                          style: TextStyle(
+                ),
+                const SizedBox(height: 32),
+                SizedBox(
+                  height: 310,
+                  child: GridView.builder(
+                    itemCount: items.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 12,
+                      mainAxisSpacing: 13,
+                      childAspectRatio: 2,
+                    ),
+                    itemBuilder: (BuildContext context, int index) {
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            if (_selectedIndex == index) {
+                              _selectedIndex = -1;
+                              selectedAmount = '';
+                            } else {
+                              _selectedIndex = index;
+                              selectedAmount = items[index];
+                            }
+                            checkButtonStatus();
+                          });
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 22, horizontal: 26),
+                          decoration: BoxDecoration(
                             color: _selectedIndex == index
-                                ? Colors.white
-                                : const Color(0XFF444CE7),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
+                                ? const Color(0XFF444CE7)
+                                : const Color(0XFFEEF4FF),
+                            borderRadius: BorderRadius.circular(16),
                           ),
-                          textAlign: TextAlign.center,
+                          child: Text(
+                            items[index],
+                            style: TextStyle(
+                              color: _selectedIndex == index
+                                  ? Colors.white
+                                  : const Color(0XFF444CE7),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        child: Text(
+                          'Atau',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
-                    );
-                  },
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Divider(),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      child: Text(
-                        'Atau',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black,
-                        ),
+                      Expanded(
+                        child: Divider(),
                       ),
-                    ),
-                    Expanded(
-                      child: Divider(),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              const SizedBox(height: 32),
-              SizedBox(
-                width: 396,
-                height: 72,
-                child: TextFormField(
-                  onChanged: (value) {
-                    setState(() {
-                      selectedAmount = value;
-                      checkButtonStatus();
-                    });
-                  },
-                  controller: _donationController,
-                  keyboardType: TextInputType.number,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  decoration: InputDecoration(
-                    labelText: 'Ketik jumlah donasi',
-                    filled: true,
-                    fillColor: const Color(0XFFF9FAFB),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      borderSide: BorderSide.none,
+                const SizedBox(height: 32),
+                SizedBox(
+                  width: 396,
+                  height: 72,
+                  child: TextFormField(
+                    onChanged: (value) {
+                      setState(() {
+                        selectedAmount = value;
+                        checkButtonStatus();
+                      });
+                    },
+                    controller: _donationController,
+                    keyboardType: TextInputType.number,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.digitsOnly,
+                    ],
+                    decoration: InputDecoration(
+                      labelText: 'Ketik jumlah donasi',
+                      filled: true,
+                      fillColor: const Color(0XFFF9FAFB),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide.none,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -207,7 +210,9 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => ConfirmPaymentScreen(
-                              selectedAmount: selectedAmount),
+                              selectedAmount: selectedAmount
+                                  .replaceAll('Rp', '')
+                                  .replaceAll('.', '')),
                         ),
                       );
                     },

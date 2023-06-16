@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
+import 'package:sociops/screen/fitur_donation/select_payment_screen.dart';
 
 class DetailDonateScreen extends StatefulWidget {
   const DetailDonateScreen({super.key});
@@ -412,7 +413,14 @@ class _DetailDonateScreenState extends State<DetailDonateScreen> {
                   ),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SelectPaymentScreen(),
+                  ),
+                );
+              },
               child: Text(
                 'Donasi sekarang',
                 style: GoogleFonts.inter(
