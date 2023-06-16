@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sociops/screen/splash_screen.dart';
 
+import 'screen/fitur_volunteer/volunteer_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Sociops',
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home: const VolunteerScreen(),
     );
   }
 }

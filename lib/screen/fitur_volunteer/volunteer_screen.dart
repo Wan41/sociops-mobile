@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sociops/widget/bottom_navbar_widget.dart';
 import 'package:sociops/widget/card_volunteer.dart';
+import 'package:sociops/widget/cekbo.dart';
 
 class VolunteerScreen extends StatefulWidget {
   const VolunteerScreen({super.key});
@@ -12,13 +13,12 @@ class VolunteerScreen extends StatefulWidget {
 
 class _VolunteerScreenState extends State<VolunteerScreen> {
   int _selectedNavbar = 0;
-  bool cekbox = false;
 
-  // void _changeSelectedNavbar(int index) {
-  //   setState(() {
-  //     _selectedNavbar = index;
-  //   });
-  // }
+  void _changeSelectedNavbar(int index) {
+    setState(() {
+      _selectedNavbar = index;
+    });
+  }
 
   // void _cekbox(bool val) {
   //   setState(() {
@@ -92,52 +92,7 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
                                   borderRadius: BorderRadius.circular(20)),
                               context: context,
                               builder: (context) {
-                                return Padding(
-                                  padding: const EdgeInsets.all(23),
-                                  child: SizedBox(
-                                    height: 170,
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          padding:
-                                              const EdgeInsets.only(bottom: 12),
-                                          width: double.infinity,
-                                          decoration: const BoxDecoration(
-                                              border: Border(
-                                                  bottom: BorderSide(
-                                                      color: Colors.grey))),
-                                          child: Text(
-                                            'Urut berdasarkan:',
-                                            style: GoogleFonts.inter(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            textAlign: TextAlign.center,
-                                          ),
-                                        ),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              'Terbaru ke terlama',
-                                              style: GoogleFonts.inter(
-                                                fontSize: 16,
-                                              ),
-                                            ),
-                                            Checkbox(
-                                                checkColor: Colors.greenAccent,
-                                                activeColor: Colors.red,
-                                                value: cekbox,
-                                                onChanged: (value) {
-                                                  setState(() {
-                                                    cekbox = value!;
-                                                  });
-                                                })
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
+                                return Checkboxcon();
                               });
                         },
                       ),
@@ -331,10 +286,10 @@ class _VolunteerScreenState extends State<VolunteerScreen> {
           ),
         ),
       ),
-      // bottomNavigationBar: BottomNavbarWidget(
-      //   onTap: _changeSelectedNavbar,
-      //   currentIndex: _selectedNavbar,
-      // ),
+      bottomNavigationBar: BottomNavbarWidget(
+        onTap: _changeSelectedNavbar,
+        currentIndex: _selectedNavbar,
+      ),
     );
   }
 }

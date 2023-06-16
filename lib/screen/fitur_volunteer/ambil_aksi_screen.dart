@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
@@ -15,10 +14,96 @@ class AmbilAksiScreen extends StatefulWidget {
 }
 
 class _AmbilAksiScreenState extends State<AmbilAksiScreen> {
-  bool state = false;
-  List<XFile>? imageFileList;
   final linkController = TextEditingController();
-  bool validate = false;
+
+  final ImagePicker _picker = ImagePicker();
+  List<XFile>? _imageFileList;
+  dynamic _pickImageError;
+
+  Future<void> _onImageButtonPressed(ImageSource source) async {
+    try {
+      final XFile? pickedFile = await _picker.pickImage(source: source);
+      if (pickedFile != null) {
+        setState(() {
+          _setImageFileListFromFile(pickedFile);
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _pickImageError = e;
+      });
+    }
+    // ignore: use_build_context_synchronously
+    Navigator.of(context).pop();
+  }
+
+  void _setImageFileListFromFile(XFile? file) {
+    if (file != null) {
+      setState(() {
+        _imageFileList = [file];
+      });
+    }
+  }
+
+  Widget bottomSheet() {
+    return Container(
+      height: 100.0,
+      width: 300.0,
+      margin: const EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 20,
+      ),
+      child: Column(
+        children: [
+          const Text(
+            'Pilih Foto atau Video',
+            style: TextStyle(
+              fontSize: 20.0,
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton.icon(
+                onPressed: () {
+                  _onImageButtonPressed(ImageSource.camera);
+                },
+                icon: const Icon(
+                  Icons.camera,
+                  color: Color(0XFF444CE7),
+                ),
+                label: const Text(
+                  'Kamera',
+                  style: TextStyle(
+                    color: Color(0XFF444CE7),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 50),
+              TextButton.icon(
+                onPressed: () {
+                  _onImageButtonPressed(ImageSource.gallery);
+                },
+                icon: const Icon(
+                  Icons.image,
+                  color: Color(0XFF444CE7),
+                ),
+                label: const Text(
+                  'Galeri',
+                  style: TextStyle(
+                    color: Color(0XFF444CE7),
+                  ),
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +171,7 @@ class _AmbilAksiScreenState extends State<AmbilAksiScreen> {
                 horizontalTitleGap: 10,
                 minVerticalPadding: 10,
                 leading: Image.asset(
-                  'assets/camera.png',
+                  'assets/camera-taking.png',
                 ),
                 title: Text(
                   'Langkah pertama',
@@ -115,7 +200,7 @@ class _AmbilAksiScreenState extends State<AmbilAksiScreen> {
                 horizontalTitleGap: 10,
                 minVerticalPadding: 10,
                 leading: Image.asset(
-                  'assets/camera_love.png',
+                  'assets/carousel-screen1.png',
                 ),
                 title: Text(
                   'Langkah kedua',
@@ -144,7 +229,7 @@ class _AmbilAksiScreenState extends State<AmbilAksiScreen> {
                 horizontalTitleGap: 10,
                 minVerticalPadding: 10,
                 leading: Image.asset(
-                  'assets/phone.png',
+                  'assets/taking-photo.png',
                 ),
                 title: Text(
                   'Langkah ketiga',
@@ -175,33 +260,36 @@ class _AmbilAksiScreenState extends State<AmbilAksiScreen> {
                 ),
               ),
             ),
-            InkWell(
-              borderRadius: BorderRadius.circular(30),
-              onTap: () {
-                pickFile();
-              },
-              child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 32),
-                decoration: BoxDecoration(
-                  // image: DecorationImage(image: placeholder),
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.blue[50],
+            const SizedBox(height: 16),
+            if (_imageFileList != null)
+              Center(
+                child: Image.file(
+                  File(_imageFileList![0].path),
+                  width: 372,
+                  height: 180,
+                  fit: BoxFit.cover,
                 ),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    if (imageFileList != null)
-                      Positioned(
-                        child: Container(
-                          decoration: BoxDecoration(
-                              border: Border.all(), color: Colors.amber),
-                          child: Image.file(
-                            File(imageFileList![0].path),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      )
-                    else
+              )
+            else
+              //
+              InkWell(
+                borderRadius: BorderRadius.circular(30),
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (context) => bottomSheet(),
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 32),
+                  decoration: BoxDecoration(
+                    // image: DecorationImage(image: placeholder),
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.blue[50],
+                  ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
                       Column(
                         children: [
                           const Icon(
@@ -221,10 +309,10 @@ class _AmbilAksiScreenState extends State<AmbilAksiScreen> {
                           ),
                         ],
                       ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
             const SizedBox(
               height: 20,
             ),
@@ -287,20 +375,5 @@ class _AmbilAksiScreenState extends State<AmbilAksiScreen> {
             )),
       ),
     );
-  }
-
-  void pickFile() async {
-    final result = await FilePicker.platform.pickFiles();
-    if (result == null) return;
-
-    final file = result.files.first;
-  }
-
-  void setImageFileListFromFile(XFile? file) {
-    if (file != null) {
-      setState(() {
-        imageFileList = [file];
-      });
-    }
   }
 }

@@ -377,7 +377,7 @@ class _DetailVolunteerState extends State<DetailVolunteer> {
                       horizontalTitleGap: 10,
                       minVerticalPadding: 10,
                       leading: Image.asset(
-                        'assets/camera.png',
+                        'assets/camera-taking.png',
                       ),
                       title: Text(
                         'Aksi 1',
