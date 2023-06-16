@@ -4,8 +4,8 @@ import 'package:sociops/screen/fitur_organization/profile.dart';
 import 'package:sociops/style/color_style.dart';
 import 'package:sociops/style/font_style.dart';
 
-class GalangDana extends StatelessWidget {
-  const GalangDana();
+class Volunteer extends StatelessWidget {
+  const Volunteer();
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class GalangDana extends StatelessWidget {
                   ),
                   SizedBox(width: 16),
                   Text(
-                    'Hyundai Galang Dana',
+                    'Hyundai Volunteer',
                     style: Styles.organizerTextStyle,
                   ),
                 ],

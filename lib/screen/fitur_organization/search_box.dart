@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sociops/style/font_style.dart';
+import 'package:sociops/style/color_style.dart';
 
 class SearchBox extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class SearchBox extends StatelessWidget {
       width: 396,
       height: 40,
       decoration: BoxDecoration(
-        color: Colors.grey.shade200,
+        color: AppColors.Cari,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Stack(

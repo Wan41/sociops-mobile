@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:sociops/screen/fitur_organization/galang_dana.dart';
 import 'package:sociops/screen/fitur_organization/round_button.dart';
 import 'package:sociops/style/color_style.dart';
 import 'package:sociops/style/font_style.dart';
 import 'package:sociops/screen/home_screen.dart';
-import 'package:sociops/screen/fitur_organization/galang_dana.dart';
+import 'package:sociops/screen/fitur_organization/volunteer.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -50,7 +51,7 @@ class ProfilePage extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => GalangDana()), // Navigasi ke halaman Galang Dana
+                        MaterialPageRoute(builder: (context) => GalangDana()),
                       );
                     },
                     child: Row(
@@ -99,46 +100,56 @@ class ProfilePage extends StatelessWidget {
                 SizedBox(height: 16),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(color: AppColors.Kotak),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: 40,
-                                  height: 40,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: AssetImage('community.png'),
-                                      fit: BoxFit.cover,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                Volunteer()), // Navigasi ke VolunteerPage
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(color: AppColors.Kotak),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('community.png'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(width: 16),
-                                Text(
-                                  'Volunteer',
-                                  style: Styles.Result2,
-                                ),
-                                Spacer(),
-                                Icon(
-                                  Icons.navigate_next,
-                                  color: AppColors.arrowColor,
-                                ),
-                              ],
+                                  SizedBox(width: 16),
+                                  Text(
+                                    'Volunteer',
+                                    style: Styles.Result2,
+                                  ),
+                                  Spacer(),
+                                  Icon(
+                                    Icons.navigate_next,
+                                    color: AppColors.arrowColor,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -149,7 +160,6 @@ class ProfilePage extends StatelessWidget {
     );
   }
 }
-
 
 class CustomFollowButton extends StatefulWidget {
   @override
@@ -177,9 +187,7 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               color: Colors.grey,
               shape: BoxShape.circle,
               image: DecorationImage(
-                image: NetworkImage(
-                  'https://media.glassdoor.com/lst2x/b9/c5/c8/b3/hyundai-motor-india-engineering-r-and-d-centre.jpg',
-                ),
+                image: AssetImage('assets/hyundai.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -194,23 +202,19 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      Text(
+                        'Hyundai',
+                        style: Styles.result3,
+                      ),
+                      SizedBox(width: 8),
                       Container(
                         width: 25,
                         height: 25,
-                        decoration: BoxDecoration(
-                          color: AppColors.arrowColor,
-                          shape: BoxShape.circle,
-                        ),
                         child: Icon(
-                          Icons.check,
-                          color: Colors.white,
+                          Icons.verified,
+                          color: AppColors.arrowColor,
                           size: 20,
                         ),
-                      ),
-                      SizedBox(width: 16),
-                      Text(
-                        'Hyundai',
-                        style: Styles.Result2,
                       ),
                     ],
                   ),
@@ -282,7 +286,7 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                   Text(
                     isFollowing ? 'Mengikuti' : 'Ikuti',
                     style: TextStyle(
-                      color: isFollowing ? Colors.white : AppColors.Button,
+                      color: isFollowing ? Colors.blue : AppColors.Button,
                     ),
                   ),
                 ],
