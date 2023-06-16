@@ -19,7 +19,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         title: Text(
           'Notifikasi',
           style: GoogleFonts.inter(
@@ -32,165 +32,168 @@ class _NotificationScreenState extends State<NotificationScreen> {
           color: Color(0XFF444CE7),
         ),
       ),
-      body: SizedBox(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 16, right: 16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              const SizedBox(height: 32),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(16)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            but1 = !but1;
-                          });
-                        },
-                        child: Text(
-                          'Bunyi',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.black,
+      body: Container(
+        color: Colors.white,
+        child: SizedBox(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16, right: 16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const SizedBox(height: 32),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            setState(() {
+                              but1 = !but1;
+                            });
+                          },
+                          child: Text(
+                            'Bunyi',
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
-                      ),
-                      Switch(
-                        value: but1,
-                        activeColor: const Color(0XFF444CE7),
-                        onChanged: (bool value) {
-                          setState(() {
-                            but1 = value;
-                          });
-                        },
-                      ),
-                    ],
+                        Switch(
+                          value: but1,
+                          activeColor: const Color(0XFF444CE7),
+                          onChanged: (bool value) {
+                            setState(() {
+                              but1 = value;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(16)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            but2 = !but2;
-                          });
-                        },
-                        child: Text(
-                          'Getaran',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.black,
+                const SizedBox(height: 16),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            setState(() {
+                              but2 = !but2;
+                            });
+                          },
+                          child: Text(
+                            'Getaran',
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
-                      ),
-                      Switch(
-                        value: but2,
-                        activeColor: const Color(0XFF444CE7),
-                        onChanged: (bool value) {
-                          setState(() {
-                            but2 = value;
-                          });
-                        },
-                      ),
-                    ],
+                        Switch(
+                          value: but2,
+                          activeColor: const Color(0XFF444CE7),
+                          onChanged: (bool value) {
+                            setState(() {
+                              but2 = value;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(16)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            but3 = !but3;
-                          });
-                        },
-                        child: Text(
-                          'Kiat baru tersedia',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.black,
+                const SizedBox(height: 16),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            setState(() {
+                              but3 = !but3;
+                            });
+                          },
+                          child: Text(
+                            'Kiat baru tersedia',
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
-                      ),
-                      Switch(
-                        value: but3,
-                        activeColor: const Color(0XFF444CE7),
-                        onChanged: (bool value) {
-                          setState(() {
-                            but3 = value;
-                          });
-                        },
-                      ),
-                    ],
+                        Switch(
+                          value: but3,
+                          activeColor: const Color(0XFF444CE7),
+                          onChanged: (bool value) {
+                            setState(() {
+                              but3 = value;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(16)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            but4 = !but4;
-                          });
-                        },
-                        child: Text(
-                          'Layanan baru tersedia',
-                          style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            color: Colors.black,
+                const SizedBox(height: 16),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            setState(() {
+                              but4 = !but4;
+                            });
+                          },
+                          child: Text(
+                            'Layanan baru tersedia',
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
-                      ),
-                      Switch(
-                        value: but4,
-                        activeColor: const Color(0XFF444CE7),
-                        onChanged: (bool value) {
-                          setState(() {
-                            but4 = value;
-                          });
-                        },
-                      ),
-                    ],
+                        Switch(
+                          value: but4,
+                          activeColor: const Color(0XFF444CE7),
+                          onChanged: (bool value) {
+                            setState(() {
+                              but4 = value;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
