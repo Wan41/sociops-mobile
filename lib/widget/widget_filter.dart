@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream
-import 'package:fitur_volunteer/data/list_data.dart';
-import 'package:fitur_volunteer/widget/widget_color_choose.dart';
-=======
 import 'package:sociops/data/list_data.dart';
 import 'package:sociops/widget/widget_color_choose.dart';
->>>>>>> Stashed changes
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
