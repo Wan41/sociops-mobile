@@ -34,7 +34,6 @@ flutter:
   uses-material-design: true
 
   assets:
-
     - assets/
     - assets/handoff/
     - assets/handoff/foto/
@@ -58,7 +57,6 @@ flutter:
     - assets/promosi.png
     - assets/organizer.png
     - assets/give-love.png
-    - assets/community.png    
-    - assets/hyundai.png
+    - assets/community.png
+    - assets/hyundai.jpg
     - assets/notifikasi.png
-

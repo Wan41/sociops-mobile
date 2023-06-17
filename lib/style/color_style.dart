@@ -13,8 +13,6 @@ class ColorStyle {
 
   Color white = const Color(0xffFFFFFF);
 
-  Color red = Color.fromARGB(255, 212, 13, 13);
-
   Color greenbackground = const Color(0XffECFDF3);
 
   Color greenfield = const Color(0Xff039855);
@@ -38,7 +36,6 @@ class ColorStyle {
   Color orange = const Color(0xffF79009);
 
   Color orangedisable = const Color(0xffFFFAEB);
-
 }
 
 class AppColors {

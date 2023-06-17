@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:sociops/screen/fitur_organization/round_button.dart';
 import 'package:sociops/screen/fitur_organization/profile.dart';
@@ -5,7 +7,7 @@ import 'package:sociops/style/color_style.dart';
 import 'package:sociops/style/font_style.dart';
 
 class GalangDana extends StatelessWidget {
-  const GalangDana();
+  const GalangDana({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class GalangDana extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(top: 30, left: 16),
+              padding: const EdgeInsets.only(top: 30, left: 16),
               child: Row(
                 children: [
                   RoundButton(
@@ -29,16 +31,16 @@ class GalangDana extends StatelessWidget {
                       );
                     },
                   ),
-                  SizedBox(width: 16),
-                  Text(
+                  const SizedBox(width: 16),
+                  const Text(
                     'Hyundai Galang Dana',
                     style: Styles.organizerTextStyle,
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 16),
-            Padding(
+            const SizedBox(height: 16),
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: CustomFollowButton(),
             ),
@@ -50,6 +52,8 @@ class GalangDana extends StatelessWidget {
 }
 
 class CustomFollowButton extends StatefulWidget {
+  const CustomFollowButton({super.key});
+
   @override
   _CustomFollowButtonState createState() => _CustomFollowButtonState();
 }
@@ -112,7 +116,7 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                                 borderRadius: BorderRadius.circular(32.0),
                                 color: Colors.red,
                               ),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   'CLOSED SOON',
                                   textAlign: TextAlign.center,
@@ -215,9 +219,9 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               ),
               Row(
                 children: [
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Padding(
-                    padding: EdgeInsets.only(top: 8),
+                    padding: const EdgeInsets.only(top: 8),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Container(
@@ -241,9 +245,9 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Padding(
-                    padding: EdgeInsets.only(top: 8),
+                    padding: const EdgeInsets.only(top: 8),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Container(
@@ -271,13 +275,12 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               ),
               const SizedBox(height: 20),
               const Text(
-                'Gerakan #SampaiTujuanDenganAman, Hyundai Bekerjasama dengan Kepolisian Indonesia',
-                style: Styles.resultTextStyle
-              ),
+                  'Gerakan #SampaiTujuanDenganAman, Hyundai Bekerjasama dengan Kepolisian Indonesia',
+                  style: Styles.resultTextStyle),
               const SizedBox(height: 8),
               Container(
                 height: 20,
-                child: Text(
+                child: const Text(
                   'Kegiatan kampanye online yang diadakan oleh Perusahaan Hyundai',
                   style: TextStyle(
                     fontSize: 14,
@@ -289,22 +292,22 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               GestureDetector(
                 onTap: toggleFollow,
                 child: Container(
                   height: 40,
-                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  margin: const EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
                     color: isFollowing
-                        ? Color.fromARGB(255, 241, 172, 172)
-                        : Color.fromARGB(255, 250, 10, 10),
+                        ? const Color.fromARGB(255, 241, 172, 172)
+                        : const Color.fromARGB(255, 250, 10, 10),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Text(
                         isFollowing ? 'Joined' : 'Join',
                         style: TextStyle(

@@ -5,8 +5,8 @@ import 'package:sociops/screen/fitur_organization/profile.dart';
 import 'package:sociops/style/color_style.dart';
 import 'package:sociops/style/font_style.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen();
+class OrganizationScreen extends StatelessWidget {
+  const OrganizationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(top: 30, left: 16),
+              padding: const EdgeInsets.only(top: 30, left: 16),
               child: Row(
                 children: [
                   RoundButton(
@@ -25,21 +25,21 @@ class HomeScreen extends StatelessWidget {
                     icon: Icons.arrow_back,
                     onPressed: () {},
                   ),
-                  SizedBox(width: 16),
-                  Text(
+                  const SizedBox(width: 16),
+                  const Text(
                     'Organizer',
                     style: Styles.organizerTextStyle,
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: SearchBox(),
             ),
-            SizedBox(height: 16),
-            Padding(
+            const SizedBox(height: 16),
+            const Padding(
               padding: EdgeInsets.only(left: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,8 +61,8 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 16),
-            Padding(
+            const SizedBox(height: 16),
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: CustomFollowButton(),
             ),
@@ -74,7 +74,10 @@ class HomeScreen extends StatelessWidget {
 }
 
 class CustomFollowButton extends StatefulWidget {
+  const CustomFollowButton({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _CustomFollowButtonState createState() => _CustomFollowButtonState();
 }
 
@@ -103,7 +106,7 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
           Container(
             width: double.infinity,
             height: 200,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.grey,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(8),
@@ -117,9 +120,9 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               ),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Padding(
-            padding: EdgeInsets.only(left: 16),
+            padding: const EdgeInsets.only(left: 16),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Row(
@@ -127,18 +130,18 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                   Container(
                     width: 25,
                     height: 25,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: AppColors.arrowColor,
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.check,
                       color: Colors.white,
                       size: 20,
                     ),
                   ),
-                  SizedBox(width: 16),
-                  Text(
+                  const SizedBox(width: 16),
+                  const Text(
                     'Hyundai',
                     style: Styles.Result2,
                   ),
@@ -146,11 +149,11 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               ),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Container(
-              child: Text(
+              child: const Text(
                 'PT Hyundai adalah anak perusahaan penjualan dan distributor resmi Hyundai Motor Company yang merupakan produsen otomotif di Indonesia.',
                 style: Styles.resultTextStyle,
                 maxLines: 2,
@@ -159,7 +162,7 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               ),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -173,12 +176,12 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                   },
                   child: Container(
                     height: 40,
-                    margin: EdgeInsets.only(left: 16, right: 8),
+                    margin: const EdgeInsets.only(left: 16, right: 8),
                     decoration: BoxDecoration(
                       color: AppColors.Button,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(width: 8),
@@ -198,19 +201,21 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                   onTap: toggleFollow,
                   child: Container(
                     height: 40,
-                    margin: EdgeInsets.only(right: 16, left: 8),
+                    margin: const EdgeInsets.only(right: 16, left: 8),
                     decoration: BoxDecoration(
-                      color: isFollowing ? AppColors.Button : AppColors.arrowColor,
+                      color:
+                          isFollowing ? AppColors.Button : AppColors.arrowColor,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                         Text(
                           isFollowing ? 'Mengikuti' : 'Ikuti',
                           style: TextStyle(
-                            color: isFollowing ? Colors.white : AppColors.Button,
+                            color:
+                                isFollowing ? Colors.white : AppColors.Button,
                           ),
                         ),
                       ],
@@ -220,7 +225,7 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               ),
             ],
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
         ],
       ),
     );

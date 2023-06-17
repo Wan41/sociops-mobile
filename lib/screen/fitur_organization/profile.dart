@@ -7,6 +7,8 @@ import 'package:sociops/screen/home_screen.dart';
 import 'package:sociops/screen/fitur_organization/volunteer.dart';
 
 class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +17,7 @@ class ProfilePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(top: 30, left: 16),
+              padding: const EdgeInsets.only(top: 30, left: 16),
               child: Row(
                 children: [
                   RoundButton(
@@ -25,33 +27,35 @@ class ProfilePage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()),
                       );
                     },
                   ),
-                  SizedBox(width: 16),
-                  Text(
+                  const SizedBox(width: 16),
+                  const Text(
                     'Hyundai',
                     style: Styles.organizerTextStyle,
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 16),
-            Padding(
+            const SizedBox(height: 16),
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: CustomFollowButton(),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Column(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: GestureDetector(
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => GalangDana()),
+                        MaterialPageRoute(
+                            builder: (context) => const GalangDana()),
                       );
                     },
                     child: Row(
@@ -70,7 +74,7 @@ class ProfilePage extends StatelessWidget {
                                   Container(
                                     width: 40,
                                     height: 40,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
                                         image: AssetImage('give-love.png'),
@@ -78,13 +82,13 @@ class ProfilePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(width: 16),
-                                  Text(
+                                  const SizedBox(width: 16),
+                                  const Text(
                                     'Galang Dana',
                                     style: Styles.Result2,
                                   ),
-                                  Spacer(),
-                                  Icon(
+                                  const Spacer(),
+                                  const Icon(
                                     Icons.navigate_next,
                                     color: AppColors.arrowColor,
                                   ),
@@ -97,16 +101,16 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: GestureDetector(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                Volunteer()), // Navigasi ke VolunteerPage
+                                const Volunteer()), // Navigasi ke VolunteerPage
                       );
                     },
                     child: Row(
@@ -125,7 +129,7 @@ class ProfilePage extends StatelessWidget {
                                   Container(
                                     width: 40,
                                     height: 40,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
                                         image: AssetImage('community.png'),
@@ -133,13 +137,13 @@ class ProfilePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(width: 16),
-                                  Text(
+                                  const SizedBox(width: 16),
+                                  const Text(
                                     'Volunteer',
                                     style: Styles.Result2,
                                   ),
-                                  Spacer(),
-                                  Icon(
+                                  const Spacer(),
+                                  const Icon(
                                     Icons.navigate_next,
                                     color: AppColors.arrowColor,
                                   ),
@@ -162,6 +166,8 @@ class ProfilePage extends StatelessWidget {
 }
 
 class CustomFollowButton extends StatefulWidget {
+  const CustomFollowButton({super.key});
+
   @override
   _CustomFollowButtonState createState() => _CustomFollowButtonState();
 }
@@ -183,7 +189,7 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
           Container(
             width: 150,
             height: 150,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.grey,
               shape: BoxShape.circle,
               image: DecorationImage(
@@ -192,9 +198,9 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               ),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Padding(
-            padding: EdgeInsets.only(left: 16),
+            padding: const EdgeInsets.only(left: 16),
             child: Align(
               alignment: Alignment.center,
               child: Column(
@@ -202,15 +208,15 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Hyundai',
                         style: Styles.result3,
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Container(
                         width: 25,
                         height: 25,
-                        child: Icon(
+                        child: const Icon(
                           Icons.verified,
                           color: AppColors.arrowColor,
                           size: 20,
@@ -218,8 +224,8 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 12),
-                  Row(
+                  const SizedBox(height: 12),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Column(
@@ -269,12 +275,12 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               ),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           GestureDetector(
             onTap: toggleFollow,
             child: Container(
               height: 40,
-              margin: EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
                 color: isFollowing ? AppColors.Button : AppColors.arrowColor,
                 borderRadius: BorderRadius.circular(20),
@@ -282,7 +288,7 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Text(
                     isFollowing ? 'Mengikuti' : 'Ikuti',
                     style: TextStyle(
@@ -293,8 +299,8 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               ),
             ),
           ),
-          SizedBox(height: 16),
-          Padding(
+          const SizedBox(height: 16),
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: Align(
               alignment: Alignment.topLeft,
@@ -304,8 +310,8 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               ),
             ),
           ),
-          SizedBox(height: 8),
-          Padding(
+          const SizedBox(height: 8),
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
             child: Text(
               'Proin et euismod diam. Duis fermentum felis nisi, ut lobortis lectus mollis non. Integer pellentesque erat eu diam pharetra auctor id et nulla. Nam sodales arcu nec blandit fringilla. Ut vitae ligula vel lectus ultrices tempus ut id sem. Etiam egestas lacus scelerisque augue congue, sed rutrum sem lobortis. Pellentesque vel enim ante. Quisque hendrerit lobortis neque, ac tempor dui elementum vel. Duis vitae ante imperdiet, lacinia nulla sit amet, hendrerit erat. In ac lectus vulputate, pellentesque est et, interdum augue. Nam in sodales augue, non pellentesque orci. Nullam aliquet ante ut dolor molestie venenatis. Aliquam a erat quis nulla congue porttitor sit amet id nulla. Fusce pretium diam quam, vel consequat nibh feugiat id. Aenean laoreet auctor sollicitudin. Donec at sagittis nulla, sit amet lacinia eros.',

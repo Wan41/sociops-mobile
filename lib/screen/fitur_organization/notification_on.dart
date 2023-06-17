@@ -1,10 +1,12 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:sociops/screen/fitur_organization/round_button.dart';
 import 'package:sociops/style/color_style.dart';
 import 'package:sociops/style/font_style.dart';
 
 class Notifikasi extends StatefulWidget {
-  const Notifikasi();
+  const Notifikasi({super.key});
 
   @override
   _BeritaState createState() => _BeritaState();
@@ -21,7 +23,7 @@ class _BeritaState extends State<Notifikasi> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(top: 30, left: 16),
+              padding: const EdgeInsets.only(top: 30, left: 16),
               child: Row(
                 children: [
                   RoundButton(
@@ -30,20 +32,20 @@ class _BeritaState extends State<Notifikasi> {
                     icon: Icons.arrow_back,
                     onPressed: () {},
                   ),
-                  SizedBox(width: 16),
-                  Text(
+                  const SizedBox(width: 16),
+                  const Text(
                     'Notifikasi',
                     style: Styles.organizerTextStyle,
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   GestureDetector(
                     onTap: () {
                       setState(() {
@@ -55,27 +57,27 @@ class _BeritaState extends State<Notifikasi> {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: SizedBox(
                 height: 30,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    CategoryBox(
+                    const CategoryBox(
                       text: 'All',
                       color: AppColors.arrowColor,
                       width: 105,
                     ),
-                    SizedBox(width: 8),
-                    CategoryBox(
+                    const SizedBox(width: 8),
+                    const CategoryBox(
                       text: 'Galang Dana',
                       color: AppColors.arrowColor,
                       width: 105,
                     ),
-                    SizedBox(width: 8),
-                    CategoryBox(
+                    const SizedBox(width: 8),
+                    const CategoryBox(
                       text: 'Volunteer',
                       color: AppColors.arrowColor,
                       width: 105,
@@ -84,41 +86,38 @@ class _BeritaState extends State<Notifikasi> {
                 ),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Hari ini',
                     style: Styles.resultTe,
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Container(
                         width: 40,
                         height: 40,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: Color.fromRGBO(187, 250, 168, 1),
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.check,
-                          color: const Color.fromARGB(255, 19, 163, 24),
+                          color: Color.fromARGB(255, 19, 163, 24),
                         ),
                       ),
-                      SizedBox(width: 8),
-                      Column(
+                      const SizedBox(width: 8),
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Donation successful',
-                            style: Styles.resultTe
-                          ),
+                          Text('Donation successful', style: Styles.resultTe),
                           SizedBox(height: 8),
                           Text(
                             'You have successfully donated',
@@ -136,35 +135,35 @@ class _BeritaState extends State<Notifikasi> {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Minggu ini',
                     style: Styles.resultTe,
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Container(
                         width: 40,
                         height: 40,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: Color.fromRGBO(250, 168, 168, 1),
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.close,
                           color: Color.fromARGB(255, 163, 19, 19),
                         ),
                       ),
-                      SizedBox(width: 8),
-                      Column(
+                      const SizedBox(width: 8),
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -201,6 +200,7 @@ class CategoryBox extends StatefulWidget {
   final double width; // Add width parameter
 
   const CategoryBox({
+    super.key,
     required this.text,
     required this.color,
     this.width = 80, // Set a default width value

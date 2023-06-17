@@ -5,7 +5,7 @@ import 'package:sociops/style/color_style.dart';
 import 'package:sociops/style/font_style.dart';
 
 class Eksplor extends StatefulWidget {
-  const Eksplor();
+  const Eksplor({super.key});
 
   @override
   _BeritaState createState() => _BeritaState();
@@ -23,7 +23,7 @@ class _BeritaState extends State<Eksplor> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(top: 30, left: 16),
+              padding: const EdgeInsets.only(top: 30, left: 16),
               child: Row(
                 children: [
                   RoundButton(
@@ -32,23 +32,23 @@ class _BeritaState extends State<Eksplor> {
                     icon: Icons.arrow_back,
                     onPressed: () {},
                   ),
-                  SizedBox(width: 16),
-                  Text(
+                  const SizedBox(width: 16),
+                  const Text(
                     'Eksplor',
                     style: Styles.organizerTextStyle,
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
                   Expanded(
                     child: SearchBox(),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   GestureDetector(
                     onTap: () {
                       setState(() {
@@ -72,7 +72,7 @@ class _BeritaState extends State<Eksplor> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   GestureDetector(
                     onTap: () {
                       // Logic for sort button
@@ -80,7 +80,7 @@ class _BeritaState extends State<Eksplor> {
                         context: context,
                         builder: (context) {
                           return Container(
-                            padding: EdgeInsets.all(16),
+                            padding: const EdgeInsets.all(16),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,8 +95,8 @@ class _BeritaState extends State<Eksplor> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 20),
-                                Text(
+                                const SizedBox(height: 20),
+                                const Text(
                                   'Date',
                                   style: Styles.resultTextStyle,
                                   textAlign: TextAlign.start,
@@ -122,7 +122,7 @@ class _BeritaState extends State<Eksplor> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(width: 8),
+                                    const SizedBox(width: 8),
                                     Expanded(
                                       child: GestureDetector(
                                         onTap: () {
@@ -144,7 +144,7 @@ class _BeritaState extends State<Eksplor> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 8),
+                                const SizedBox(height: 8),
                                 Row(
                                   children: [
                                     Expanded(
@@ -166,7 +166,7 @@ class _BeritaState extends State<Eksplor> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(width: 8),
+                                    const SizedBox(width: 8),
                                     Expanded(
                                       child: GestureDetector(
                                         onTap: () {
@@ -188,8 +188,8 @@ class _BeritaState extends State<Eksplor> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 16),
-                                Text(
+                                const SizedBox(height: 16),
+                                const Text(
                                   'Category',
                                   style: Styles.resultTextStyle,
                                 ),
@@ -214,7 +214,7 @@ class _BeritaState extends State<Eksplor> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(width: 8),
+                                    const SizedBox(width: 8),
                                     Expanded(
                                       child: GestureDetector(
                                         onTap: () {
@@ -236,7 +236,7 @@ class _BeritaState extends State<Eksplor> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 8),
+                                const SizedBox(height: 8),
                                 Row(
                                   children: [
                                     Expanded(
@@ -258,7 +258,7 @@ class _BeritaState extends State<Eksplor> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(width: 8),
+                                    const SizedBox(width: 8),
                                     Expanded(
                                       child: GestureDetector(
                                         onTap: () {
@@ -280,7 +280,7 @@ class _BeritaState extends State<Eksplor> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 16),
+                                const SizedBox(height: 16),
                                 GestureDetector(
                                   onTap: () {
                                     // Logic for apply button
@@ -293,7 +293,7 @@ class _BeritaState extends State<Eksplor> {
                                       color: AppColors.Button,
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    child: Center(
+                                    child: const Center(
                                       child: Text(
                                         'Apply',
                                         style: Styles.Result2,
@@ -310,11 +310,11 @@ class _BeritaState extends State<Eksplor> {
                     child: Container(
                       width: 40,
                       height: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppColors.primaryColor,
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.sort,
                         color: AppColors.arrowColor,
                       ),
@@ -323,27 +323,27 @@ class _BeritaState extends State<Eksplor> {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: SizedBox(
                 height: 30,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    CategoryBox(
+                    const CategoryBox(
                       text: 'All',
                       color: AppColors.arrowColor,
                       width: 105,
                     ),
-                    SizedBox(width: 8),
-                    CategoryBox(
+                    const SizedBox(width: 8),
+                    const CategoryBox(
                       text: 'Galang Dana',
                       color: AppColors.arrowColor,
                       width: 105, // Adjust the width value to make it wider
                     ),
-                    SizedBox(width: 8),
-                    CategoryBox(
+                    const SizedBox(width: 8),
+                    const CategoryBox(
                       text: 'Volunteer',
                       color: AppColors.arrowColor,
                       width: 105,
@@ -352,8 +352,8 @@ class _BeritaState extends State<Eksplor> {
                 ),
               ),
             ),
-            SizedBox(height: 16),
-            Padding(
+            const SizedBox(height: 16),
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: CustomFollowButton(),
             ),
@@ -370,6 +370,7 @@ class CategoryBox extends StatefulWidget {
   final double width;
 
   const CategoryBox({
+    super.key,
     required this.text,
     required this.color,
     this.width = 80,
@@ -414,6 +415,8 @@ class _CategoryBoxState extends State<CategoryBox> {
 }
 
 class CustomFollowButton extends StatefulWidget {
+  const CustomFollowButton({super.key});
+
   @override
   _CustomFollowButtonState createState() => _CustomFollowButtonState();
 }
@@ -476,7 +479,7 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                                 borderRadius: BorderRadius.circular(32.0),
                                 color: Colors.red,
                               ),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   'CLOSED SOON',
                                   textAlign: TextAlign.center,
@@ -579,16 +582,16 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
               ),
               Row(
                 children: [
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Padding(
-                    padding: EdgeInsets.only(top: 8),
+                    padding: const EdgeInsets.only(top: 8),
                     child: Center(
                       child: Container(
                         width: 250,
                         height: 22,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(32.0),
-                          color: Color.fromARGB(255, 212, 245, 212),
+                          color: const Color.fromARGB(255, 212, 245, 212),
                         ),
                         child: const Center(
                           child: Text(
@@ -611,7 +614,7 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                   'Gerakan #SampaiTujuanDenganAman, Hyundai Bekerjasama dengan Kepolisian Indonesia',
                   style: Styles.resultTextStyle),
               const SizedBox(height: 12),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Rp233.461.250', style: Styles.resultTextStyle),
@@ -625,17 +628,17 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                 value: 72 / 100,
                 minHeight: 12,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               InkWell(
                 onTap: toggleFollow,
                 child: Container(
                   height: 40,
-                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  margin: const EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 247, 32, 32),
+                    color: const Color.fromARGB(255, 247, 32, 32),
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(width: 8),

@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:sociops/screen/fitur_organization/round_button.dart';
 import 'package:sociops/style/color_style.dart';
@@ -6,6 +8,8 @@ import 'package:sociops/screen/home_screen.dart';
 import 'package:sociops/screen/explore_screen.dart';
 
 class NotificationPage extends StatelessWidget {
+  const NotificationPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +18,7 @@ class NotificationPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(top: 30, left: 16),
+              padding: const EdgeInsets.only(top: 30, left: 16),
               child: Row(
                 children: [
                   RoundButton(
@@ -24,20 +28,21 @@ class NotificationPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()),
                       );
                     },
                   ),
-                  SizedBox(width: 16),
-                  Text(
+                  const SizedBox(width: 16),
+                  const Text(
                     'Notifikasi',
                     style: Styles.organizerTextStyle,
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 16),
-            Padding(
+            const SizedBox(height: 16),
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: CustomNotificationButton(),
             ),
@@ -49,6 +54,8 @@ class NotificationPage extends StatelessWidget {
 }
 
 class CustomNotificationButton extends StatefulWidget {
+  const CustomNotificationButton({super.key});
+
   @override
   _CustomNotificationButtonState createState() =>
       _CustomNotificationButtonState();
@@ -68,11 +75,11 @@ class _CustomNotificationButtonState extends State<CustomNotificationButton> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Center(
             child: Column(
               children: [
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 SizedBox(
                   width: 400,
                   height: 300,
@@ -84,8 +91,8 @@ class _CustomNotificationButtonState extends State<CustomNotificationButton> {
                     ),
                   ),
                 ),
-                SizedBox(height: 16),
-                Text(
+                const SizedBox(height: 16),
+                const Text(
                   'You have no notifications. Follow program to get updated notifications',
                   style: Styles.resultTex,
                   textAlign: TextAlign.center,
@@ -93,22 +100,22 @@ class _CustomNotificationButtonState extends State<CustomNotificationButton> {
               ],
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           GestureDetector(
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ExploreScreen()),
+                MaterialPageRoute(builder: (context) => const ExploreScreen()),
               );
             },
             child: Container(
               height: 40,
-              margin: EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
                 color: AppColors.arrowColor,
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(width: 8),
@@ -122,7 +129,7 @@ class _CustomNotificationButtonState extends State<CustomNotificationButton> {
               ),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
         ],
       ),
     );
