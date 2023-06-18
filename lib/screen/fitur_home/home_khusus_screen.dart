@@ -40,17 +40,18 @@ class _HomeKhususState extends State<HomeKhusus> {
                       ),
                       Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                child: Container(
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
                                   alignment: Alignment.centerLeft,
-                                  height: 35,
+                                  height: 48,
                                   width: 276,
                                   decoration: BoxDecoration(
-                                    color: const Color(0xffF9FAFB),
-                                    borderRadius: BorderRadius.circular(23),
+                                    color: const Color(0XFFF9FAFB),
+                                    borderRadius: BorderRadius.circular(56),
                                   ),
                                   child: TextField(
                                     decoration: InputDecoration(
@@ -58,63 +59,53 @@ class _HomeKhususState extends State<HomeKhusus> {
                                       prefixIcon: const Icon(Icons.search),
                                       border: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(23),
+                                        borderSide: BorderSide.none,
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    width: 5,
-                                    color: ColorStyle().buttonColor,
-                                  ),
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: ColorStyle().buttonColor,
-                                ),
-                                child: Row(
-                                  children: [
-                                    IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        Icons.notifications,
-                                        color: ColorStyle().primaryblue,
-                                      ),
+                                const SizedBox(width: 12),
+                                GestureDetector(
+                                  onTap: () {},
+                                  child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: const BoxDecoration(
+                                      color: AppColors.primaryColor,
+                                      shape: BoxShape.circle,
                                     ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                margin: const EdgeInsets.only(right: 12),
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    width: 5,
-                                    color: ColorStyle().buttonColor,
-                                  ),
-                                  borderRadius: BorderRadius.circular(50),
-                                  color: ColorStyle().buttonColor,
-                                ),
-                                child: Row(
-                                  children: [
-                                    IconButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                const BookmarkScreen(),
-                                          ),
-                                        );
-                                      },
-                                      icon: Icon(
-                                        Icons.bookmark_border,
-                                        color: ColorStyle().primaryblue,
-                                      ),
+                                    child: const Icon(
+                                      Icons.notifications_outlined,
+                                      color: AppColors.arrowColor,
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                const SizedBox(width: 12),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const BookmarkScreen(),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: const BoxDecoration(
+                                      color: AppColors.primaryColor,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: const Icon(
+                                      Icons.bookmark_border,
+                                      color: AppColors.arrowColor,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                           SingleChildScrollView(
                             child: Column(
@@ -126,7 +117,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
                                   decoration: BoxDecoration(
                                     border: Border.all(
-                                      color: const Color(0XFFFEE4E2),
+                                      color: const Color(0XFFE0EAFF),
                                     ),
                                     borderRadius: BorderRadius.circular(24),
                                   ),
@@ -173,6 +164,10 @@ class _HomeKhususState extends State<HomeKhusus> {
                                                           BorderRadius.circular(
                                                               32.0),
                                                       color: Colors.white,
+                                                      border: Border.all(
+                                                        color: const Color(
+                                                            0xFF444CE7),
+                                                      ),
                                                     ),
                                                     child: Center(
                                                       child: Row(
@@ -216,6 +211,10 @@ class _HomeKhususState extends State<HomeKhusus> {
                                                           BorderRadius.circular(
                                                               32.0),
                                                       color: Colors.white,
+                                                      border: Border.all(
+                                                        color: const Color(
+                                                            0xFF444CE7),
+                                                      ),
                                                     ),
                                                     child: Center(
                                                       child: Text(
@@ -302,6 +301,10 @@ class _HomeKhususState extends State<HomeKhusus> {
                                 const SizedBox(
                                   height: 16,
                                 ),
+                                const Divider(),
+                                const SizedBox(
+                                  height: 12,
+                                ),
                                 Container(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
@@ -313,12 +316,205 @@ class _HomeKhususState extends State<HomeKhusus> {
                                   ),
                                 ),
                                 const SizedBox(height: 12),
+                                SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: SizedBox(
+                                    width: 396,
+                                    height: 94,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const DonationScreen()),
+                                            );
+                                          },
+                                          child: Column(
+                                            children: [
+                                              Image.asset(
+                                                'assets/galang dana.png',
+                                                fit: BoxFit.cover,
+                                                width: 40,
+                                              ),
+                                              const SizedBox(height: 8),
+                                              Container(
+                                                alignment:
+                                                    Alignment.bottomCenter,
+                                                decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                      width: 5,
+                                                      color: ColorStyle()
+                                                          .buttonColor),
+                                                  borderRadius:
+                                                      BorderRadius.circular(32),
+                                                  color:
+                                                      ColorStyle().buttonColor,
+                                                ),
+                                                child: Text(
+                                                  'Galang Dana',
+                                                  style: GoogleFonts.inter(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: ColorStyle()
+                                                        .primaryblue,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const VolunteerScreen()),
+                                            );
+                                          },
+                                          child: Column(
+                                            children: [
+                                              Image.asset(
+                                                'assets/volunteer.png',
+                                                fit: BoxFit.cover,
+                                                width: 40,
+                                              ),
+                                              const SizedBox(height: 8),
+                                              Container(
+                                                alignment:
+                                                    Alignment.bottomCenter,
+                                                decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                      width: 5,
+                                                      color: ColorStyle()
+                                                          .buttonColor),
+                                                  borderRadius:
+                                                      BorderRadius.circular(32),
+                                                  color:
+                                                      ColorStyle().buttonColor,
+                                                ),
+                                                child: Text(
+                                                  'Volunteer',
+                                                  style: GoogleFonts.inter(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: ColorStyle()
+                                                        .primaryblue,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const BuatCampaignScreen()),
+                                            );
+                                          },
+                                          child: Column(
+                                            children: [
+                                              Image.asset(
+                                                'assets/campaign.png',
+                                                fit: BoxFit.cover,
+                                                width: 40,
+                                              ),
+                                              const SizedBox(height: 8),
+                                              Container(
+                                                alignment:
+                                                    Alignment.bottomCenter,
+                                                decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                      width: 5,
+                                                      color: ColorStyle()
+                                                          .buttonColor),
+                                                  borderRadius:
+                                                      BorderRadius.circular(32),
+                                                  color:
+                                                      ColorStyle().buttonColor,
+                                                ),
+                                                child: Text(
+                                                  'Campaign',
+                                                  style: GoogleFonts.inter(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: ColorStyle()
+                                                        .primaryblue,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const OrganizationScreen()),
+                                            );
+                                          },
+                                          child: Column(
+                                            children: [
+                                              Image.asset(
+                                                'assets/komunitas.png',
+                                                width: 40,
+                                              ),
+                                              const SizedBox(height: 8),
+                                              Container(
+                                                alignment:
+                                                    Alignment.bottomCenter,
+                                                decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                      width: 5,
+                                                      color: ColorStyle()
+                                                          .buttonColor),
+                                                  borderRadius:
+                                                      BorderRadius.circular(32),
+                                                  color:
+                                                      ColorStyle().buttonColor,
+                                                ),
+                                                child: Text(
+                                                  'Komunitas',
+                                                  style: GoogleFonts.inter(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: ColorStyle()
+                                                        .primaryblue,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                const Divider(),
+                                const SizedBox(height: 12),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    GestureDetector(
-                                      onTap: () {
+                                    Text(
+                                      'Penggalangan Dana',
+                                      style: GoogleFonts.inter(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -326,199 +522,16 @@ class _HomeKhususState extends State<HomeKhusus> {
                                                   const DonationScreen()),
                                         );
                                       },
-                                      child: Column(
-                                        children: [
-                                          Image.asset(
-                                            'assets/galang dana.png',
-                                            fit: BoxFit.cover,
-                                            width: 30,
-                                          ),
-                                          const SizedBox(height: 5),
-                                          Container(
-                                            margin: const EdgeInsets.all(12),
-                                            alignment: Alignment.bottomCenter,
-                                            decoration: BoxDecoration(
-                                              border: Border.all(
-                                                  width: 5,
-                                                  color:
-                                                      ColorStyle().buttonColor),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              color: ColorStyle().buttonColor,
-                                            ),
-                                            child: Text(
-                                              'Galang Dana',
-                                              style: GoogleFonts.inter(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w500,
-                                                color: ColorStyle().primaryblue,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const VolunteerScreen()),
-                                        );
-                                      },
-                                      child: Column(
-                                        children: [
-                                          Image.asset(
-                                            'assets/volunteer.png',
-                                            fit: BoxFit.cover,
-                                            width: 30,
-                                          ),
-                                          const SizedBox(height: 5),
-                                          Container(
-                                            margin: const EdgeInsets.all(12),
-                                            alignment: Alignment.bottomCenter,
-                                            decoration: BoxDecoration(
-                                              border: Border.all(
-                                                  width: 5,
-                                                  color:
-                                                      ColorStyle().buttonColor),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              color: ColorStyle().buttonColor,
-                                            ),
-                                            child: Text(
-                                              'Volunteer',
-                                              style: GoogleFonts.inter(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w500,
-                                                color: ColorStyle().primaryblue,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const BuatCampaignScreen()),
-                                        );
-                                      },
-                                      child: Column(
-                                        children: [
-                                          Image.asset(
-                                            'assets/campaign.png',
-                                            fit: BoxFit.cover,
-                                            width: 30,
-                                          ),
-                                          const SizedBox(height: 5),
-                                          Container(
-                                            margin: const EdgeInsets.all(12),
-                                            alignment: Alignment.bottomCenter,
-                                            decoration: BoxDecoration(
-                                              border: Border.all(
-                                                  width: 5,
-                                                  color:
-                                                      ColorStyle().buttonColor),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              color: ColorStyle().buttonColor,
-                                            ),
-                                            child: Text(
-                                              'Campaign',
-                                              style: GoogleFonts.inter(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w500,
-                                                color: ColorStyle().primaryblue,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const OrganizationScreen()),
-                                        );
-                                      },
-                                      child: Column(
-                                        children: [
-                                          Image.asset(
-                                            'assets/komunitas.png',
-                                            width: 30,
-                                          ),
-                                          const SizedBox(height: 5),
-                                          Container(
-                                            margin: const EdgeInsets.all(12),
-                                            alignment: Alignment.bottomCenter,
-                                            decoration: BoxDecoration(
-                                              border: Border.all(
-                                                  width: 5,
-                                                  color:
-                                                      ColorStyle().buttonColor),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              color: ColorStyle().buttonColor,
-                                            ),
-                                            child: Text(
-                                              'Komunitas',
-                                              style: GoogleFonts.inter(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w500,
-                                                color: ColorStyle().primaryblue,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                                      child: Text(
+                                        'LIHAT SEMUA',
+                                        style: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14,
+                                          color: ColorStyle().primaryblue,
+                                        ),
                                       ),
                                     ),
                                   ],
-                                ),
-                                const SizedBox(height: 16),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 16),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          'Penggalangan Dana',
-                                          style: GoogleFonts.inter(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 10),
-                                          child: TextButton(
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const DonationScreen()),
-                                              );
-                                            },
-                                            child: Text(
-                                              'LIHAT SEMUA',
-                                              style: GoogleFonts.inter(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 14,
-                                                color: ColorStyle().primaryblue,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ]),
                                 ),
                                 const SizedBox(height: 16),
                                 SingleChildScrollView(
@@ -531,7 +544,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                         padding:
                                             const EdgeInsets.only(left: 16),
                                         child: SizedBox(
-                                          width: 138,
+                                          width: 94,
                                           height: 44,
                                           child: OutlinedButton(
                                             style: ButtonStyle(
@@ -547,8 +560,9 @@ class _HomeKhususState extends State<HomeKhusus> {
                                                       BorderRadius.circular(
                                                           26.0),
                                                   side: const BorderSide(
-                                                      width: 1.5,
-                                                      color: Color(0xFF444CE7)),
+                                                    width: 1.5,
+                                                    color: Color(0xFF444CE7),
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -568,7 +582,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                         padding:
                                             const EdgeInsets.only(left: 12),
                                         child: SizedBox(
-                                          width: 132,
+                                          width: 92,
                                           height: 44,
                                           child: OutlinedButton(
                                             style: ButtonStyle(
@@ -605,7 +619,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                         padding:
                                             const EdgeInsets.only(left: 12),
                                         child: SizedBox(
-                                          width: 123,
+                                          width: 106,
                                           height: 44,
                                           child: OutlinedButton(
                                             style: ButtonStyle(
@@ -679,7 +693,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                         padding:
                                             const EdgeInsets.only(left: 12),
                                         child: SizedBox(
-                                          width: 123,
+                                          width: 119,
                                           height: 44,
                                           child: OutlinedButton(
                                             style: ButtonStyle(
@@ -702,7 +716,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                             ),
                                             onPressed: () {},
                                             child: Text(
-                                              'Lainnya',
+                                              'Kesehatan',
                                               style: GoogleFonts.inter(
                                                 fontWeight: FontWeight.w500,
                                                 fontSize: 16,
@@ -979,42 +993,38 @@ class _HomeKhususState extends State<HomeKhusus> {
                                   ),
                                 ),
                                 const SizedBox(height: 16),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 16),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          'Volunteer',
-                                          style: GoogleFonts.inter(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w600,
-                                          ),
+                                const Divider(),
+                                const SizedBox(height: 12),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Volunteer',
+                                      style: GoogleFonts.inter(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const VolunteerScreen()),
+                                        );
+                                      },
+                                      child: Text(
+                                        'LIHAT SEMUA',
+                                        style: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14,
+                                          color: ColorStyle().primaryblue,
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 10),
-                                          child: TextButton(
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const VolunteerScreen()),
-                                              );
-                                            },
-                                            child: Text(
-                                              'LIHAT SEMUA',
-                                              style: GoogleFonts.inter(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 14,
-                                                color: ColorStyle().primaryblue,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ]),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 const SizedBox(height: 16),
                                 SingleChildScrollView(
@@ -1027,7 +1037,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                         padding:
                                             const EdgeInsets.only(left: 16),
                                         child: SizedBox(
-                                          width: 138,
+                                          width: 94,
                                           height: 44,
                                           child: OutlinedButton(
                                             style: ButtonStyle(
@@ -1043,8 +1053,9 @@ class _HomeKhususState extends State<HomeKhusus> {
                                                       BorderRadius.circular(
                                                           26.0),
                                                   side: const BorderSide(
-                                                      width: 1.5,
-                                                      color: Color(0xFF444CE7)),
+                                                    width: 1.5,
+                                                    color: Color(0xFF444CE7),
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -1064,7 +1075,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                         padding:
                                             const EdgeInsets.only(left: 12),
                                         child: SizedBox(
-                                          width: 132,
+                                          width: 92,
                                           height: 44,
                                           child: OutlinedButton(
                                             style: ButtonStyle(
@@ -1101,7 +1112,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                         padding:
                                             const EdgeInsets.only(left: 12),
                                         child: SizedBox(
-                                          width: 123,
+                                          width: 106,
                                           height: 44,
                                           child: OutlinedButton(
                                             style: ButtonStyle(
@@ -1175,7 +1186,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                         padding:
                                             const EdgeInsets.only(left: 12),
                                         child: SizedBox(
-                                          width: 123,
+                                          width: 119,
                                           height: 44,
                                           child: OutlinedButton(
                                             style: ButtonStyle(
@@ -1198,7 +1209,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                             ),
                                             onPressed: () {},
                                             child: Text(
-                                              'Lainnya',
+                                              'Kesehatan',
                                               style: GoogleFonts.inter(
                                                 fontWeight: FontWeight.w500,
                                                 fontSize: 16,
@@ -1380,9 +1391,9 @@ class _HomeKhususState extends State<HomeKhusus> {
                                     ),
                                     const SizedBox(height: 12),
                                     Container(
+                                      margin: const EdgeInsets.only(right: 236),
                                       alignment: Alignment.centerLeft,
-                                      margin: const EdgeInsets.only(right: 370),
-                                      width: 85,
+                                      width: 96,
                                       height: 30,
                                       decoration: BoxDecoration(
                                         border: Border.all(
@@ -1392,27 +1403,25 @@ class _HomeKhususState extends State<HomeKhusus> {
                                             BorderRadius.circular(32.0),
                                         color: ColorStyle().backgroundfield,
                                       ),
-                                      child: Center(
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            const Icon(
-                                              Icons.location_on_outlined,
-                                              color: Color(0xFF444CE7),
-                                              size: Checkbox.width,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          const Icon(
+                                            Icons.location_on_outlined,
+                                            color: Color(0xFF444CE7),
+                                            size: Checkbox.width,
+                                          ),
+                                          Text(
+                                            'Indonesia',
+                                            textAlign: TextAlign.center,
+                                            style: GoogleFonts.inter(
+                                              color: const Color(0xFF444CE7),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w500,
                                             ),
-                                            Text(
-                                              'Indonesia',
-                                              textAlign: TextAlign.center,
-                                              style: GoogleFonts.inter(
-                                                color: const Color(0xFF444CE7),
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                     const SizedBox(height: 8),
@@ -1477,46 +1486,43 @@ class _HomeKhususState extends State<HomeKhusus> {
                                   ]),
                                 ),
                                 const SizedBox(height: 16),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 16),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          'Berita Terbaru',
-                                          style: GoogleFonts.inter(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w600,
-                                          ),
+                                const Divider(),
+                                const SizedBox(height: 12),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Berita Terbaru',
+                                      style: GoogleFonts.inter(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Berita()),
+                                        );
+                                      },
+                                      child: Text(
+                                        'LIHAT SEMUA',
+                                        style: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14,
+                                          color: ColorStyle().primaryblue,
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 10),
-                                          child: TextButton(
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const Berita()),
-                                              );
-                                            },
-                                            child: Text(
-                                              'LIHAT SEMUA',
-                                              style: GoogleFonts.inter(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 14,
-                                                color: ColorStyle().primaryblue,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ]),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 const SizedBox(height: 12),
                                 SizedBox(
-                                  height: 160,
+                                  width: 396,
+                                  height: 162,
                                   child: Card(
                                     clipBehavior: Clip.antiAliasWithSaveLayer,
                                     shape: RoundedRectangleBorder(
@@ -1529,15 +1535,17 @@ class _HomeKhususState extends State<HomeKhusus> {
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Stack(
                                           children: [
                                             Padding(
                                               padding: const EdgeInsets.only(
-                                                  left: 20, top: 10),
+                                                  left: 12, top: 12),
                                               child: SizedBox(
-                                                width: 100,
-                                                height: 100,
+                                                width: 94,
+                                                height: 94,
                                                 child: Image.asset(
                                                   'assets/fundraising.png',
                                                   fit: BoxFit.cover,
@@ -1545,12 +1553,11 @@ class _HomeKhususState extends State<HomeKhusus> {
                                               ),
                                             ),
                                             Positioned(
-                                              left: 27,
-                                              right: 8,
+                                              left: 18,
                                               bottom: 8,
                                               child: Container(
-                                                width: 80,
-                                                height: 25,
+                                                width: 83,
+                                                height: 22,
                                                 decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -1580,66 +1587,78 @@ class _HomeKhususState extends State<HomeKhusus> {
                                           children: [
                                             const SizedBox(width: 12),
                                             Container(
-                                              width: 285,
+                                              width: 256,
                                               height: 140,
                                               margin: const EdgeInsets.only(
-                                                top: 16,
-                                                right: 40,
+                                                top: 12,
                                               ),
                                               child: SizedBox(
                                                 width: 266,
                                                 child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
                                                   children: [
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              right: 195,
-                                                              bottom: 3),
-                                                      child: Text(
-                                                        '3 hari yang lalu',
-                                                        maxLines: 1,
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
-                                                        textAlign:
-                                                            TextAlign.start,
-                                                        style:
-                                                            GoogleFonts.inter(
-                                                          fontSize: 12,
-                                                          fontStyle:
-                                                              FontStyle.italic,
-                                                        ),
-                                                      ),
-                                                    ),
                                                     Text(
-                                                      'Seru! Salurkan Donasi Alat Kesenian untuk Anak-anak Desa Wagiri',
-                                                      maxLines: 2,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      textAlign:
-                                                          TextAlign.start,
-                                                      style: GoogleFonts.inter(
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      'Pada hari jumat tanggal 5 Mei 2023, komunitas Desa Wagiri membagikan alat kesenian',
+                                                      '3 hari yang lalu',
                                                       maxLines: 1,
                                                       overflow:
                                                           TextOverflow.ellipsis,
                                                       textAlign:
                                                           TextAlign.start,
                                                       style: GoogleFonts.inter(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.w400,
+                                                        fontSize: 12,
+                                                        fontStyle:
+                                                            FontStyle.italic,
+                                                      ),
+                                                    ),
+                                                    const SizedBox(height: 4),
+                                                    Container(
+                                                      margin:
+                                                          const EdgeInsets.only(
+                                                              right: 16),
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            'Seru! Salurkan Donasi Alat Kesenian untuk Anak-anak Desa Wagiri',
+                                                            style: GoogleFonts
+                                                                .inter(
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                            ),
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            maxLines: 2,
+                                                            textAlign:
+                                                                TextAlign.left,
+                                                          ),
+                                                          const SizedBox(
+                                                              height: 4),
+                                                          Text(
+                                                            'Pada hari jumat tanggal 5 Mei 2023, komunitas Desa Wagiri membagikan alat kesenian',
+                                                            maxLines: 1,
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            textAlign:
+                                                                TextAlign.start,
+                                                            style: GoogleFonts
+                                                                .inter(
+                                                              fontSize: 14,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                     const SizedBox(height: 8),
                                                     SizedBox(
-                                                      width: 600,
-                                                      height: 30,
+                                                      width: 240,
+                                                      height: 44,
                                                       child: TextButton(
                                                         onPressed: () {
                                                           Navigator.push(
@@ -1691,607 +1710,156 @@ class _HomeKhususState extends State<HomeKhusus> {
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  height: 160,
-                                  margin: const EdgeInsets.only(
-                                      left: 12, right: 12),
-                                  child: Card(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: BorderSide(
-                                        width: 1,
-                                        color: ColorStyle().kotakColor,
-                                      ),
-                                    ),
-                                    child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Column(children: [
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 20, top: 10),
-                                              child: SizedBox(
-                                                width: 100,
-                                                height: 100,
-                                                child: Image.asset(
-                                                  'assets/fundraising.png',
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(height: 5),
-                                            Container(
-                                              margin: const EdgeInsets.only(
-                                                  left: 18),
-                                              width: 70,
-                                              height: 25,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(32.0),
-                                                color: ColorStyle().buttonColor,
-                                              ),
-                                              child: Container(
-                                                alignment: Alignment.center,
-                                                child: Text(
-                                                  'Volunteer',
-                                                  textAlign: TextAlign.center,
-                                                  style: GoogleFonts.inter(
-                                                    color:
-                                                        const Color(0xFF444CE7),
-                                                    fontSize: 12,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ]),
-                                          Row(children: [
-                                            Container(
-                                              width: 285,
-                                              height: 140,
-                                              margin: const EdgeInsets.only(
-                                                top: 16,
-                                                right: 40,
-                                              ),
-                                              child: Column(children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          right: 195,
-                                                          bottom: 3),
-                                                  child: Text(
-                                                    '3 hari yang lalu',
-                                                    maxLines: 1,
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
-                                                    textAlign: TextAlign.start,
-                                                    style: GoogleFonts.inter(
-                                                      fontSize: 12,
-                                                      fontStyle:
-                                                          FontStyle.italic,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Text(
-                                                  'Seru! Salurkan Donasi Alat Kesenian untuk Anak-anak Desa Wagiri',
-                                                  maxLines: 2,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.start,
-                                                  style: GoogleFonts.inter(
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                                ),
-                                                Text(
-                                                  'Pada hari jumat tanggal 5 Mei 2023, komunitas Desa Wagiri membagikan alat kesenian',
-                                                  maxLines: 1,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.start,
-                                                  style: GoogleFonts.inter(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 8),
-                                                SizedBox(
-                                                  width: 600,
-                                                  height: 30,
-                                                  child: TextButton(
-                                                    onPressed: () {},
-                                                    style: ButtonStyle(
-                                                      backgroundColor:
-                                                          MaterialStateProperty
-                                                              .all<Color>(
-                                                        ColorStyle()
-                                                            .buttonColor,
-                                                      ),
-                                                      shape: MaterialStateProperty
-                                                          .all<
-                                                              RoundedRectangleBorder>(
-                                                        RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      32.0),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    child: Text(
-                                                      'Baca selengkapnya',
-                                                      style: GoogleFonts.inter(
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        fontSize: 14,
-                                                        color: ColorStyle()
-                                                            .primaryblue,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ]),
-                                            ),
-                                          ]),
-                                        ]),
-                                  ),
-                                ),
-                                Container(
-                                  height: 160,
-                                  margin: const EdgeInsets.only(
-                                      left: 12, right: 12),
-                                  child: Card(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: BorderSide(
-                                        width: 1,
-                                        color: ColorStyle().kotakColor,
-                                      ),
-                                    ),
-                                    child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Column(children: [
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 20, top: 10),
-                                              child: SizedBox(
-                                                width: 100,
-                                                height: 100,
-                                                child: Image.asset(
-                                                  'assets/fundraising.png',
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(height: 5),
-                                            Container(
-                                              margin: const EdgeInsets.only(
-                                                  left: 18),
-                                              width: 70,
-                                              height: 25,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(32.0),
-                                                color: ColorStyle().buttonColor,
-                                              ),
-                                              child: Container(
-                                                alignment: Alignment.center,
-                                                child: Text(
-                                                  'Volunteer',
-                                                  textAlign: TextAlign.center,
-                                                  style: GoogleFonts.inter(
-                                                    color:
-                                                        const Color(0xFF444CE7),
-                                                    fontSize: 12,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ]),
-                                          Row(children: [
-                                            Container(
-                                              width: 285,
-                                              height: 140,
-                                              margin: const EdgeInsets.only(
-                                                top: 16,
-                                                right: 40,
-                                              ),
-                                              child: Column(children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          right: 195,
-                                                          bottom: 3),
-                                                  child: Text(
-                                                    '3 hari yang lalu',
-                                                    maxLines: 1,
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
-                                                    textAlign: TextAlign.start,
-                                                    style: GoogleFonts.inter(
-                                                      fontSize: 12,
-                                                      fontStyle:
-                                                          FontStyle.italic,
-                                                    ),
-                                                  ),
-                                                ),
-                                                Text(
-                                                  'Seru! Salurkan Donasi Alat Kesenian untuk Anak-anak Desa Wagiri',
-                                                  maxLines: 2,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.start,
-                                                  style: GoogleFonts.inter(
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                                ),
-                                                Text(
-                                                  'Pada hari jumat tanggal 5 Mei 2023, komunitas Desa Wagiri membagikan alat kesenian',
-                                                  maxLines: 1,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.start,
-                                                  style: GoogleFonts.inter(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 8),
-                                                SizedBox(
-                                                  width: 600,
-                                                  height: 30,
-                                                  child: TextButton(
-                                                    onPressed: () {},
-                                                    style: ButtonStyle(
-                                                      backgroundColor:
-                                                          MaterialStateProperty
-                                                              .all<Color>(
-                                                        ColorStyle()
-                                                            .buttonColor,
-                                                      ),
-                                                      shape: MaterialStateProperty
-                                                          .all<
-                                                              RoundedRectangleBorder>(
-                                                        RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      32.0),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    child: Text(
-                                                      'Baca selengkapnya',
-                                                      style: GoogleFonts.inter(
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        fontSize: 14,
-                                                        color: ColorStyle()
-                                                            .primaryblue,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ]),
-                                            ),
-                                          ]),
-                                        ]),
-                                  ),
-                                ),
                                 const SizedBox(height: 16),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 16),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Organizer',
-                                        style: GoogleFonts.inter(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w600,
-                                        ),
+                                SizedBox(
+                                  width: 396,
+                                  height: 162,
+                                  child: Card(
+                                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      side: BorderSide(
+                                        width: 1,
+                                        color: ColorStyle().kotakColor,
                                       ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 10),
-                                        child: TextButton(
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const OrganizationScreen()),
-                                            );
-                                          },
-                                          child: Text(
-                                            'LIHAT SEMUA',
-                                            style: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 14,
-                                              color: ColorStyle().primaryblue,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(height: 10),
-                                      Container(
-                                        height: 300,
-                                        padding: const EdgeInsets.only(
-                                            left: 16, right: 16),
-                                        alignment: Alignment.center,
-                                        child: Card(
-                                          clipBehavior:
-                                              Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            side: BorderSide(
-                                              width: 1,
-                                              color: ColorStyle().kotakColor,
-                                            ),
-                                          ),
-                                          child: Column(children: [
-                                            Stack(
-                                              children: [
-                                                Container(
-                                                  margin: const EdgeInsets.only(
-                                                      top: 10),
-                                                  child: SizedBox(
-                                                    width: 440,
-                                                    height: 150,
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              20),
-                                                      child: Image.network(
-                                                        "assets/organizer.png",
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                    ),
-                                                  ),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Stack(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 12, top: 12),
+                                              child: SizedBox(
+                                                width: 94,
+                                                height: 94,
+                                                child: Image.asset(
+                                                  'assets/fundraising.png',
+                                                  fit: BoxFit.cover,
                                                 ),
-                                              ],
+                                              ),
                                             ),
-                                            const SizedBox(height: 8),
-                                            Container(
-                                              margin: const EdgeInsets.only(
-                                                  left: 16),
-                                              child: Row(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  const Icon(
-                                                    Icons.verified,
-                                                    color: Color(0xFF444CE7),
-                                                    size: Checkbox.width,
-                                                  ),
-                                                  const SizedBox(width: 5),
-                                                  Text(
-                                                    'Hyundai',
-                                                    textAlign: TextAlign.start,
+                                            Positioned(
+                                              left: 18,
+                                              bottom: 8,
+                                              child: Container(
+                                                width: 83,
+                                                height: 22,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          32.0),
+                                                  color:
+                                                      ColorStyle().buttonColor,
+                                                ),
+                                                child: Container(
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    'Fundraising',
+                                                    textAlign: TextAlign.center,
                                                     style: GoogleFonts.inter(
                                                       color: const Color(
                                                           0xFF444CE7),
-                                                      fontSize: 14,
+                                                      fontSize: 12,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                     ),
                                                   ),
-                                                ],
-                                              ),
-                                            ),
-                                            const SizedBox(height: 8),
-                                            Container(
-                                              margin: const EdgeInsets.only(
-                                                  left: 16, right: 16),
-                                              child: Text(
-                                                'PT Hyundai adalah anak perusahaan penjualan dan distributor resmi Hyundai Motor Company yang merupakan produsen otomotif di Indonesia.',
-                                                style: GoogleFonts.inter(
-                                                  fontWeight: FontWeight.w400,
-                                                  fontSize: 14,
                                                 ),
-                                                overflow: TextOverflow.ellipsis,
-                                                maxLines: 2,
                                               ),
                                             ),
-                                            const SizedBox(height: 10),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 16, right: 16),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  SizedBox(
-                                                    width: 200,
-                                                    height: 40,
-                                                    child: TextButton(
-                                                      onPressed: () {},
-                                                      style: ButtonStyle(
-                                                        backgroundColor:
-                                                            MaterialStateProperty
-                                                                .all<Color>(
-                                                          ColorStyle()
-                                                              .buttonColor,
-                                                        ),
-                                                        shape: MaterialStateProperty
-                                                            .all<
-                                                                RoundedRectangleBorder>(
-                                                          RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        32.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      child: Text(
-                                                        'Kunjungi profil',
-                                                        style:
-                                                            GoogleFonts.inter(
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontSize: 14,
-                                                          color: ColorStyle()
-                                                              .primaryblue,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    width: 200,
-                                                    height: 40,
-                                                    child: TextButton(
-                                                      onPressed: () {},
-                                                      style: ButtonStyle(
-                                                        backgroundColor:
-                                                            MaterialStateProperty
-                                                                .all<Color>(
-                                                          ColorStyle()
-                                                              .kotakColor,
-                                                        ),
-                                                        shape: MaterialStateProperty
-                                                            .all<
-                                                                RoundedRectangleBorder>(
-                                                          RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        32.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      child: Text(
-                                                        'Ikuti',
-                                                        style:
-                                                            GoogleFonts.inter(
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontSize: 14,
-                                                          color: ColorStyle()
-                                                              .backgroundfield,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ]),
+                                          ],
                                         ),
-                                      ),
-                                      const SizedBox(height: 10),
-                                      Container(
-                                        height: 300,
-                                        padding: const EdgeInsets.only(
-                                            left: 16, right: 16),
-                                        alignment: Alignment.center,
-                                        child: Card(
-                                          clipBehavior:
-                                              Clip.antiAliasWithSaveLayer,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(25),
-                                            side: BorderSide(
-                                              width: 1,
-                                              color: ColorStyle().kotakColor,
-                                            ),
-                                          ),
-                                          child: Column(
-                                            children: [
-                                              Stack(
-                                                children: [
-                                                  Container(
-                                                    margin:
-                                                        const EdgeInsets.only(
-                                                            top: 10),
-                                                    child: SizedBox(
-                                                      width: 440,
-                                                      height: 150,
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(20),
-                                                        child: Image.network(
-                                                          "assets/organizer.png",
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
+                                        Row(
+                                          children: [
+                                            const SizedBox(width: 12),
+                                            Container(
+                                              width: 256,
+                                              height: 140,
+                                              margin: const EdgeInsets.only(
+                                                top: 12,
                                               ),
-                                              const SizedBox(height: 8),
-                                              Container(
-                                                margin: const EdgeInsets.only(
-                                                    left: 16),
-                                                child: Row(
+                                              child: SizedBox(
+                                                width: 266,
+                                                child: Column(
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
                                                   children: [
-                                                    const Icon(
-                                                      Icons.verified,
-                                                      color: Color(0xFF444CE7),
-                                                      size: Checkbox.width,
-                                                    ),
-                                                    const SizedBox(width: 5),
                                                     Text(
-                                                      'Hyundai',
+                                                      '3 hari yang lalu',
+                                                      maxLines: 1,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
                                                       textAlign:
                                                           TextAlign.start,
                                                       style: GoogleFonts.inter(
-                                                        color: const Color(
-                                                            0xFF444CE7),
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.w500,
+                                                        fontSize: 12,
+                                                        fontStyle:
+                                                            FontStyle.italic,
                                                       ),
                                                     ),
-                                                  ],
-                                                ),
-                                              ),
-                                              const SizedBox(height: 8),
-                                              Container(
-                                                margin: const EdgeInsets.only(
-                                                    left: 16, right: 16),
-                                                child: Text(
-                                                  'PT Hyundai adalah anak perusahaan penjualan dan distributor resmi Hyundai Motor Company yang merupakan produsen otomotif di Indonesia.',
-                                                  style: GoogleFonts.inter(
-                                                    fontWeight: FontWeight.w400,
-                                                    fontSize: 14,
-                                                  ),
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  maxLines: 2,
-                                                ),
-                                              ),
-                                              const SizedBox(height: 10),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 16, right: 16),
-                                                child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
+                                                    const SizedBox(height: 4),
+                                                    Container(
+                                                      margin:
+                                                          const EdgeInsets.only(
+                                                              right: 16),
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            'Seru! Salurkan Donasi Alat Kesenian untuk Anak-anak Desa Wagiri',
+                                                            style: GoogleFonts
+                                                                .inter(
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                            ),
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            maxLines: 2,
+                                                            textAlign:
+                                                                TextAlign.left,
+                                                          ),
+                                                          const SizedBox(
+                                                              height: 4),
+                                                          Text(
+                                                            'Pada hari jumat tanggal 5 Mei 2023, komunitas Desa Wagiri membagikan alat kesenian',
+                                                            maxLines: 1,
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            textAlign:
+                                                                TextAlign.start,
+                                                            style: GoogleFonts
+                                                                .inter(
+                                                              fontSize: 14,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    const SizedBox(height: 8),
                                                     SizedBox(
-                                                      width: 200,
-                                                      height: 40,
+                                                      width: 240,
+                                                      height: 44,
                                                       child: TextButton(
-                                                        onPressed: () {},
+                                                        onPressed: () {
+                                                          Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        const Baca()),
+                                                          );
+                                                        },
                                                         style: ButtonStyle(
                                                           backgroundColor:
                                                               MaterialStateProperty
@@ -2311,43 +1879,7 @@ class _HomeKhususState extends State<HomeKhusus> {
                                                           ),
                                                         ),
                                                         child: Text(
-                                                          'Kunjungi profil',
-                                                          style:
-                                                              GoogleFonts.inter(
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontSize: 14,
-                                                            color: ColorStyle()
-                                                                .primaryblue,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 200,
-                                                      height: 40,
-                                                      child: TextButton(
-                                                        onPressed: () {},
-                                                        style: ButtonStyle(
-                                                          backgroundColor:
-                                                              MaterialStateProperty
-                                                                  .all<Color>(
-                                                            ColorStyle()
-                                                                .kotakColor,
-                                                          ),
-                                                          shape: MaterialStateProperty
-                                                              .all<
-                                                                  RoundedRectangleBorder>(
-                                                            RoundedRectangleBorder(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          32.0),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        child: Text(
-                                                          'Ikuti',
+                                                          'Baca selengkapnya',
                                                           style:
                                                               GoogleFonts.inter(
                                                             fontWeight:
@@ -2362,11 +1894,610 @@ class _HomeKhususState extends State<HomeKhusus> {
                                                   ],
                                                 ),
                                               ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                                SizedBox(
+                                  width: 396,
+                                  height: 162,
+                                  child: Card(
+                                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                      side: BorderSide(
+                                        width: 1,
+                                        color: ColorStyle().kotakColor,
+                                      ),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Stack(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 12, top: 12),
+                                              child: SizedBox(
+                                                width: 94,
+                                                height: 94,
+                                                child: Image.asset(
+                                                  'assets/fundraising.png',
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                            ),
+                                            Positioned(
+                                              left: 18,
+                                              bottom: 8,
+                                              child: Container(
+                                                width: 83,
+                                                height: 22,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          32.0),
+                                                  color:
+                                                      ColorStyle().buttonColor,
+                                                ),
+                                                child: Container(
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                    'Fundraising',
+                                                    textAlign: TextAlign.center,
+                                                    style: GoogleFonts.inter(
+                                                      color: const Color(
+                                                          0xFF444CE7),
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            const SizedBox(width: 12),
+                                            Container(
+                                              width: 256,
+                                              height: 140,
+                                              margin: const EdgeInsets.only(
+                                                top: 12,
+                                              ),
+                                              child: SizedBox(
+                                                width: 266,
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      '3 hari yang lalu',
+                                                      maxLines: 1,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                      textAlign:
+                                                          TextAlign.start,
+                                                      style: GoogleFonts.inter(
+                                                        fontSize: 12,
+                                                        fontStyle:
+                                                            FontStyle.italic,
+                                                      ),
+                                                    ),
+                                                    const SizedBox(height: 4),
+                                                    Container(
+                                                      margin:
+                                                          const EdgeInsets.only(
+                                                              right: 16),
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            'Seru! Salurkan Donasi Alat Kesenian untuk Anak-anak Desa Wagiri',
+                                                            style: GoogleFonts
+                                                                .inter(
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                            ),
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            maxLines: 2,
+                                                            textAlign:
+                                                                TextAlign.left,
+                                                          ),
+                                                          const SizedBox(
+                                                              height: 4),
+                                                          Text(
+                                                            'Pada hari jumat tanggal 5 Mei 2023, komunitas Desa Wagiri membagikan alat kesenian',
+                                                            maxLines: 1,
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            textAlign:
+                                                                TextAlign.start,
+                                                            style: GoogleFonts
+                                                                .inter(
+                                                              fontSize: 14,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    const SizedBox(height: 8),
+                                                    SizedBox(
+                                                      width: 240,
+                                                      height: 44,
+                                                      child: TextButton(
+                                                        onPressed: () {
+                                                          Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        const Baca()),
+                                                          );
+                                                        },
+                                                        style: ButtonStyle(
+                                                          backgroundColor:
+                                                              MaterialStateProperty
+                                                                  .all<Color>(
+                                                            ColorStyle()
+                                                                .buttonColor,
+                                                          ),
+                                                          shape: MaterialStateProperty
+                                                              .all<
+                                                                  RoundedRectangleBorder>(
+                                                            RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          32.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        child: Text(
+                                                          'Baca selengkapnya',
+                                                          style:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontSize: 14,
+                                                            color: ColorStyle()
+                                                                .primaryblue,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                                const Divider(),
+                                const SizedBox(height: 12),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Video Promosi',
+                                      style: GoogleFonts.inter(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Berita()),
+                                        );
+                                      },
+                                      child: Text(
+                                        'LIHAT SEMUA',
+                                        style: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14,
+                                          color: ColorStyle().primaryblue,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 24),
+                                SingleChildScrollView(
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        'assets/videopromosi.png',
+                                        fit: BoxFit.cover,
+                                      ),
+                                      const SizedBox(width: 16),
+                                      Image.asset(
+                                        'assets/videopromosi.png',
+                                        fit: BoxFit.cover,
+                                      ),
+                                      const SizedBox(width: 16),
+                                      Image.asset(
+                                        'assets/videopromosi.png',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                                const Divider(),
+                                const SizedBox(height: 12),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Organizer',
+                                      style: GoogleFonts.inter(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const OrganizationScreen()),
+                                        );
+                                      },
+                                      child: Text(
+                                        'LIHAT SEMUA',
+                                        style: GoogleFonts.inter(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 14,
+                                          color: ColorStyle().primaryblue,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 24),
+                                Container(
+                                  width: 396,
+                                  height: 330,
+                                  alignment: Alignment.center,
+                                  child: Card(
+                                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(25),
+                                      side: BorderSide(
+                                        width: 1,
+                                        color: ColorStyle().kotakColor,
+                                      ),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Stack(
+                                          children: [
+                                            Container(
+                                              margin: const EdgeInsets.all(12),
+                                              child: SizedBox(
+                                                width: 372,
+                                                height: 148,
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(12),
+                                                  child: Image.network(
+                                                    "assets/organizer.png",
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 10),
+                                        Container(
+                                          margin:
+                                              const EdgeInsets.only(left: 12),
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              const Icon(
+                                                Icons.verified,
+                                                color: Color(0xFF444CE7),
+                                                size: Checkbox.width,
+                                              ),
+                                              const SizedBox(width: 5),
+                                              Text(
+                                                'Hyundai',
+                                                textAlign: TextAlign.start,
+                                                style: GoogleFonts.inter(
+                                                  color:
+                                                      const Color(0xFF444CE7),
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ),
+                                        const SizedBox(height: 8),
+                                        Container(
+                                          margin: const EdgeInsets.only(
+                                              left: 12, right: 12),
+                                          child: Text(
+                                            'PT Hyundai adalah anak perusahaan penjualan dan distributor resmi Hyundai Motor Company yang merupakan produsen otomotif di Indonesia.',
+                                            style: GoogleFonts.inter(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                            ),
+                                            overflow: TextOverflow.ellipsis,
+                                            maxLines: 2,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
+                                        Container(
+                                          margin: const EdgeInsets.only(
+                                              left: 12, right: 12, bottom: 16),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              SizedBox(
+                                                width: 182,
+                                                height: 44,
+                                                child: TextButton(
+                                                  onPressed: () {},
+                                                  style: ButtonStyle(
+                                                    backgroundColor:
+                                                        MaterialStateProperty
+                                                            .all<Color>(
+                                                      ColorStyle().buttonColor,
+                                                    ),
+                                                    shape: MaterialStateProperty
+                                                        .all<
+                                                            RoundedRectangleBorder>(
+                                                      RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(32.0),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  child: Text(
+                                                    'Kunjungi profil',
+                                                    style: GoogleFonts.inter(
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontSize: 14,
+                                                      color: ColorStyle()
+                                                          .primaryblue,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 164,
+                                                height: 44,
+                                                child: TextButton(
+                                                  onPressed: () {},
+                                                  style: ButtonStyle(
+                                                    backgroundColor:
+                                                        MaterialStateProperty
+                                                            .all<Color>(
+                                                      ColorStyle().kotakColor,
+                                                    ),
+                                                    shape: MaterialStateProperty
+                                                        .all<
+                                                            RoundedRectangleBorder>(
+                                                      RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(32.0),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  child: Text(
+                                                    'Ikuti',
+                                                    style: GoogleFonts.inter(
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontSize: 14,
+                                                      color: ColorStyle()
+                                                          .backgroundfield,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 16),
+                                Container(
+                                  width: 396,
+                                  height: 330,
+                                  alignment: Alignment.center,
+                                  child: Card(
+                                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(25),
+                                      side: BorderSide(
+                                        width: 1,
+                                        color: ColorStyle().kotakColor,
                                       ),
-                                    ],
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Stack(
+                                          children: [
+                                            Container(
+                                              margin: const EdgeInsets.all(12),
+                                              child: SizedBox(
+                                                width: 372,
+                                                height: 148,
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(12),
+                                                  child: Image.network(
+                                                    "assets/organizer.png",
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 10),
+                                        Container(
+                                          margin:
+                                              const EdgeInsets.only(left: 12),
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              const Icon(
+                                                Icons.verified,
+                                                color: Color(0xFF444CE7),
+                                                size: Checkbox.width,
+                                              ),
+                                              const SizedBox(width: 5),
+                                              Text(
+                                                'Hyundai',
+                                                textAlign: TextAlign.start,
+                                                style: GoogleFonts.inter(
+                                                  color:
+                                                      const Color(0xFF444CE7),
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8),
+                                        Container(
+                                          margin: const EdgeInsets.only(
+                                              left: 12, right: 12),
+                                          child: Text(
+                                            'PT Hyundai adalah anak perusahaan penjualan dan distributor resmi Hyundai Motor Company yang merupakan produsen otomotif di Indonesia.',
+                                            style: GoogleFonts.inter(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14,
+                                            ),
+                                            overflow: TextOverflow.ellipsis,
+                                            maxLines: 2,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
+                                        Container(
+                                          margin: const EdgeInsets.only(
+                                              left: 12, right: 12, bottom: 16),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              SizedBox(
+                                                width: 182,
+                                                height: 44,
+                                                child: TextButton(
+                                                  onPressed: () {},
+                                                  style: ButtonStyle(
+                                                    backgroundColor:
+                                                        MaterialStateProperty
+                                                            .all<Color>(
+                                                      ColorStyle().buttonColor,
+                                                    ),
+                                                    shape: MaterialStateProperty
+                                                        .all<
+                                                            RoundedRectangleBorder>(
+                                                      RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(32.0),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  child: Text(
+                                                    'Kunjungi profil',
+                                                    style: GoogleFonts.inter(
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontSize: 14,
+                                                      color: ColorStyle()
+                                                          .primaryblue,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 164,
+                                                height: 44,
+                                                child: TextButton(
+                                                  onPressed: () {},
+                                                  style: ButtonStyle(
+                                                    backgroundColor:
+                                                        MaterialStateProperty
+                                                            .all<Color>(
+                                                      ColorStyle().kotakColor,
+                                                    ),
+                                                    shape: MaterialStateProperty
+                                                        .all<
+                                                            RoundedRectangleBorder>(
+                                                      RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(32.0),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  child: Text(
+                                                    'Ikuti',
+                                                    style: GoogleFonts.inter(
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontSize: 14,
+                                                      color: ColorStyle()
+                                                          .backgroundfield,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],

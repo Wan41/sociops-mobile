@@ -87,7 +87,8 @@ class Alert {
               textAlign: TextAlign.center,
               maxLines: 2,
             ),
-            contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             actions: [
               ElevatedButton(
                 onPressed: () {

@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:sociops/screen/fitur_organization/round_button.dart';
 import 'package:sociops/screen/fitur_organization/search_box.dart';
@@ -9,7 +11,6 @@ class Berita extends StatefulWidget {
   const Berita({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _BeritaState createState() => _BeritaState();
 }
 
@@ -47,7 +48,7 @@ class _BeritaState extends State<Berita> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
-                  Expanded(
+                  const Expanded(
                     child: SearchBox(),
                   ),
                   const SizedBox(width: 16),
@@ -112,7 +113,7 @@ class _BeritaState extends State<Berita> {
                                             _selectedFilter = 'Day';
                                           });
                                         },
-                                        child: Container(
+                                        child: SizedBox(
                                           height: 35,
                                           width: 20, // Mengatur tinggi kotak
                                           child: CategoryBox(
@@ -132,7 +133,7 @@ class _BeritaState extends State<Berita> {
                                             _selectedFilter = 'Day';
                                           });
                                         },
-                                        child: Container(
+                                        child: SizedBox(
                                           height: 35,
                                           width: 20, // Mengatur tinggi kotak
                                           child: CategoryBox(
@@ -156,7 +157,7 @@ class _BeritaState extends State<Berita> {
                                             _selectedFilter = 'Day';
                                           });
                                         },
-                                        child: Container(
+                                        child: SizedBox(
                                           height: 35,
                                           width: 20, // Mengatur tinggi kotak
                                           child: CategoryBox(
@@ -176,7 +177,7 @@ class _BeritaState extends State<Berita> {
                                             _selectedFilter = 'Day';
                                           });
                                         },
-                                        child: Container(
+                                        child: SizedBox(
                                           height: 35,
                                           width: 20, // Mengatur tinggi kotak
                                           child: CategoryBox(
@@ -204,7 +205,7 @@ class _BeritaState extends State<Berita> {
                                             _selectedFilter = 'Day';
                                           });
                                         },
-                                        child: Container(
+                                        child: SizedBox(
                                           height: 35,
                                           width: 20, // Mengatur tinggi kotak
                                           child: CategoryBox(
@@ -224,7 +225,7 @@ class _BeritaState extends State<Berita> {
                                             _selectedFilter = 'Day';
                                           });
                                         },
-                                        child: Container(
+                                        child: SizedBox(
                                           height: 35,
                                           width: 20, // Mengatur tinggi kotak
                                           child: CategoryBox(
@@ -248,7 +249,7 @@ class _BeritaState extends State<Berita> {
                                             _selectedFilter = 'Day';
                                           });
                                         },
-                                        child: Container(
+                                        child: SizedBox(
                                           height: 35,
                                           width: 20, // Mengatur tinggi kotak
                                           child: CategoryBox(
@@ -268,7 +269,7 @@ class _BeritaState extends State<Berita> {
                                             _selectedFilter = 'Day';
                                           });
                                         },
-                                        child: Container(
+                                        child: SizedBox(
                                           height: 35,
                                           width: 20, // Mengatur tinggi kotak
                                           child: CategoryBox(
@@ -332,23 +333,23 @@ class _BeritaState extends State<Berita> {
                 height: 30,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: [
-                    const CategoryBox(
+                  children: const [
+                    CategoryBox(
                       text: 'Semua',
                       color: AppColors.arrowColor,
                     ),
-                    const SizedBox(width: 8),
-                    const CategoryBox(
+                    SizedBox(width: 8),
+                    CategoryBox(
                       text: 'Umum',
                       color: AppColors.arrowColor,
                     ),
-                    const SizedBox(width: 8),
-                    const CategoryBox(
+                    SizedBox(width: 8),
+                    CategoryBox(
                       text: 'Bencana',
                       color: AppColors.arrowColor,
                     ),
-                    const SizedBox(width: 8),
-                    const CategoryBox(
+                    SizedBox(width: 8),
+                    CategoryBox(
                       text: 'Pendidikan',
                       color: AppColors.arrowColor,
                     ),

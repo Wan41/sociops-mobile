@@ -34,8 +34,8 @@ class OrganizationScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: SearchBox(),
             ),
             const SizedBox(height: 16),
@@ -150,16 +150,14 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
             ),
           ),
           const SizedBox(height: 16),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Container(
-              child: const Text(
-                'PT Hyundai adalah anak perusahaan penjualan dan distributor resmi Hyundai Motor Company yang merupakan produsen otomotif di Indonesia.',
-                style: Styles.resultTextStyle,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.justify,
-              ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              'PT Hyundai adalah anak perusahaan penjualan dan distributor resmi Hyundai Motor Company yang merupakan produsen otomotif di Indonesia.',
+              style: Styles.resultTextStyle,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.justify,
             ),
           ),
           const SizedBox(height: 16),
@@ -171,7 +169,8 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ProfilePage()),
+                      MaterialPageRoute(
+                          builder: (context) => const ProfilePage()),
                     );
                   },
                   child: Container(

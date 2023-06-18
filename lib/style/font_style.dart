@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -121,7 +123,7 @@ class Styles {
     color: Colors.black,
   );
 
-    static const TextStyle resultTex = TextStyle(
+  static const TextStyle resultTex = TextStyle(
     fontFamily: 'Inter',
     fontSize: 24,
     fontWeight: FontWeight.bold,

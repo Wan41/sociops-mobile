@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:sociops/screen/fitur_organization/galang_dana.dart';
 import 'package:sociops/screen/fitur_organization/round_button.dart';
@@ -199,8 +201,8 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
             ),
           ),
           const SizedBox(height: 16),
-          Padding(
-            padding: const EdgeInsets.only(left: 16),
+          const Padding(
+            padding: EdgeInsets.only(left: 16),
             child: Align(
               alignment: Alignment.center,
               child: Column(
@@ -208,15 +210,15 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
+                      Text(
                         'Hyundai',
                         style: Styles.result3,
                       ),
-                      const SizedBox(width: 8),
-                      Container(
+                      SizedBox(width: 8),
+                      SizedBox(
                         width: 25,
                         height: 25,
-                        child: const Icon(
+                        child: Icon(
                           Icons.verified,
                           color: AppColors.arrowColor,
                           size: 20,
@@ -224,8 +226,8 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 12),
-                  const Row(
+                  SizedBox(height: 12),
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Column(

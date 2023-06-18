@@ -27,7 +27,8 @@ class GalangDana extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ProfilePage()),
+                        MaterialPageRoute(
+                            builder: (context) => const ProfilePage()),
                       );
                     },
                   ),
@@ -278,9 +279,9 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                   'Gerakan #SampaiTujuanDenganAman, Hyundai Bekerjasama dengan Kepolisian Indonesia',
                   style: Styles.resultTextStyle),
               const SizedBox(height: 8),
-              Container(
+              const SizedBox(
                 height: 20,
-                child: const Text(
+                child: Text(
                   'Kegiatan kampanye online yang diadakan oleh Perusahaan Hyundai',
                   style: TextStyle(
                     fontSize: 14,

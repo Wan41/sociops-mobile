@@ -124,67 +124,65 @@ class CustomFollowButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Seru! Salurkan Donasi Alat Kesenian untuk Anak-anak Desa Wagiri',
-            style: Styles.result4,
-          ),
-          const SizedBox(height: 8),
-          const Text(
-            'By Nailul Izah',
-            style: Styles.result5,
-          ),
-          const SizedBox(height: 8),
-          const Text(
-            '11 May 2023',
-            style: Styles.result6,
-          ),
-          const SizedBox(
-            height: 10,
-            width: 5,
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProfilePage()),
-              );
-            },
-            child: Container(
-              width: 55,
-              height: 25,
-              decoration: BoxDecoration(
-                color: AppColors.Button,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: const Center(
-                child: Text('Donation', style: Styles.result7),
-              ),
-            ),
-          ),
-          const SizedBox(height: 16),
-          Container(
-            width: 500,
-            height: 200,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Seru! Salurkan Donasi Alat Kesenian untuk Anak-anak Desa Wagiri',
+          style: Styles.result4,
+        ),
+        const SizedBox(height: 8),
+        const Text(
+          'By Nailul Izah',
+          style: Styles.result5,
+        ),
+        const SizedBox(height: 8),
+        const Text(
+          '11 May 2023',
+          style: Styles.result6,
+        ),
+        const SizedBox(
+          height: 10,
+          width: 5,
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ProfilePage()),
+            );
+          },
+          child: Container(
+            width: 55,
+            height: 25,
             decoration: BoxDecoration(
-              color: Colors.grey,
-              borderRadius: BorderRadius.circular(8),
-              image: const DecorationImage(
-                image: AssetImage('assets/hyundai.jpg'),
-                fit: BoxFit.cover,
-              ),
+              color: AppColors.Button,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Center(
+              child: Text('Donation', style: Styles.result7),
             ),
           ),
-          const SizedBox(height: 16),
-          const Text(
-            'Proin et euismod diam. Duis fermentum felis nisi, ut lobortis lectus mollis non. Integer pellentesque erat eu diam pharetra auctor id et nulla. Nam sodales arcu nec blandit fringilla. Ut vitae ligula vel lectus ultrices tempus ut id sem. Etiam egestas lacus scelerisque augue congue, sed rutrum sem lobortis. Pellentesque vel enim ante. Quisque hendrerit lobortis neque, ac tempor dui elementum vel. Duis vitae ante imperdiet, lacinia nulla sit amet, hendrerit erat. In ac lectus vulputate, pellentesque est et, interdum augue. Nam in sodales augue, non pellentesque orci. Nullam aliquet ante ut dolor molestie venenatis. Aliquam a erat quis nulla congue porttitor sit amet id nulla. Fusce pretium diam quam, vel consequat nibh feugiat id. Aenean laoreet auctor sollicitudin. Donec at sagittis nulla, sit amet lacinia eros.',
-            style: Styles.resultTextStyle,
+        ),
+        const SizedBox(height: 16),
+        Container(
+          width: 500,
+          height: 200,
+          decoration: BoxDecoration(
+            color: Colors.grey,
+            borderRadius: BorderRadius.circular(8),
+            image: const DecorationImage(
+              image: AssetImage('assets/hyundai.jpg'),
+              fit: BoxFit.cover,
+            ),
           ),
-        ],
-      ),
+        ),
+        const SizedBox(height: 16),
+        const Text(
+          'Proin et euismod diam. Duis fermentum felis nisi, ut lobortis lectus mollis non. Integer pellentesque erat eu diam pharetra auctor id et nulla. Nam sodales arcu nec blandit fringilla. Ut vitae ligula vel lectus ultrices tempus ut id sem. Etiam egestas lacus scelerisque augue congue, sed rutrum sem lobortis. Pellentesque vel enim ante. Quisque hendrerit lobortis neque, ac tempor dui elementum vel. Duis vitae ante imperdiet, lacinia nulla sit amet, hendrerit erat. In ac lectus vulputate, pellentesque est et, interdum augue. Nam in sodales augue, non pellentesque orci. Nullam aliquet ante ut dolor molestie venenatis. Aliquam a erat quis nulla congue porttitor sit amet id nulla. Fusce pretium diam quam, vel consequat nibh feugiat id. Aenean laoreet auctor sollicitudin. Donec at sagittis nulla, sit amet lacinia eros.',
+          style: Styles.resultTextStyle,
+        ),
+      ],
     );
   }
 }

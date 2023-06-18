@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sociops/screen/fitur_donation/detail_donate_screen.dart';
 import 'package:sociops/screen/fitur_donation/detail_donation_screen.dart';
+import 'package:sociops/screen/fitur_organization/notification_on.dart';
+import 'package:sociops/style/color_style.dart';
+import 'package:sociops/style/font_style.dart';
 
 class DonationScreen extends StatefulWidget {
   const DonationScreen({super.key});
@@ -12,6 +15,7 @@ class DonationScreen extends StatefulWidget {
 
 class _DonationScreenState extends State<DonationScreen> {
   bool isSorted = false;
+  String _selectedFilter = 'Day';
 
   @override
   Widget build(BuildContext context) {
@@ -39,37 +43,295 @@ class _DonationScreenState extends State<DonationScreen> {
             child: Column(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const SizedBox(
+                    Container(
+                      alignment: Alignment.centerLeft,
                       height: 48,
                       width: 276,
+                      decoration: BoxDecoration(
+                        color: const Color(0XFFF9FAFB),
+                        borderRadius: BorderRadius.circular(56),
+                      ),
                       child: TextField(
                         decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.search),
                           hintText: 'Cari',
-                          filled: true,
-                          fillColor: Color(0XFFF9FAFB),
+                          prefixIcon: const Icon(Icons.search),
                           border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(23),
                             borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.all(Radius.circular(56)),
                           ),
                         ),
                       ),
                     ),
-                    IconButton(
-                      icon: Icon(isSorted
-                          ? Icons.arrow_upward_rounded
-                          : Icons.arrow_downward_rounded),
-                      onPressed: () {
+                    const SizedBox(width: 12),
+                    GestureDetector(
+                      onTap: () {
                         setState(() {
                           isSorted = !isSorted;
                         });
                       },
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: const BoxDecoration(
+                          color: AppColors.primaryColor,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          isSorted
+                              ? Icons.arrow_downward_rounded
+                              : Icons.arrow_upward_rounded,
+                          color: AppColors.arrowColor,
+                        ),
+                      ),
                     ),
-                    IconButton(
-                      icon: const Icon(Icons.filter_list_sharp),
-                      onPressed: () {},
+                    const SizedBox(width: 12),
+                    GestureDetector(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            return Container(
+                              padding: const EdgeInsets.all(16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Align(
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      'Choose Filter',
+                                      style: Styles.resultTextStyle.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 20),
+                                  const Text(
+                                    'Date',
+                                    style: Styles.resultTextStyle,
+                                    textAlign: TextAlign.start,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              _selectedFilter = 'Day';
+                                            });
+                                          },
+                                          child: SizedBox(
+                                            height: 35,
+                                            width: 20, // Mengatur tinggi kotak
+                                            child: CategoryBox(
+                                              text: 'Day',
+                                              color: _selectedFilter == 'Day'
+                                                  ? AppColors.arrowColor
+                                                  : Colors.transparent,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Expanded(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              _selectedFilter = 'Day';
+                                            });
+                                          },
+                                          child: SizedBox(
+                                            height: 35,
+                                            width: 20, // Mengatur tinggi kotak
+                                            child: CategoryBox(
+                                              text: 'Week',
+                                              color: _selectedFilter == 'Day'
+                                                  ? AppColors.arrowColor
+                                                  : Colors.transparent,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              _selectedFilter = 'Day';
+                                            });
+                                          },
+                                          child: SizedBox(
+                                            height: 35,
+                                            width: 20, // Mengatur tinggi kotak
+                                            child: CategoryBox(
+                                              text: 'Month',
+                                              color: _selectedFilter == 'Day'
+                                                  ? AppColors.arrowColor
+                                                  : Colors.transparent,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Expanded(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              _selectedFilter = 'Day';
+                                            });
+                                          },
+                                          child: SizedBox(
+                                            height: 35,
+                                            width: 20, // Mengatur tinggi kotak
+                                            child: CategoryBox(
+                                              text: 'Year',
+                                              color: _selectedFilter == 'Day'
+                                                  ? AppColors.arrowColor
+                                                  : Colors.transparent,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 16),
+                                  const Text(
+                                    'Category',
+                                    style: Styles.resultTextStyle,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              _selectedFilter = 'Day';
+                                            });
+                                          },
+                                          child: SizedBox(
+                                            height: 35,
+                                            width: 20, // Mengatur tinggi kotak
+                                            child: CategoryBox(
+                                              text: 'General',
+                                              color: _selectedFilter == 'Day'
+                                                  ? AppColors.arrowColor
+                                                  : Colors.transparent,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Expanded(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              _selectedFilter = 'Day';
+                                            });
+                                          },
+                                          child: SizedBox(
+                                            height: 35,
+                                            width: 20, // Mengatur tinggi kotak
+                                            child: CategoryBox(
+                                              text: 'Education',
+                                              color: _selectedFilter == 'Day'
+                                                  ? AppColors.arrowColor
+                                                  : Colors.transparent,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              _selectedFilter = 'Day';
+                                            });
+                                          },
+                                          child: SizedBox(
+                                            height: 35,
+                                            width: 20, // Mengatur tinggi kotak
+                                            child: CategoryBox(
+                                              text: 'Disaster',
+                                              color: _selectedFilter == 'Day'
+                                                  ? AppColors.arrowColor
+                                                  : Colors.transparent,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Expanded(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              _selectedFilter = 'Day';
+                                            });
+                                          },
+                                          child: SizedBox(
+                                            height: 35,
+                                            width: 20, // Mengatur tinggi kotak
+                                            child: CategoryBox(
+                                              text: 'Year',
+                                              color: _selectedFilter == 'Day'
+                                                  ? AppColors.arrowColor
+                                                  : Colors.transparent,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 16),
+                                  GestureDetector(
+                                    onTap: () {
+                                      // Logic for apply button
+                                      Navigator.pop(
+                                          context); // Kembali ke halaman sebelumnya
+                                    },
+                                    child: Container(
+                                      height: 40,
+                                      decoration: BoxDecoration(
+                                        color: AppColors.Button,
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: const Center(
+                                        child: Text(
+                                          'Apply',
+                                          style: Styles.Result2,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: const BoxDecoration(
+                          color: AppColors.primaryColor,
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(
+                          Icons.filter_list_sharp,
+                          color: AppColors.arrowColor,
+                        ),
+                      ),
                     ),
                   ],
                 ),

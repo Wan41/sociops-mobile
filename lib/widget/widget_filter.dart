@@ -1,5 +1,3 @@
-import 'package:sociops/data/list_data.dart';
-import 'package:sociops/widget/widget_color_choose.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

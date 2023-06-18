@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sociops/widget/bottom_navbar_widget.dart';
 import 'package:sociops/widget/card_volunteer.dart';
 
 class VolunteerScreen extends StatefulWidget {

@@ -64,20 +64,20 @@ class _BeritaState extends State<Notifikasi> {
                 height: 30,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: [
-                    const CategoryBox(
+                  children: const [
+                    CategoryBox(
                       text: 'All',
                       color: AppColors.arrowColor,
                       width: 105,
                     ),
-                    const SizedBox(width: 8),
-                    const CategoryBox(
+                    SizedBox(width: 8),
+                    CategoryBox(
                       text: 'Galang Dana',
                       color: AppColors.arrowColor,
                       width: 105,
                     ),
-                    const SizedBox(width: 8),
-                    const CategoryBox(
+                    SizedBox(width: 8),
+                    CategoryBox(
                       text: 'Volunteer',
                       color: AppColors.arrowColor,
                       width: 105,
