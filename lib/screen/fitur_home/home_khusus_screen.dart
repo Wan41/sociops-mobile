@@ -10,6 +10,7 @@ import 'package:sociops/screen/fitur_organization/berita.dart';
 import 'package:sociops/screen/fitur_organization/organization.dart';
 import 'package:sociops/screen/fitur_volunteer/detail_volunteer_screen.dart';
 import 'package:sociops/screen/fitur_volunteer/volunteer_screen.dart';
+import 'package:sociops/screen/fitur_organization/profile.dart';
 import 'package:sociops/style/color_style.dart';
 
 class HomeKhusus extends StatefulWidget {
@@ -2281,7 +2282,15 @@ class _HomeKhususState extends State<HomeKhusus> {
                                                 width: 182,
                                                 height: 44,
                                                 child: TextButton(
-                                                  onPressed: () {},
+                                                  onPressed: () {
+                                                    Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const ProfilePage(),
+                                                      ),
+                                                    );
+                                                  },
                                                   style: ButtonStyle(
                                                     backgroundColor:
                                                         MaterialStateProperty
@@ -2440,7 +2449,15 @@ class _HomeKhususState extends State<HomeKhusus> {
                                                 width: 182,
                                                 height: 44,
                                                 child: TextButton(
-                                                  onPressed: () {},
+                                                  onPressed: () {
+                                                                                                        Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const ProfilePage(),
+                                                      ),
+                                                    );
+                                                  },
                                                   style: ButtonStyle(
                                                     backgroundColor:
                                                         MaterialStateProperty
