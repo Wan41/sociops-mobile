@@ -1,92 +1,23 @@
-// ignore_for_file: unused_field
-
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:sociops/screen/fitur_profile/edit_profile_screen.dart';
 import 'package:sociops/screen/fitur_profile/setting_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+  final String? uploadedImage;
+  final String? fullName;
+
+  const ProfileScreen({super.key, this.uploadedImage, this.fullName});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final ImagePicker _picker = ImagePicker();
-  List<XFile>? _imageFileList;
-  dynamic _pickImageError;
-
-  Future<void> _onImageButtonPressed(ImageSource source) async {
-    try {
-      final XFile? pickedFile = await _picker.pickImage(source: source);
-      if (pickedFile != null) {
-        setState(() {
-          _setImageFileListFromFile(pickedFile);
-        });
-      }
-    } catch (e) {
-      setState(() {
-        _pickImageError = e;
-      });
-    }
-    // ignore: use_build_context_synchronously
-    Navigator.of(context).pop();
-  }
-
-  void _setImageFileListFromFile(XFile? file) {
-    if (file != null) {
-      setState(() {
-        _imageFileList = [file];
-      });
-    }
-  }
-
-  Widget bottomSheet() {
-    return Container(
-      height: 100.0,
-      width: 300.0,
-      margin: const EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 20,
-      ),
-      child: Column(
-        children: [
-          const Text(
-            'Pilih Foto Profil Anda',
-            style: TextStyle(
-              fontSize: 20.0,
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                onPressed: () {
-                  _onImageButtonPressed(ImageSource.camera);
-                },
-                icon: const Icon(Icons.camera),
-              ),
-              const Text('Camera'),
-              const SizedBox(width: 50),
-              IconButton(
-                onPressed: () {
-                  _onImageButtonPressed(ImageSource.gallery);
-                },
-                icon: const Icon(Icons.image),
-              ),
-              const Text('Galeri'),
-            ],
-          )
-        ],
-      ),
-    );
-  }
+  String? uploadedImage;
+  String? fullName;
 
   @override
   Widget build(BuildContext context) {
@@ -138,10 +69,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(height: 40),
                 Stack(
                   children: [
-                    if (_imageFileList != null)
+                    if (uploadedImage != null)
                       ClipOval(
                         child: Image.file(
-                          File(_imageFileList![0].path),
+                          File(uploadedImage!),
                           width: 160,
                           height: 160,
                           fit: BoxFit.cover,
@@ -163,9 +94,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       right: 0,
                       child: GestureDetector(
                         onTap: () {
-                          showModalBottomSheet(
-                            context: context,
-                            builder: (context) => bottomSheet(),
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const EditProfileScreen(),
+                            ),
                           );
                         },
                         child: Container(
@@ -184,14 +117,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ],
                 ),
                 const SizedBox(height: 16),
-                Text(
-                  'Muhammad Rifki Muzakki',
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 18,
-                    color: Colors.black,
+                if (fullName != null)
+                  Text(
+                    fullName!,
+                    style: GoogleFonts.inter(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  )
+                else
+                  Text(
+                    'User',
+                    style: GoogleFonts.inter(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
                   ),
-                ),
                 const SizedBox(height: 40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -366,6 +309,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                         ),
                       ),
+                      const SizedBox(width: 12),
                       SizedBox(
                         width: 132,
                         height: 44,
@@ -394,6 +338,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                         ),
                       ),
+                      const SizedBox(width: 12),
                       SizedBox(
                         width: 123,
                         height: 44,

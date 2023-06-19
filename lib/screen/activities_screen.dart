@@ -18,7 +18,7 @@ class _ActivitiesScrenState extends State<ActivitiesScren> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         title: Text(
           'Aktivitas',
           style: GoogleFonts.inter(
@@ -27,13 +27,12 @@ class _ActivitiesScrenState extends State<ActivitiesScren> {
             color: Colors.black,
           ),
         ),
-        leading: const BackButton(
-          color: Color(0XFF444CE7),
-        ),
       ),
       body: Container(
-        margin: const EdgeInsets.all(16),
+        color: Colors.white,
         alignment: Alignment.topLeft,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,265 +47,251 @@ class _ActivitiesScrenState extends State<ActivitiesScren> {
                   ),
                 ),
               ),
-              Column(
-                children: [
-                  const SizedBox(
-                    height: 16,
+              const SizedBox(height: 32),
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: Image.asset('assets/galang dana.png'),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: const Color(0xff444CE7),
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                TextButton.icon(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const GalangDana()),
-                                    );
-                                  },
-                                  icon: Image.asset('assets/galang dana.png'),
-                                  label: Text(
-                                    'Galang Dana',
-                                    style: GoogleFonts.inter(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 16,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const GalangDana(),
-                                  ),
-                                );
-                              },
-                              icon: const Icon(Icons.navigate_next),
-                              color: const Color(0XFF444CE7),
-                            ),
-                          ]
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const GalangDana()),
+                    );
+                  },
+                  label: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Galang dana',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
                         ),
                       ),
-                    ),
-                  ]
-                ),
-                Column(
-                  children: [
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: const Color(0xff444CE7),
-                        ),
-                        borderRadius: BorderRadius.circular(16),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const GalangDana()),
+                          );
+                        },
+                        icon: const Icon(Icons.navigate_next),
+                        color: const Color(0XFF444CE7),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  TextButton.icon(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => const Volunteer(),
-                                        ),
-                                      );
-                                    },
-                                    icon: Image.asset('assets/volunteerr.png'),
-                                    label: Text(
-                                      'Volunteer',
-                                      style: GoogleFonts.inter(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 16,
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                  ),
-                                ]
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const Volunteer(),
-                                    ),
-                                  );
-                                },
-                                icon: const Icon(Icons.navigate_next),
-                                color: const Color(0XFF444CE7),
-                              ),
-                            ]
-                          ),
-                        ),
-                      ),
-                    ]
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Text(
-                              'Penggunaan Akun',
-                            style: GoogleFonts.inter(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        Column(
-                          children: [
-                            const SizedBox(height: 16),
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: const Color(0xff444CE7),
-                                ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        TextButton.icon(
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) => const GalangDana(),
-                                              ),
-                                            );
-                                          },
-                                          icon: const Icon(
-                                            Icons.calendar_today_sharp,
-                                            color: Color(0xff101828),
-                                          ),
-                                          label: Text(
-                                            'Histori Akun',
-                                            style: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 16,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                        ),
-                                      ]
-                                    ),
-                                    IconButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => const HistoriAkun(),
-                                          ),
-                                        );
-                                      },
-                                      icon: const Icon(Icons.navigate_next),
-                                      color: const Color(0XFF444CE7),
-                                    ),
-                                  ]
-                                ),
-                              ),
-                            ),
-                          ]
-                        ),
-                        Column(
-                          children: [
-                            const SizedBox(height: 16),
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: const Color(0xff444CE7),
-                                ),
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        TextButton.icon(
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) => const HistoriAkun(),
-                                              ),
-                                            );
-                                          },
-                                          icon: const Icon(
-                                            Icons.search_sharp,
-                                            color: Color(0xff101828),
-                                          ),
-                                          label: Text(
-                                            'Pencarian Terbaru',
-                                            style: GoogleFonts.inter(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 16,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                        ),
-                                      ]
-                                    ),
-                                    IconButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                        MaterialPageRoute(
-                                          builder: (context) => const PencarianTerbaru(),
-                                        ),
-                                      );
-                                    },
-                                    icon: const Icon(Icons.navigate_next),
-                                    color: const Color(0XFF444CE7),
-                                  ),
-                                ]
-                              ),
-                            ),
-                          ),
-                        ]
-                      ),
-                    ]
+                    ],
                   ),
                 ),
-              ]
-            ),
-          ),  
-        ); 
-      }    
-    }
+              ),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: Image.asset('assets/volunteerr.png'),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Volunteer()),
+                    );
+                  },
+                  label: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Volunteer',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Volunteer()),
+                          );
+                        },
+                        icon: const Icon(Icons.navigate_next),
+                        color: const Color(0XFF444CE7),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 32),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Penggunaan Akun',
+                  style: GoogleFonts.inter(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 32),
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.calendar_today_sharp,
+                    color: Color(0xff101828),
+                  ),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HistoriAkun()),
+                    );
+                  },
+                  label: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Histori Akun',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HistoriAkun()),
+                          );
+                        },
+                        icon: const Icon(Icons.navigate_next),
+                        color: const Color(0XFF444CE7),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              SizedBox(
+                width: 396,
+                height: 64,
+                child: TextButton.icon(
+                  icon: const Icon(
+                    Icons.search_sharp,
+                    color: Color(0xff101828),
+                  ),
+                  style: ButtonStyle(
+                    alignment: Alignment.centerLeft,
+                    padding: const MaterialStatePropertyAll(
+                      EdgeInsets.all(16),
+                    ),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.transparent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: const BorderSide(
+                          color: Color(0XFFE0EAFF),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PencarianTerbaru()),
+                    );
+                  },
+                  label: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Pencarian Terbaru',
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const PencarianTerbaru()),
+                          );
+                        },
+                        icon: const Icon(Icons.navigate_next),
+                        color: const Color(0XFF444CE7),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

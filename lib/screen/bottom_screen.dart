@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sociops/screen/activities_screen.dart';
-// import 'package:sociops/screen/explore_screen.dart';
+import 'package:sociops/screen/explore_screen.dart';
 import 'package:sociops/screen/fitur_home/home_khusus_screen.dart';
-import 'package:sociops/screen/fitur_organization/eksplor.dart';
-// import 'package:sociops/screen/home_screen.dart';
 import 'package:sociops/screen/profile_screen.dart';
 import 'package:sociops/widget/bottom_navbar_widget.dart';
 
@@ -27,7 +25,7 @@ class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
     if (index == 0) {
       return const HomeKhusus();
     } else if (index == 1) {
-      return const Eksplor();
+      return const ExploreScreen();
     } else if (index == 2) {
       return const ActivitiesScren();
     } else {
