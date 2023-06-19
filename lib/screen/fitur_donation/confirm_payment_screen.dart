@@ -1,14 +1,35 @@
+import 'dart:js_interop';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:sociops/screen/fitur_donation/code_payment_screen.dart';
 
 // ignore: must_be_immutable
-class ConfirmPaymentScreen extends StatelessWidget {
+class ConfirmPaymentScreen extends StatefulWidget {
   final String selectedAmount;
-  ConfirmPaymentScreen({super.key, required this.selectedAmount});
+  const ConfirmPaymentScreen({super.key, required this.selectedAmount});
+  static const Color disabledButtonColor = Color(0XFFC7D7FE);
+
+  @override
+  State<ConfirmPaymentScreen> createState() => _ConfirmPaymentScreenState();
+}
+
+class _ConfirmPaymentScreenState extends State<ConfirmPaymentScreen> {
   final int fee = 1000;
+
   String? selectedPaymentMethod;
+  bool isButtonDisabled = true;
+
+  void checkButtonStatus() {
+    setState(() {
+      if (selectedPaymentMethod.isUndefinedOrNull) {
+        isButtonDisabled = true;
+      } else {
+        isButtonDisabled = false;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +66,7 @@ class ConfirmPaymentScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Rp${NumberFormat('#,##0').format(int.parse(selectedAmount))}',
+                  'Rp${NumberFormat('#,##0').format(int.parse(widget.selectedAmount))}',
                   style: GoogleFonts.inter(
                     fontWeight: FontWeight.w600,
                     fontSize: 36,
@@ -125,6 +146,7 @@ class ConfirmPaymentScreen extends StatelessWidget {
                         }).toList(),
                         onChanged: (String? newValue) {
                           selectedPaymentMethod = newValue;
+                          checkButtonStatus();
                         },
                       ),
                     ),
@@ -151,7 +173,7 @@ class ConfirmPaymentScreen extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              'Rp${NumberFormat('#,##0').format(int.parse(selectedAmount))}',
+                              'Rp${NumberFormat('#,##0').format(int.parse(widget.selectedAmount))}',
                               style: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 14,
@@ -193,7 +215,7 @@ class ConfirmPaymentScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Rp${NumberFormat('#,##0').format(int.parse(selectedAmount) + fee)}',
+                          'Rp${NumberFormat('#,##0').format(int.parse(widget.selectedAmount) + fee)}',
                           style: GoogleFonts.inter(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
@@ -218,7 +240,9 @@ class ConfirmPaymentScreen extends StatelessWidget {
             child: OutlinedButton(
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
-                  const Color(0xFF444CE7),
+                  selectedPaymentMethod != null
+                      ? const Color(0xFF444CE7)
+                      : ConfirmPaymentScreen.disabledButtonColor,
                 ),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
@@ -226,16 +250,19 @@ class ConfirmPaymentScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => CodePaymentScreen(
-                            selectedAmount: selectedAmount,
-                            selectedPaymentMethod: selectedPaymentMethod,
-                          )),
-                );
-              },
+              onPressed: isButtonDisabled
+                  ? null
+                  : () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CodePaymentScreen(
+                            selectedAmount: widget.selectedAmount,
+                            selectedPaymentMethod: selectedPaymentMethod!,
+                          ),
+                        ),
+                      );
+                    },
               child: Text(
                 'Bayar',
                 style: GoogleFonts.inter(

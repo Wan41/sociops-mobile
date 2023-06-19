@@ -608,7 +608,7 @@ class _DonationScreenState extends State<DonationScreen> {
                                     ),
                                     const SizedBox(width: 8),
                                     Container(
-                                      width: 82,
+                                      width: 70,
                                       height: 22,
                                       decoration: BoxDecoration(
                                         borderRadius:
@@ -618,9 +618,11 @@ class _DonationScreenState extends State<DonationScreen> {
                                       child: Center(
                                         child: Row(
                                           children: [
+                                            const SizedBox(width: 2),
                                             const Icon(
                                               Icons.verified,
                                               color: Color(0xFF444CE7),
+                                              size: 14,
                                             ),
                                             Text(
                                               'Unilever',
@@ -850,7 +852,7 @@ class _DonationScreenState extends State<DonationScreen> {
                                     ),
                                     const SizedBox(width: 8),
                                     Container(
-                                      width: 82,
+                                      width: 70,
                                       height: 22,
                                       decoration: BoxDecoration(
                                         borderRadius:
@@ -860,9 +862,11 @@ class _DonationScreenState extends State<DonationScreen> {
                                       child: Center(
                                         child: Row(
                                           children: [
+                                            const SizedBox(width: 2),
                                             const Icon(
                                               Icons.verified,
                                               color: Color(0xFF444CE7),
+                                              size: 14,
                                             ),
                                             Text(
                                               'Unilever',
@@ -1092,7 +1096,7 @@ class _DonationScreenState extends State<DonationScreen> {
                                     ),
                                     const SizedBox(width: 8),
                                     Container(
-                                      width: 82,
+                                      width: 70,
                                       height: 22,
                                       decoration: BoxDecoration(
                                         borderRadius:
@@ -1102,9 +1106,11 @@ class _DonationScreenState extends State<DonationScreen> {
                                       child: Center(
                                         child: Row(
                                           children: [
+                                            const SizedBox(width: 2),
                                             const Icon(
                                               Icons.verified,
                                               color: Color(0xFF444CE7),
+                                              size: 14,
                                             ),
                                             Text(
                                               'Unilever',

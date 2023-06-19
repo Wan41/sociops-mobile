@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sociops/screen/bottom_screen.dart';
 
 class Alert {
   Future doneAlert(context) {
@@ -33,6 +34,12 @@ class Alert {
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const BottomNavbarScreen(),
+                  ),
+                );
               },
               style: ButtonStyle(
                 fixedSize: const MaterialStatePropertyAll(Size(300, 55)),
@@ -93,10 +100,14 @@ class Alert {
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavbarScreen(),
+                    ),
+                  );
                 },
                 style: ButtonStyle(
-                  // fixedSize:
-                  //     const MaterialStatePropertyAll(Size(300, 55)),
                   backgroundColor: const MaterialStatePropertyAll(Colors.white),
                   side: const MaterialStatePropertyAll(
                     BorderSide(color: Colors.grey),

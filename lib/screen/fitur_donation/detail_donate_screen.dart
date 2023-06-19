@@ -41,9 +41,11 @@ class _DetailDonateScreenState extends State<DetailDonateScreen> {
                 });
               },
               child: Container(
+                width: 40,
+                height: 40,
                 decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
                   color: Color(0XFFEEF4FF),
+                  shape: BoxShape.circle,
                 ),
                 child: Icon(
                   isBookmarked
@@ -213,7 +215,11 @@ class _DetailDonateScreenState extends State<DetailDonateScreen> {
                           Container(
                             alignment: Alignment.center,
                             padding: const EdgeInsets.all(12),
-                            child: const CircleAvatar(),
+                            child: Image.asset(
+                              'assets/circle.png',
+                              width: 58,
+                              height: 56,
+                            ),
                           ),
                           Container(
                             alignment: Alignment.center,
@@ -292,7 +298,11 @@ class _DetailDonateScreenState extends State<DetailDonateScreen> {
                           Container(
                             alignment: Alignment.center,
                             padding: const EdgeInsets.all(12),
-                            child: const CircleAvatar(),
+                            child: Image.asset(
+                              'assets/logo_notif.png',
+                              width: 56,
+                              height: 56,
+                            ),
                           ),
                           Container(
                             alignment: Alignment.center,
@@ -300,28 +310,16 @@ class _DetailDonateScreenState extends State<DetailDonateScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  'Nyalakan notifikasi Anda',
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 12,
-                                    color: const Color(0xFF444CE7),
-                                  ),
-                                ),
-                                Text(
-                                  'untuk mendapatkan informasi',
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 12,
-                                    color: const Color(0xFF444CE7),
-                                  ),
-                                ),
-                                Text(
-                                  'terbaru dari tantangan ini',
-                                  style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 12,
-                                    color: const Color(0xFF444CE7),
+                                SizedBox(
+                                  width: 170,
+                                  height: 54,
+                                  child: Text(
+                                    'Nyalakan notifikasi Anda untuk mendapatkan informasi terbaru dari tantangan ini.',
+                                    style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 12,
+                                      color: const Color(0xFF444CE7),
+                                    ),
                                   ),
                                 ),
                               ],
@@ -333,12 +331,12 @@ class _DetailDonateScreenState extends State<DetailDonateScreen> {
                         alignment: Alignment.center,
                         padding: const EdgeInsets.only(right: 12),
                         child: SizedBox(
-                          width: 120,
+                          width: 100,
                           height: 44,
                           child: OutlinedButton(
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                const Color(0xFF444CE7),
+                                const Color(0xFFEEF4FF),
                               ),
                               shape: MaterialStateProperty.all<
                                   RoundedRectangleBorder>(
@@ -352,7 +350,7 @@ class _DetailDonateScreenState extends State<DetailDonateScreen> {
                             child: Text(
                               'Aktifkan',
                               style: GoogleFonts.inter(
-                                color: Colors.white,
+                                color: const Color(0xFF444CE7),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -374,7 +372,7 @@ class _DetailDonateScreenState extends State<DetailDonateScreen> {
                   ),
                 ),
                 const SizedBox(height: 32),
-                Image.asset('assets/Rectangle 8.png'),
+                Image.asset('assets/video.png'),
                 const SizedBox(height: 16),
                 ReadMoreText(
                   'Stunting adalah gagal tumbuh akibat kurangnya asupan gizi, di mana dalam jangka pendek dapat menyebabkan terganggunya perkembangan otak, metabolisme, dan pertumbuhan fisik pada anak. Sementara, dalam jangka panjang, dampak stunting adalah sebagai ',

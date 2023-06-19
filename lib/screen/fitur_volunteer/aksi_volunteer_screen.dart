@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sociops/screen/fitur_volunteer/ambil_aksi_screen.dart';
+import 'package:sociops/style/color_style.dart';
 import 'package:sociops/widget/button_bar.dart';
 
 class AksiScreen extends StatefulWidget {
@@ -10,29 +12,14 @@ class AksiScreen extends StatefulWidget {
 }
 
 class _AksiScreenState extends State<AksiScreen> {
+  bool state = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: Colors.lightBlue[50],
-          ),
-          child: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            splashRadius: 25,
-            splashColor: Colors.blueAccent[100],
-            icon: const Icon(
-              Icons.keyboard_backspace,
-              color: Color(0XFF444CE7),
-            ),
-          ),
-        ),
         elevation: 0.0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         title: Text(
           'Aksi 1',
           style: GoogleFonts.inter(
@@ -41,131 +28,185 @@ class _AksiScreenState extends State<AksiScreen> {
             color: Colors.black,
           ),
         ),
+        leading: const BackButton(
+          color: Color(0XFF444CE7),
+        ),
         actions: [
-          IconButton(
-            onPressed: () {
-              // setState(() {
-              //   state ? Icons.bookmark_border_outlined : Icons.bookmark;
-              // });
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                state ? Icons.bookmark_border_outlined : Icons.bookmark;
+              });
             },
-            splashRadius: 25,
-            splashColor: Colors.blueAccent[100],
-            icon: const Icon(
-              Icons.bookmark_border_outlined,
-              color: Color(0XFF444CE7),
+            child: Container(
+              width: 40,
+              height: 40,
+              decoration: const BoxDecoration(
+                color: AppColors.primaryColor,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                Icons.bookmark_border_outlined,
+                color: AppColors.arrowColor,
+              ),
             ),
           ),
-          IconButton(
-            onPressed: () {},
-            splashRadius: 25,
-            splashColor: Colors.blueAccent[100],
-            icon: const Icon(
-              Icons.screen_share_outlined,
-              color: Color(0XFF444CE7),
+          const SizedBox(width: 12),
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              width: 40,
+              height: 40,
+              decoration: const BoxDecoration(
+                color: AppColors.primaryColor,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                Icons.screen_share_outlined,
+                color: AppColors.arrowColor,
+              ),
             ),
           ),
-          const SizedBox(
-            width: 15,
-          )
+          const SizedBox(width: 16),
         ],
       ),
-      body: ListView(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.symmetric(
-                    vertical: 20,
-                  ),
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                  height: 240,
-                  width: 370,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      'assets/seat-belt.jpg',
-                      fit: BoxFit.cover,
+      body: Container(
+        color: Colors.white,
+        child: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Column(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 20,
                     ),
-                  ),
-                ),
-                Text(
-                  'Gerakan #SampaiTujuanDenganAman, Posting foto kamu di media sosial menggunakan Seat Belt saat bepergian dengan aman!',
-                  style: GoogleFonts.inter(
-                      fontSize: 20, fontWeight: FontWeight.w500),
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                InkWell(
-                  borderRadius: BorderRadius.circular(20),
-                  onTap: () {},
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 4,
-                    ),
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: const Color.fromARGB(255, 187, 233, 255)),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: ListTile(
-                      horizontalTitleGap: 10,
-                      minVerticalPadding: 10,
-                      leading: Image.asset(
-                        'assets/quirky-polaroid-photo-with-caption 1.png',
-                      ),
-                      title: Text(
-                        'Cara ikutan',
-                        style: GoogleFonts.inter(
-                            fontSize: 16, color: const Color(0XFF444CE7)),
-                      ),
-                      subtitle: Text(
-                        'Pada dasarnya, fungsi sabuk pengaman adalah untuk melindungi penumpang, baik dalam kondisi biasa maupun darurat. Lakukan aksimu dengan mengunggah foto memakai sabuk pengaman saat bepergian dan bagikan ke sosial media milik kamu. Jangan lupa gunakan tagar #SampaiTujuanDenganAman',
-                        textAlign: TextAlign.left,
-                        style: GoogleFonts.inter(
-                            fontSize: 16, color: Colors.black),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                    height: 240,
+                    width: 370,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        'assets/seatbelt.png',
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 25,
-                  child: Divider(
-                    color: Colors.black45,
-                  ),
-                ),
-                Container(
-                  height: 50,
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    'Aksi dari temanmu',
+                  Text(
+                    'Gerakan #SampaiTujuanDenganAman, Posting foto kamu di media sosial menggunakan Seat Belt saat bepergian dengan aman!',
                     style: GoogleFonts.inter(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
+                        fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  InkWell(
+                    borderRadius: BorderRadius.circular(20),
+                    onTap: () {},
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 187, 233, 255)),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: ListTile(
+                        horizontalTitleGap: 10,
+                        minVerticalPadding: 10,
+                        leading: Image.asset(
+                          'assets/polaroid.png',
+                        ),
+                        title: Text(
+                          'Cara ikutan',
+                          style: GoogleFonts.inter(
+                              fontSize: 16, color: const Color(0XFF444CE7)),
+                        ),
+                        subtitle: Text(
+                          'Pada dasarnya, fungsi sabuk pengaman adalah untuk melindungi penumpang, baik dalam kondisi biasa maupun darurat. Lakukan aksimu dengan mengunggah foto memakai sabuk pengaman saat bepergian dan bagikan ke sosial media milik kamu. Jangan lupa gunakan tagar #SampaiTujuanDenganAman',
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inter(
+                              fontSize: 16, color: Colors.black),
+                        ),
+                      ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 25,
+                    child: Divider(
+                      color: Colors.black45,
+                    ),
+                  ),
+                  Container(
+                    height: 50,
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Aksi dari temanmu',
+                      style: GoogleFonts.inter(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                  daritemanmu(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  daritemanmu(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  daritemanmu(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Button().moreButton(),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: SizedBox(
+            width: 396,
+            height: 60,
+            child: OutlinedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  const Color(0xFF444CE7),
                 ),
-                daritemanmu(),
-                const SizedBox(
-                  height: 20,
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32.0),
+                  ),
                 ),
-                daritemanmu(),
-                const SizedBox(
-                  height: 20,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AmbilAksiScreen(),
+                  ),
+                );
+              },
+              child: Text(
+                'Ambil aksi',
+                style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
                 ),
-                daritemanmu(),
-                const SizedBox(
-                  height: 20,
-                ),
-                Button().moreButton(),
-              ],
+              ),
             ),
           ),
-        ],
+        ),
       ),
-      bottomNavigationBar: Button().buttonbar((context)),
     );
   }
 
@@ -233,7 +274,7 @@ class _AksiScreenState extends State<AksiScreen> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
-                'assets/cara_memakai_sabuk_pengaman_mobil 2.png',
+                'assets/seatbelt2.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -249,11 +290,8 @@ class _AksiScreenState extends State<AksiScreen> {
               onTap: () {},
               child: Row(
                 children: [
-                  CircleAvatar(
-                    radius: 12,
-                    child: Image.asset(
-                      'assets/logo-ig-png-32464.png',
-                    ),
+                  Image.asset(
+                    'assets/instagram.png',
                   ),
                   const SizedBox(
                     width: 16,

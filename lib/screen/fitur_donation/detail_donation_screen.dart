@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -14,6 +16,7 @@ class DetailDonationScreen extends StatefulWidget {
 
 class _DetailDonationScreenState extends State<DetailDonationScreen> {
   bool isBookmarked = false;
+  String linkValue = '';
 
   final ImagePicker _picker = ImagePicker();
   List<XFile>? _imageFileList;
@@ -132,9 +135,11 @@ class _DetailDonationScreenState extends State<DetailDonationScreen> {
                 });
               },
               child: Container(
+                width: 40,
+                height: 40,
                 decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
                   color: Color(0XFFEEF4FF),
+                  shape: BoxShape.circle,
                 ),
                 child: Icon(
                   isBookmarked
@@ -294,9 +299,41 @@ class _DetailDonationScreenState extends State<DetailDonationScreen> {
                         ),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: const Text('Tambahkan link'),
+                            content: TextField(
+                              onChanged: (value) {
+                                setState(() {
+                                  linkValue = value;
+                                });
+                              },
+                            ),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('Cancel'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    Navigator.pop(context);
+                                  });
+                                },
+                                child: const Text('Simpan'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
                     child: Text(
-                      'Tambahkan link',
+                      linkValue.isEmpty ? 'Tambahkan link' : linkValue,
                       style: GoogleFonts.inter(
                         color: const Color(0xFF444CE7),
                         fontSize: 14,

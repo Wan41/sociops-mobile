@@ -240,4 +240,15 @@ class _SelectPaymentScreenState extends State<SelectPaymentScreen> {
       }
     });
   }
+
+  // void checkButtonStatus() {
+  //   setState(() {
+  //     if ((_selectedIndex != -1 && selectedAmount.isNotEmpty) ||
+  //         (_selectedIndex == -1 && selectedAmount.isEmpty)) {
+  //       isButtonDisabled = true;
+  //     } else {
+  //       isButtonDisabled = false;
+  //     }
+  //   });
+  // }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
+import 'package:sociops/screen/fitur_volunteer/ambil_aksi_screen.dart';
+import 'package:sociops/style/color_style.dart';
 import 'package:sociops/widget/button_bar.dart';
 import 'aksi_volunteer_screen.dart';
 
@@ -37,25 +39,8 @@ class _DetailVolunteerState extends State<DetailVolunteer> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: Colors.lightBlue[50],
-          ),
-          child: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            splashRadius: 25,
-            splashColor: Colors.blueAccent[100],
-            icon: const Icon(
-              Icons.keyboard_backspace,
-              color: Color(0XFF444CE7),
-            ),
-          ),
-        ),
         elevation: 0.0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         title: Text(
           'Detail Volunteer',
           style: GoogleFonts.inter(
@@ -64,384 +49,429 @@ class _DetailVolunteerState extends State<DetailVolunteer> {
             color: Colors.black,
           ),
         ),
+        leading: const BackButton(
+          color: Color(0XFF444CE7),
+        ),
         actions: [
-          IconButton(
-            onPressed: () {
+          GestureDetector(
+            onTap: () {
               setState(() {
                 state ? Icons.bookmark_border_outlined : Icons.bookmark;
               });
             },
-            splashRadius: 25,
-            splashColor: Colors.blueAccent[100],
-            icon: const Icon(
-              Icons.bookmark_border_outlined,
-              color: Color(0XFF444CE7),
+            child: Container(
+              width: 40,
+              height: 40,
+              decoration: const BoxDecoration(
+                color: AppColors.primaryColor,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                Icons.bookmark_border_outlined,
+                color: AppColors.arrowColor,
+              ),
             ),
           ),
-          IconButton(
-            onPressed: () {},
-            splashRadius: 25,
-            splashColor: Colors.blueAccent[100],
-            icon: const Icon(
-              Icons.screen_share_outlined,
-              color: Color(0XFF444CE7),
+          const SizedBox(width: 12),
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              width: 40,
+              height: 40,
+              decoration: const BoxDecoration(
+                color: AppColors.primaryColor,
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(
+                Icons.screen_share_outlined,
+                color: AppColors.arrowColor,
+              ),
             ),
           ),
-          const SizedBox(
-            width: 15,
-          )
+          const SizedBox(width: 16),
         ],
       ),
-      body: ListView(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Column(
-              children: [
-                Center(
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(vertical: 20),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(30)),
-                    height: 240,
-                    width: 370,
-                    child: Image.asset(
-                      'assets/Rectangle 8 (1).png',
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-                Text(
-                  'Gerakan #SampaiTujuanDenganAman, Hyundai Bekerjasama dengan Kepolisian Indonesia',
-                  style: GoogleFonts.inter(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 12),
+      body: Container(
+        color: Colors.white,
+        child: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Center(
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 20),
                       decoration: BoxDecoration(
-                          color: Colors.lightBlue[50],
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Text(
-                        'General',
-                        style: GoogleFonts.inter(
-                            fontSize: 14, color: const Color(0XFF444CE7)),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 2, horizontal: 5),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                              width: 2, color: const Color(0XFF444CE7))),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Icon(
-                            Icons.location_on_outlined,
-                            color: Color(0XFF444CE7),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            'Indonesia (Online)',
-                            style: GoogleFonts.inter(
-                                fontSize: 14, color: const Color(0XFF444CE7)),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 2,
-                  ),
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: const Color.fromARGB(255, 187, 233, 255)),
-                      borderRadius: BorderRadius.circular(35)),
-                  child: ListTile(
-                    leading: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          color: Colors.lightBlue[50],
-                          border: Border.all(
-                            color: Colors.lightBlue,
-                          ),
-                          borderRadius: BorderRadius.circular(35)),
-                      child: CircleAvatar(
-                        backgroundColor: Colors.lightBlue[50],
-                        child: Image.asset(
-                          'assets/logo.png',
-                        ),
-                      ),
-                    ),
-                    title: Text(
-                      'Organizer',
-                      style: GoogleFonts.inter(fontSize: 12),
-                    ),
-                    subtitle: Text(
-                      'PT. Hyundai',
-                      style: GoogleFonts.inter(
-                          fontSize: 20, color: const Color(0XFF444CE7)),
-                    ),
-                    trailing: Container(
-                      padding: const EdgeInsets.only(left: 15, right: 15),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: const Color(0XFF444CE7)),
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Ikuti',
-                          style: GoogleFonts.inter(
-                              fontSize: 16, color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 2,
-                  ),
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: const Color.fromARGB(255, 187, 233, 255)),
-                      borderRadius: BorderRadius.circular(35)),
-                  child: ListTile(
-                    leading: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          color: Colors.lightBlue[50],
-                          border: Border.all(
-                            color: Colors.lightBlue,
-                          ),
-                          borderRadius: BorderRadius.circular(35)),
-                      child: CircleAvatar(
-                          backgroundColor: Colors.lightBlue[50],
-                          child: const Icon(
-                            Icons.notifications_none_rounded,
-                            color: Colors.black,
-                          )),
-                    ),
-                    title: Text(
-                      'Nyalakan notifikasi Anda untuk mendapatkan informasi terbaru dari tantangan ini',
-                      style: GoogleFonts.inter(
-                          fontSize: 12, color: const Color(0XFF444CE7)),
-                    ),
-                    trailing: Container(
-                      padding: const EdgeInsets.only(left: 15, right: 15),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: Colors.lightBlue[50]),
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Aktifkan',
-                          style: GoogleFonts.inter(
-                              fontSize: 16, color: const Color(0XFF444CE7)),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 25,
-                  child: Divider(
-                    color: Colors.black,
-                  ),
-                ),
-                Container(
-                  height: 20,
-                  alignment: Alignment.topLeft,
-                  decoration: const BoxDecoration(),
-                  child: Text(
-                    'Video Promosi',
-                    style: GoogleFonts.inter(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
-                Stack(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(
-                        vertical: 20,
-                      ),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20)),
+                          borderRadius: BorderRadius.circular(30)),
                       height: 240,
                       width: 370,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.asset(
-                          'assets/seat-belt.jpg',
-                          fit: BoxFit.cover,
-                        ),
+                      child: Image.asset(
+                        'assets/galang dana page.png',
+                        fit: BoxFit.fill,
                       ),
                     ),
-                    Positioned(
-                      top: 20,
-                      child: InkWell(
-                        onTap: () {},
-                        child: Opacity(
-                          opacity: 0.6,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Colors.black),
-                            height: 240,
-                            width: 370,
-                            child: Icon(
-                              Icons.play_circle_fill_rounded,
-                              size: 50,
-                              color: Colors.blueGrey[100],
+                  ),
+                  Text(
+                    'Gerakan #SampaiTujuanDenganAman, Hyundai Bekerjasama dengan Kepolisian Indonesia',
+                    style: GoogleFonts.inter(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 12),
+                        decoration: BoxDecoration(
+                            color: Colors.lightBlue[50],
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Text(
+                          'General',
+                          style: GoogleFonts.inter(
+                              fontSize: 14, color: const Color(0XFF444CE7)),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 2, horizontal: 5),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                                width: 2, color: const Color(0XFF444CE7))),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Icon(
+                              Icons.location_on_outlined,
+                              color: Color(0XFF444CE7),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Indonesia (Online)',
+                              style: GoogleFonts.inter(
+                                  fontSize: 14, color: const Color(0XFF444CE7)),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    width: 396,
+                    height: 80,
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: const Color.fromARGB(255, 187, 233, 255)),
+                        borderRadius: BorderRadius.circular(58)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              'assets/logo_hyundai.png',
+                              width: 58,
+                              height: 56,
+                            ),
+                            const SizedBox(width: 12),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Organizer',
+                                  style: GoogleFonts.inter(fontSize: 12),
+                                ),
+                                Text(
+                                  'PT. Hyundai',
+                                  style: GoogleFonts.inter(
+                                      fontSize: 20,
+                                      color: const Color(0XFF444CE7)),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Container(
+                          width: 98,
+                          height: 44,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(32),
+                              color: const Color(0XFF444CE7)),
+                          child: TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Ikuti',
+                              style: GoogleFonts.inter(
+                                  fontSize: 16, color: Colors.white),
                             ),
                           ),
                         ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Container(
+                    width: 396,
+                    height: 80,
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: const Color.fromARGB(255, 187, 233, 255)),
+                        borderRadius: BorderRadius.circular(58)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              'assets/logo_notif.png',
+                              width: 58,
+                              height: 56,
+                            ),
+                            const SizedBox(width: 12),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  width: 182,
+                                  height: 54,
+                                  child: Text(
+                                    'Nyalakan notifikasi Anda untuk mendapatkan informasi terbaru dari tantangan ini',
+                                    style: GoogleFonts.inter(
+                                      fontSize: 12,
+                                      color: const Color(0XFF444CE7),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Container(
+                          width: 98,
+                          height: 44,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(32),
+                            color: Colors.lightBlue[50],
+                          ),
+                          child: TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Aktifkan',
+                              style: GoogleFonts.inter(
+                                fontSize: 16,
+                                color: const Color(0XFF444CE7),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                    child: Divider(
+                      color: Colors.black,
+                    ),
+                  ),
+                  Container(
+                    height: 20,
+                    alignment: Alignment.topLeft,
+                    decoration: const BoxDecoration(),
+                    child: Text(
+                      'Video Promosi',
+                      style: GoogleFonts.inter(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
-                  ],
-                ),
-                ReadMoreText(
-                  '''The standard Lorem Ipsum passage, used since the 1500s
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."''',
-                  style: GoogleFonts.inter(),
-                  trimLines: 3,
-                  trimCollapsedText: '...Read more',
-                  trimExpandedText: ' Less',
-                  textAlign: TextAlign.justify,
-                  lessStyle: GoogleFonts.inter(
-                      color: const Color(0XFF444CE7),
-                      fontWeight: FontWeight.w600),
-                  moreStyle: GoogleFonts.inter(
-                      color: const Color(0XFF444CE7),
-                      fontWeight: FontWeight.w600),
-                ),
-                const SizedBox(
-                  height: 25,
-                  child: Divider(
-                    color: Colors.black,
                   ),
-                ),
-                Container(
-                  height: 30,
-                  alignment: Alignment.topLeft,
-                  decoration: const BoxDecoration(),
-                  child: Text(
-                    'Tindakan yang harus di ambil',
+                  const SizedBox(height: 16),
+                  Image.asset(
+                    'assets/video.png',
+                    fit: BoxFit.cover,
+                  ),
+                  Text(
+                    'Kegiatan kampanye online yang diadakan oleh Perusahaan Hyundai dan bekerjasama dengan kepolisian Indonesia.',
                     style: GoogleFonts.inter(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
-                ),
-                InkWell(
-                  borderRadius: BorderRadius.circular(20),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (contex) => const AksiScreen()));
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 4,
+                  ReadMoreText(
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                    style: GoogleFonts.inter(),
+                    trimLines: 4,
+                    trimCollapsedText: '...read more',
+                    trimExpandedText: ' less',
+                    lessStyle: GoogleFonts.inter(
+                        color: const Color(0XFF444CE7),
+                        fontWeight: FontWeight.w600),
+                    moreStyle: GoogleFonts.inter(
+                        color: const Color(0XFF444CE7),
+                        fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                    child: Divider(
+                      color: Colors.black,
                     ),
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: const Color.fromARGB(255, 187, 233, 255)),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: ListTile(
-                      horizontalTitleGap: 10,
-                      minVerticalPadding: 10,
-                      leading: Image.asset(
-                        'assets/camera.png',
-                      ),
-                      title: Text(
-                        'Aksi 1',
-                        style: GoogleFonts.inter(
-                            fontSize: 16, color: const Color(0XFF444CE7)),
-                      ),
-                      subtitle: Text(
-                        'Upload foto kamu saat menggunakan sabuk pengaman di media sosial',
-                        textAlign: TextAlign.left,
-                        style: GoogleFonts.inter(
-                            fontSize: 16, color: Colors.black),
+                  ),
+                  Container(
+                    height: 30,
+                    alignment: Alignment.topLeft,
+                    decoration: const BoxDecoration(),
+                    child: Text(
+                      'Tindakan yang harus di ambil',
+                      style: GoogleFonts.inter(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                InkWell(
-                  borderRadius: BorderRadius.circular(20),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (contex) => const AksiScreen()));
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 4,
-                    ),
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: const Color.fromARGB(255, 187, 233, 255)),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: ListTile(
-                      horizontalTitleGap: 10,
-                      minVerticalPadding: 10,
-                      leading: Image.asset(
-                        'assets/quirky-thumb-up-hand-1 2.png',
+                  InkWell(
+                    borderRadius: BorderRadius.circular(20),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (contex) => const AksiScreen()));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 4,
                       ),
-                      title: Text(
-                        'Aksi 2',
-                        style: GoogleFonts.inter(
-                            fontSize: 16, color: const Color(0XFF444CE7)),
-                      ),
-                      subtitle: Text(
-                        'Upload foto kamu saat menggunakan sabuk pengaman di media sosial',
-                        textAlign: TextAlign.left,
-                        style: GoogleFonts.inter(
-                            fontSize: 16, color: Colors.black),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 187, 233, 255)),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: ListTile(
+                        horizontalTitleGap: 10,
+                        minVerticalPadding: 10,
+                        leading: Image.asset(
+                          'assets/camera.png',
+                        ),
+                        title: Text(
+                          'Aksi 1',
+                          style: GoogleFonts.inter(
+                              fontSize: 16, color: const Color(0XFF444CE7)),
+                        ),
+                        subtitle: Text(
+                          'Upload foto kamu saat menggunakan sabuk pengaman di media sosial',
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inter(
+                              fontSize: 16, color: Colors.black),
+                        ),
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  InkWell(
+                    borderRadius: BorderRadius.circular(20),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (contex) => const AksiScreen()));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 187, 233, 255)),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: ListTile(
+                        horizontalTitleGap: 10,
+                        minVerticalPadding: 10,
+                        leading: Image.asset(
+                          'assets/thumb-up.png',
+                        ),
+                        title: Text(
+                          'Aksi 2',
+                          style: GoogleFonts.inter(
+                              fontSize: 16, color: const Color(0XFF444CE7)),
+                        ),
+                        subtitle: Text(
+                          'Upload foto kamu saat menggunakan sabuk pengaman di media sosial',
+                          textAlign: TextAlign.left,
+                          style: GoogleFonts.inter(
+                              fontSize: 16, color: Colors.black),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Button().moreButton(),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: SizedBox(
+            width: 396,
+            height: 60,
+            child: OutlinedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  const Color(0xFF444CE7),
                 ),
-                const SizedBox(
-                  height: 16,
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32.0),
+                  ),
                 ),
-                Button().moreButton(),
-              ],
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AmbilAksiScreen(),
+                  ),
+                );
+              },
+              child: Text(
+                'Ambil aksi',
+                style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
           ),
-        ],
+        ),
       ),
-      bottomNavigationBar: Button().buttonbar((context)),
     );
   }
 }

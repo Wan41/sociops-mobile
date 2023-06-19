@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:sociops/screen/bottom_screen.dart';
 import 'dart:core';
+import 'dart:math';
 
 import 'package:sociops/screen/fitur_donation/success_payment_screen.dart';
 
@@ -50,6 +52,15 @@ class CodePaymentScreen extends StatelessWidget {
       default:
         return '';
     }
+  }
+
+  String generateRandomCode() {
+    var rng = Random();
+    String code = '';
+    for (var i = 0; i < 10; i++) {
+      code += rng.nextInt(10).toString();
+    }
+    return code;
   }
 
   @override
@@ -132,7 +143,7 @@ class CodePaymentScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 12),
                       Text(
-                        'D3-12RBHSJ',
+                        generateRandomCode(),
                         style: GoogleFonts.inter(
                           fontWeight: FontWeight.w600,
                           fontSize: 24,
@@ -237,7 +248,14 @@ class CodePaymentScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BottomNavbarScreen(),
+                        ),
+                      );
+                    },
                     child: const Text(
                       'Kembali ke beranda',
                       style: TextStyle(
