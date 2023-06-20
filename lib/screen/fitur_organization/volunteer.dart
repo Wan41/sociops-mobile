@@ -1,8 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:sociops/screen/fitur_organization/round_button.dart';
-import 'package:sociops/screen/fitur_organization/profile.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sociops/style/color_style.dart';
 import 'package:sociops/style/font_style.dart';
 
@@ -12,40 +11,34 @@ class Volunteer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: const EdgeInsets.only(top: 30, left: 16),
-              child: Row(
-                children: [
-                  RoundButton(
-                    buttonColor: AppColors.primaryColor,
-                    iconColor: AppColors.arrowColor,
-                    icon: Icons.arrow_back,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ProfilePage()),
-                      );
-                    },
-                  ),
-                  const SizedBox(width: 16),
-                  const Text(
-                    'Hyundai Volunteer',
-                    style: Styles.organizerTextStyle,
-                  ),
-                ],
+      appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.white,
+        title: Text(
+          'Hyundai volunteer',
+          style: GoogleFonts.inter(
+            fontWeight: FontWeight.w500,
+            fontSize: 24,
+            color: Colors.black,
+          ),
+        ),
+        leading: const BackButton(
+          color: Color(0XFF444CE7),
+        ),
+      ),
+      body: Container(
+        color: Colors.white,
+        child: const SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 16),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: CustomFollowButton(),
               ),
-            ),
-            const SizedBox(height: 16),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: CustomFollowButton(),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -92,7 +85,7 @@ class _CustomFollowButtonState extends State<CustomFollowButton> {
                       height: 200,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
-                        child: Image.network(
+                        child: Image.asset(
                           "assets/hyundai.jpg",
                           fit: BoxFit.cover,
                         ),

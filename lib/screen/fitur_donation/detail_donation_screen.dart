@@ -186,7 +186,7 @@ class _DetailDonationScreenState extends State<DetailDonationScreen> {
                           right: 12,
                         ),
                         child: Image.asset(
-                          'assets/Polaroid.png',
+                          'assets/polaroid.png',
                         ),
                       ),
                       Column(

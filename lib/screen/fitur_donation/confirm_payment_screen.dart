@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -23,7 +21,7 @@ class _ConfirmPaymentScreenState extends State<ConfirmPaymentScreen> {
 
   void checkButtonStatus() {
     setState(() {
-      if (selectedPaymentMethod.isUndefinedOrNull) {
+      if (selectedPaymentMethod == null) {
         isButtonDisabled = true;
       } else {
         isButtonDisabled = false;

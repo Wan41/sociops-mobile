@@ -167,43 +167,46 @@ class _AmbilAksiScreenState extends State<AmbilAksiScreen> {
                     ),
                     borderRadius: BorderRadius.circular(24),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.asset(
-                        'assets/camera.png',
-                      ),
-                      const SizedBox(width: 12),
-                      SizedBox(
-                        width: 280,
-                        height: 84,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Langkah pertama',
-                              style: GoogleFonts.inter(
-                                fontSize: 14,
-                                color: const Color(0XFF444CE7),
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              'Ambil sebuah foto saat kamu akan melakukan perjalanan dengan memakai sabuk pengaman secara tepat dan benar',
-                              textAlign: TextAlign.left,
-                              style: GoogleFonts.inter(
-                                fontSize: 14,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          'assets/camera.png',
                         ),
-                      ),
-                    ],
+                        const SizedBox(width: 12),
+                        SizedBox(
+                          width: 280,
+                          height: 84,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Langkah pertama',
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: const Color(0XFF444CE7),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                'Ambil sebuah foto saat kamu akan melakukan perjalanan dengan memakai sabuk pengaman secara tepat dan benar',
+                                textAlign: TextAlign.left,
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 24),
@@ -217,45 +220,48 @@ class _AmbilAksiScreenState extends State<AmbilAksiScreen> {
                     ),
                     borderRadius: BorderRadius.circular(24),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.asset(
-                        'assets/carousel-screen1.png',
-                        width: 64,
-                        height: 64,
-                      ),
-                      const SizedBox(width: 12),
-                      SizedBox(
-                        width: 280,
-                        height: 164,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Langkah kedua',
-                              style: GoogleFonts.inter(
-                                fontSize: 14,
-                                color: const Color(0XFF444CE7),
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              'Buatlah caption yang menjelaskan bagaimana kamu peduli dengan keselamatan saat berkendara dari hal yang kecil seperti menggunakan sabuk pengaman. Cantumkan tagar #SampaiTujuanDenganAman dan tag akun @Hyundai di sosial media kamu',
-                              textAlign: TextAlign.left,
-                              style: GoogleFonts.inter(
-                                fontSize: 14,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          'assets/carousel-screen1.png',
+                          width: 64,
+                          height: 64,
                         ),
-                      ),
-                    ],
+                        const SizedBox(width: 12),
+                        SizedBox(
+                          width: 280,
+                          height: 164,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Langkah kedua',
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: const Color(0XFF444CE7),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                'Buatlah caption yang menjelaskan bagaimana kamu peduli dengan keselamatan saat berkendara dari hal yang kecil seperti menggunakan sabuk pengaman. Cantumkan tagar #SampaiTujuanDenganAman dan tag akun @Hyundai di sosial media kamu',
+                                textAlign: TextAlign.left,
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 24),
@@ -269,46 +275,49 @@ class _AmbilAksiScreenState extends State<AmbilAksiScreen> {
                     ),
                     borderRadius: BorderRadius.circular(24),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.asset(
-                        'assets/camera.png',
-                        // 'assets/phone.png',
-                        width: 64,
-                        height: 64,
-                      ),
-                      const SizedBox(width: 12),
-                      SizedBox(
-                        width: 280,
-                        height: 164,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Langkah ketiga',
-                              style: GoogleFonts.inter(
-                                fontSize: 14,
-                                color: const Color(0XFF444CE7),
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              'Posting foto dan caption yang telah kamu buat ke media sosial kamu. Jika sudah selesai, screenshoot bukti kamu telah memposting challenge ini di media sosial kamu. Jangan lupa untuk mencantumkan link media sosial yang kamu gunakan pada kolom di bawah ini.',
-                              textAlign: TextAlign.left,
-                              style: GoogleFonts.inter(
-                                fontSize: 14,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          'assets/camera.png',
+                          // 'assets/phone.png',
+                          width: 64,
+                          height: 64,
                         ),
-                      ),
-                    ],
+                        const SizedBox(width: 12),
+                        SizedBox(
+                          width: 280,
+                          height: 164,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Langkah ketiga',
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: const Color(0XFF444CE7),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                'Posting foto dan caption yang telah kamu buat ke media sosial kamu. Jika sudah selesai, screenshoot bukti kamu telah memposting challenge ini di media sosial kamu. Jangan lupa untuk mencantumkan link media sosial yang kamu gunakan pada kolom di bawah ini.',
+                                textAlign: TextAlign.left,
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),
